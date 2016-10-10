@@ -11,6 +11,27 @@
    <!-- -->
    <include href="../swe/data.rng"/>
    
+   <!-- GML Object Group with SML modification-->
+   <define name="sml.GmlObjectGroup">
+      <group>
+         <optional>
+            <ref name="gml.id"/>
+         </optional>
+         <optional>
+            <ref name="gml.description"/>
+         </optional>
+         <!-- in sml, gml:identifier with codespace=uniqueID is required -->
+         <element name="gml:identifier">
+            <attribute name="codeSpace">
+               <value>uniqueID</value>
+            </attribute>
+         </element>	
+         <zeroOrMore>
+            <ref name="gml.name"/>
+         </zeroOrMore>
+      </group>
+   </define>
+   
    
    <!-- Described Object -->
    <define name="sml.describedObject">
@@ -18,6 +39,8 @@
 		  <ref name="sml.attributes"/>
 	  
 		  <!-- ADD GML STUFF  -->	  
+         <ref name="sml.GmlObjectGroup"/>
+         
 		  <!--
 		  <zeroOrMore>
 			 <ref name="sml.extension"/>
