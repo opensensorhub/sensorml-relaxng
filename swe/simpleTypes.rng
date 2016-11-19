@@ -462,7 +462,7 @@
       <ref name="swe.Quantity"/>
       <ref name="swe.Time"/>
    </define>
-   Group
+
    <!-- Any Range -->
    <define name="swe.AnyRange">
       <choice>
