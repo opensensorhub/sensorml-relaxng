@@ -9,9 +9,7 @@
    <!-- -->
    <include href="Process.rng">
       <start>
-         <choice>
-            <ref name="sml.ProcessGroup"/>
-         </choice>
+         <ref name="sml.ProcessGroup"/>
       </start>
    </include>
        
@@ -41,7 +39,7 @@
    <!-- All Processes -->
    <define name="sml.ProcessGroup" combine="choice">
       <choice>
-         <ref name="sml.AggregateProcess"/>
+         <ref name="sml.PhysicalComponent"/>
           <ref name="sml.PhysicalSystem"/>
       </choice>
    </define>

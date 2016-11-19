@@ -9,9 +9,7 @@
    <!-- -->
    <include href="core.rng">
       <start>
-         <choice>
             <ref name="sml.ProcessGroup"/>
-         </choice>
       </start>
    </include>
       
