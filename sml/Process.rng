@@ -196,7 +196,7 @@
          </optional>
          <choice>
             <ref name="xlink.href"/>
-            <ref name="swe.AnyData"/>
+            <ref name="swe.AnyDataList"/>
             <ref name="sml.ObservableProperty"/>
          </choice>
       </element>
@@ -211,7 +211,7 @@
          </optional>
          <choice>
             <ref name="xlink.href"/>
-            <ref name="swe.AnyData"/>
+            <ref name="swe.AnyDataList"/>
             <ref name="sml.ObservableProperty"/>
          </choice>
       </element>
@@ -226,7 +226,7 @@
          </optional>
          <choice>
             <ref name="xlink.href"/>
-            <ref name="swe.AnyData"/>
+            <ref name="swe.AnyDataList"/>
          </choice>
       </element>
    </define>
