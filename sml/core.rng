@@ -25,6 +25,7 @@
             <attribute name="codeSpace">
                <value>uniqueID</value>
             </attribute>
+            <data type="ID"/>
          </element>	
          <zeroOrMore>
             <ref name="gml.name"/>
