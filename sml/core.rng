@@ -240,6 +240,11 @@
 			 <ref name="swe.extension"/>
 		  </zeroOrMore>
 		  -->
+		  <element name="sml:label">
+			 <data type="string">
+				<param name="minLength">1</param>
+			 </data>
+		  </element>
          <optional>
             <element name="sml:codeSpace">
                <ref name="xlink.href">

@@ -40,7 +40,7 @@
    <define name="sml.ProcessGroup" combine="choice">
       <choice>
          <ref name="sml.PhysicalComponent"/>
-          <ref name="sml.PhysicalSystem"/>
+         <ref name="sml.PhysicalSystem"/>
       </choice>
    </define>
    
