@@ -18,7 +18,7 @@
    <define name="sml.SimpleProcess">
       <a:documentation>Atomic Process</a:documentation>
       <element name="sml:SimpleProcess">
-         <ref name="sml.describedObject"/>
+         <ref name="sml.DescribedObject"/>
          <ref name="sml.ProcessContents"/>
          <ref name="sml.method"/>
       </element>
@@ -28,7 +28,7 @@
    <define name="sml.AggregateProcess">
       <a:documentation>Agregate Process Chain</a:documentation>
       <element name="sml:AggregateProcess">
-         <ref name="sml.describedObject"/>
+         <ref name="sml.DescribedObject"/>
          <ref name="sml.ProcessContents"/>
          <ref name="sml.components"/>
          <ref name="sml.connections"/>
@@ -253,6 +253,7 @@
             <ref name="xlink.roles"/>
          </optional>-->
          <choice>
+            <a:documentation>Type</a:documentation>
             <ref name="xlink.href"/>
             <ref name="swe.AnyDataList"/>
             <ref name="sml.ObservableProperty"/>
@@ -268,6 +269,7 @@
             <ref name="xlink.roles"/>
          </optional>-->
          <choice>
+            <a:documentation>Type</a:documentation>
             <ref name="xlink.href"/>
             <ref name="swe.AnyDataList"/>
             <ref name="sml.ObservableProperty"/>
@@ -278,14 +280,7 @@
    <!-- parameter -->
    <define name="sml.parameter">
       <element name="sml:parameter">
-         <ref name="swe.nameAtt"/>
-         <optional>
-            <ref name="xlink.roles"/>
-         </optional>
-         <choice>
-            <ref name="xlink.href"/>
-            <ref name="swe.AnyDataList"/>
-         </choice>
+         <ref name="swe.dataComponentPropertyWithName"/>
       </element>
    </define>
    
@@ -336,7 +331,7 @@
    <define name="sml.ObservableProperty">
       <a:documentation>Observable Property</a:documentation>
       <element name="sml:ObservableProperty">
-         <ref name="sml.propertyID"/>
+         <ref name="swe.AbstractSWEIdentifiable"/>
       </element>
    </define>
   
@@ -368,14 +363,15 @@
             </oneOrMore>
          </element>
       </element>
-   </define>
-       
+   </define>       
    
-   <!-- Feature of Interest FINISH THIS   -->
+   <!-- Feature of Interest -->
    <define name="sml.featureOfInterest">
-      <a:documentation>Feature of Interest</a:documentation>      
-   </define>
-   
+      <a:documentation>Feature of Interest</a:documentation>
+      <element name="sml:featureOfInterest">
+          <ref name="xlink.hrefWithTitle"/>
+       </element>
+   </define>   
    
 </grammar>
    

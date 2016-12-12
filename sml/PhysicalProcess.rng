@@ -17,7 +17,7 @@
    <define name="sml.PhysicalComponent">
       <a:documentation>Physical Component</a:documentation>
       <element name="sml:PhysicalComponent">
-         <ref name="sml.describedObject"/>
+         <ref name="sml.DescribedObject"/>
          <ref name="sml.ProcessContents"/>
          <ref name="sml.PhysicalContents"/>
          <ref name="sml.method"/>
@@ -28,7 +28,7 @@
    <define name="sml.PhysicalSystem">
       <a:documentation>Physical System</a:documentation>
       <element name="sml:PhysicalSystem">
-         <ref name="sml.describedObject"/>
+         <ref name="sml.DescribedObject"/>
          <ref name="sml.ProcessContents"/>
          <ref name="sml.PhysicalContents"/>
          <optional>

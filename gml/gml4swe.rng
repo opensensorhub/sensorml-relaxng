@@ -149,7 +149,7 @@
    
    <!-- xlink Roles -->
    <define name="xlink.roles">
-      <a:documentation>support for roles</a:documentation>
+      <a:documentation>Role</a:documentation>
       <choice>
          <attribute name="xlink:arcrole">
            <data type="anyURI">
