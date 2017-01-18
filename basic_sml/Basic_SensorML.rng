@@ -7,13 +7,7 @@
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
    
    <!-- -->
-   <include href="./Process.rng">
-      <start>
-            <ref name="sml.SimpleProcess"/>
-      </start>
-   </include>
-   
+   <include href="./Basic_Process.rng"/>
+   <include href="./Basic_PhysicalProcess.rng"/>    
    
 </grammar>
-   
-    

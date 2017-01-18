@@ -6,7 +6,7 @@
    xmlns:gml="http://www.opengis.net/gml"
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
    <!-- -->
-   <include href="simpleTypes.rng"/>
+   <include href="./simpleTypes.rng"/>
    <!--  -->
    <start combine="choice">
       <ref name="swe.AnyData"/>

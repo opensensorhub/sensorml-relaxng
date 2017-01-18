@@ -7,7 +7,7 @@
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
    
    <!-- -->
-   <include href="./Process.rng">
+   <include href="./Basic_Process.rng">
       <start>
          <ref name="sml.ProcessGroup"/>
       </start>
@@ -84,6 +84,33 @@
                <data type="string"/>           
             </element>
          </oneOrMore>           
+      </element>
+   </define>
+   
+   <!-- Reference Frame XYZ -->
+   <define name="sml.ReferenceFrame_XYZ">
+      <element name="sml:ReferenceFrame">
+         <element name="sml:origin">
+            <data type="string"/>       
+         </element>
+         <element name="sml:axis">
+            <attribute name="sml:name">
+               <value>x</value>
+            </attribute>
+            <data type="string"/>           
+         </element>        
+         <element name="sml:axis">
+            <attribute name="sml:name">
+               <value>y</value>
+            </attribute>
+            <data type="string"/>           
+         </element>        
+         <element name="sml:axis">
+            <attribute name="sml:name">
+               <value>z</value>
+            </attribute>
+            <data type="string"/>           
+         </element>        
       </element>
    </define>
    

@@ -6,7 +6,7 @@
    xmlns:swe="http://www.opengis.net/swe/1.0.1"
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
    <!-- -->
-   <include href="aggregateTypes.rng"/>
+   <include href="./aggregateTypes.rng"/>
    <!-- -->
    <define name="swe.DataDefinition">
       <empty/>

@@ -1,0 +1,2557 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ism="urn:us:gov:ic:ism">
+  <start>
+    <element name="sml:PhysicalComponent">
+<!-- ================================================= -->
+<!--                  System Description               -->
+<!-- ================================================= -->
+      
+      <element name="gml:description">
+        <data type="string">
+          <value>This is the RDI Workhorse 1200 deployed at 
+            Matha's Vineyard Coastal Observatory.</value>
+        </data>
+      </element>
+      <element name="gml:identifier">
+        <attribute name="codeSpace">
+          <data type="token">
+            <value>UniqueID</value>
+          </data>
+        </attribute>
+        <data type="token">
+          <value>urn:whoi:mvco:mvco_workhorse_1200</value>
+        </data>
+      </element>
+      <element name="gml:name">
+        <data type="string">
+          <value>MVCO_Workhorse_1200</value>
+        </data>
+      </element>
+      <element name="sml:keywords">
+        <element name="sml:KeywordList">
+          <element name="sml:keyword">
+            <data type="token">
+              <value>oceanography</value>
+            </data>
+          </element>
+          <element name="sml:keyword">
+            <data type="token">
+              <value>waves</value>
+            </data>
+          </element>
+          <element name="sml:keyword">
+            <data type="token">
+              <value>currents</value>
+            </data>
+          </element>
+          <element name="sml:keyword">
+            <data type="token">
+              <value>acoustic Doppler</value>
+            </data>
+          </element>
+          <element name="sml:keyword">
+            <data type="token">
+              <value>profiler</value>
+            </data>
+          </element>
+          <element name="sml:keyword">
+            <data type="token">
+              <value>WHOI</value>
+            </data>
+          </element>
+        </element>
+      </element>
+
+<!--===================System Identifiers=====================-->
+
+      <element name="sml:identification">
+        <element name="sml:IdentifierList">
+          <element name="sml:identifier">
+            <element name="sml:Term">
+              <attribute name="definition">
+                <data type="anyURI">
+                  <value>http://sensorml.com/ont/swe/property/longName</value>
+                </data>
+              </attribute>
+              <element name="sml:label">
+                <data type="undefistringned">
+                  <value>Long Name</value>
+                </data>
+              </element>
+              <element name="sml:value">
+                <data type="undefined">
+                  <value>Teledyne RDI ADCP at MVCO</value>
+                </data>
+              </element>
+            </element>
+          </element>
+          <element name="sml:identifier">
+            <element name="sml:Term">
+              <attribute name="definition">
+                <data type="undefined">
+                  <value>http://sensorml.com/ont/swe/property/shortName</value>
+                </data>
+              </attribute>
+              <element name="sml:label">
+                <data type="undefined">
+                  <value>Short Name</value>
+                </data>
+              </element>
+              <element name="sml:value">
+                <data type="undefined">
+                  <value>MVCO_ADCP</value>
+                </data>
+              </element>
+            </element>
+          </element>
+          <element name="sml:identifier">
+            <element name="sml:Term">
+              <attribute name="definition">
+                <data type="undefined">
+                  <value>http://sensorml.com/ont/swe/property/serialNumber</value>
+                </data>
+              </attribute>
+              <element name="sml:label">
+                <data type="undefined">
+                  <value>Serial Number</value>
+                </data>
+              </element>
+              <element name="sml:value">
+                <data type="undefined">
+                  <value>14391</value>
+                </data>
+              </element>
+            </element>
+          </element>
+          <element name="sml:identifier">
+            <element name="sml:Term">
+              <attribute name="definition">
+                <data type="undefined">
+                  <value>http://sensorml.com/ont/swe/property/deployer</value>
+                </data>
+              </attribute>
+              <element name="sml:label">
+                <data type="undefined">
+                  <value>Deploying Agency</value>
+                </data>
+              </element>
+              <element name="sml:value">
+                <data type="undefined">
+                  <value>Woods Hole Oceanographic Institute</value>
+                </data>
+              </element>
+            </element>
+          </element>
+        </element>
+      </element>
+
+      <!--===================System Classifiers=====================-->
+
+      <element name="sml:classification">
+        <element name="sml:ClassifierList">
+          <element name="sml:classifier">
+            <element name="sml:Term">
+              <attribute name="definition">
+                <data type="undefined">
+                  <value>http://sensorml.com/ont/swe/property/application</value>
+                </data>
+              </attribute>
+              <element name="sml:label">
+                <data type="undefined">
+                  <value>Intended Application</value>
+                </data>
+              </element>
+              <element name="sml:value">
+                <data type="undefined">
+                  <value>Ocean Waves</value>
+                </data>
+              </element>
+            </element>
+          </element>
+          <element name="sml:classifier">
+            <element name="sml:Term">
+              <attribute name="definition">
+                <data type="undefined">
+                  <value>http://sensorml.com/ont/swe/property/application</value>
+                </data>
+              </attribute>
+              <element name="sml:label">
+                <data type="undefined">
+                  <value>Intended Application</value>
+                </data>
+              </element>
+              <element name="sml:value">
+                <data type="undefined">
+                  <value>Ocean Currents</value>
+                </data>
+              </element>
+            </element>
+          </element>
+          <element name="sml:classifier">
+            <element name="sml:Term">
+              <attribute name="definition">
+                <data type="undefined">
+                  <value>http://sensorml.com/ont/swe/property/sensorType</value>
+                </data>
+              </attribute>
+              <element name="sml:label">
+                <data type="undefined">
+                  <value>Sensor Type</value>
+                </data>
+              </element>
+              <element name="sml:value">
+                <data type="undefined">
+                  <value>Acoustic Doppler</value>
+                </data>
+              </element>
+            </element>
+          </element>
+          <element name="sml:classifier">
+            <element name="sml:Term">
+              <attribute name="definition">
+                <data type="undefined">
+                  <value>http://sensorml.com/ont/swe/property/sensorType</value>
+                </data>
+              </attribute>
+              <element name="sml:label">
+                <data type="undefined">
+                  <value>Sensor Type</value>
+                </data>
+              </element>
+              <element name="sml:value">
+                <data type="undefined">
+                  <value>profiler</value>
+                </data>
+              </element>
+            </element>
+          </element>
+        </element>
+      </element>
+
+      <!--===================Constraints=============================-->
+
+      <element name="sml:validTime">
+        <element name="gml:TimeInstant">
+          <attribute name="gml:id">
+            <data type="undefined">
+              <value>validTime</value>
+            </data>
+          </attribute>
+          <element name="gml:timePosition">
+            <attribute name="indeterminatePosition">
+              <data type="undefined">
+                <value>after</value>
+              </data>
+            </attribute>
+            <data type="undefined">
+              <value>2009-03-20</value>
+            </data>
+          </element>
+        </element>
+      </element>
+ 
+      <!--============       System Contacts           =============-->
+
+      <element name="sml:contacts">
+        <element name="sml:ContactList">
+          <element name="sml:contact">
+            <attribute name="xlink:arcrole">
+              <data type="undefined">
+                <value>http://sensorml.com/ont/swe/role/Operator</value>
+              </data>
+            </attribute>
+            <element name="gmd:CI_ResponsibleParty">
+              <element name="gmd:individualName">
+                <element name="gco:CharacterString">
+                  <data type="undefined">
+                    <value>Janet Fredericks</value>
+                  </data>
+                </element>
+              </element>
+              <element name="gmd:organisationName">
+                <element name="gco:CharacterString">
+                  <data type="undefined">
+                    <value>Woods Hole Oceanographic Institute</value>
+                  </data>
+                </element>
+              </element>
+              <element name="gmd:contactInfo">
+                <element name="gmd:CI_Contact">
+                  <element name="gmd:phone">
+                    <element name="gmd:CI_Telephone">
+                      <element name="gmd:voice">
+                        <element name="gco:CharacterString">
+                          <data type="undefined">
+                            <value>+1-508-548-1400</value>
+                          </data>
+                        </element>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="gmd:address">
+                    <element name="gmd:CI_Address">
+                      <element name="gmd:deliveryPoint">
+                        <element name="gco:CharacterString">
+                          <data type="undefined">
+                            <value>266 Water Street</value>
+                          </data>
+                        </element>
+                      </element>
+                      <element name="gmd:city">
+                        <element name="gco:CharacterString">
+                          <data type="undefined">
+                            <value>Woods Hole</value>
+                          </data>
+                        </element>
+                      </element>
+                      <element name="gmd:administrativeArea">
+                        <element name="gco:CharacterString">
+                          <data type="undefined">
+                            <value>MA</value>
+                          </data>
+                        </element>
+                      </element>
+                      <element name="gmd:postalCode">
+                        <element name="gco:CharacterString">
+                          <data type="undefined">
+                            <value>02543</value>
+                          </data>
+                        </element>
+                      </element>
+                      <element name="gmd:country">
+                        <element name="gco:CharacterString">
+                          <data type="undefined">
+                            <value>USA</value>
+                          </data>
+                        </element>
+                      </element>
+                      <element name="gmd:electronicMailAddress">
+                        <element name="gco:CharacterString">
+                          <data type="undefined">
+                            <value>jfredericks@whoi.edu</value>
+                          </data>
+                        </element>
+                      </element>
+                    </element>
+                  </element>
+                </element>
+              </element>
+              <element name="gmd:role">
+                <attribute name="gco:nilReason">
+                  <data type="undefined">
+                    <value>inapplicable</value>
+                  </data>
+                </attribute>
+              </element>
+            </element>
+          </element>
+        </element>
+      </element>
+
+      <!--================       History             ===============-->
+
+      <element name="sml:history">
+        <element name="sml:EventList">
+          <element name="sml:event">
+            <element name="sml:Event">
+              <attribute name="definition">
+                <data type="undefined">
+                  <value>http://sensorml.com/ont/swe/property/deploymentEvent</value>
+                </data>
+              </attribute>
+              <element name="swe:label">
+                <data type="undefined">
+                  <value>System Deployment</value>
+                </data>
+              </element>
+              <element name="swe:description">
+                <data type="undefined">
+                  <value>Initial system deployment</value>
+                </data>
+              </element>
+              <element name="sml:time">
+                <element name="gml:TimeInstant">
+                  <attribute name="gml:id">
+                    <data type="undefined">
+                      <value>deploymentDate</value>
+                    </data>
+                  </attribute>
+                  <element name="gml:timePosition">
+                    <data type="undefined">
+                      <value>
+                        2001-04-20
+                     </value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="sml:property">
+                <element name="swe:DataRecord">
+                  <element name="swe:label">
+                    <data type="undefined">
+                      <value>Deployment Parameters</value>
+                    </data>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>EventType</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://mmisw.org/ont/mvco/historyEventType</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>SystemDeployment</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ComponentID</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#RDI_Workhorse_1200</value>
+                      </data>
+                    </attribute>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>SerialNumber</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://sensorml.com/ont/swe/property/serialNumber</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>1654</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ManufactureDate</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Time">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://sensorml.com/ont/swe/property/manufactureDate</value>
+                        </data>
+                      </attribute>
+                      <attribute name="referenceFrame">
+                        <data type="undefined">
+                          <value>http://www.opengis.net/def/trs/OGC/0/GPS</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:label">
+                        <data type="undefined">
+                          <value>Manufacture Date</value>
+                        </data>
+                      </element>
+                      <element name="swe:uom">
+                        <attribute name="xlink:href">
+                          <data type="undefined">
+                            <value>http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian</value>
+                          </data>
+                        </attribute>
+                      </element>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>2007-09-01T00:00:00Z</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>deployedPeriod</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:TimeRange">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://sensorml.com/ont/swe/property/deployedTimeRange</value>
+                        </data>
+                      </attribute>
+                      <attribute name="referenceFrame">
+                        <data type="undefined">
+                          <value>http://www.opengis.net/def/trs/OGC/0/GPS</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:label">
+                        <data type="undefined">
+                          <value>Manufacture Date</value>
+                        </data>
+                      </element>
+                      <element name="swe:uom">
+                        <attribute name="xlink:href">
+                          <data type="undefined">
+                            <value>http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian</value>
+                          </data>
+                        </attribute>
+                      </element>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>2001-04-20T00:00:00Z 2009-08-31T23:00:00Z</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>FirmwareVersion</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://sensorml.com/ont/swe/property/firmwareVersion</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>16.21</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>AdditionalDocumentation</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://mvcodata.whoi.edu/documentation</value>
+                      </data>
+                    </attribute>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+          <element name="sml:event">
+            <element name="sml:Event">
+              <element name="swe:label">
+                <data type="undefined">
+                  <value>Sensor Change</value>
+                </data>
+              </element>
+              <element name="swe:description">
+                <data type="undefined">
+                  <value>Sensor Change</value>
+                </data>
+              </element>
+              <element name="sml:time">
+                <element name="gml:TimeInstant">
+                  <attribute name="gml:id">
+                    <data type="undefined">
+                      <value>t67yye7</value>
+                    </data>
+                  </attribute>
+                  <element name="gml:timePosition">
+                    <data type="undefined">
+                      <value>
+                        2007-11-20
+                     </value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="sml:property">
+                <element name="swe:DataRecord">
+                  <attribute name="definition">
+                    <data type="undefined">
+                      <value>http://sensorml.com/ont/swe/property/sensorChangeParameters</value>
+                    </data>
+                  </attribute>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>EventType</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://mmisw.org/ont/mvco/historyEventType</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>SensorChange</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ComponentID</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#RDI_Workhorse_1200</value>
+                      </data>
+                    </attribute>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>SerialNumber</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>urn:ogc:def:identifier:OGC:serialNumber</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>10295</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ManufactureDate</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Time">
+                      <attribute name="referenceFrame">
+                        <data type="undefined">
+                          <value>http://www.opengis.net/def/trs/OGC/0/GPS</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:label">
+                        <data type="undefined">
+                          <value>Manufacture Date</value>
+                        </data>
+                      </element>
+                      <element name="swe:uom">
+                        <attribute name="xlink:href">
+                          <data type="undefined">
+                            <value>http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian</value>
+                          </data>
+                        </attribute>
+                      </element>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>2007-11-20T00:00:00Z</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>DeploymentTimeRange</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:TimeRange">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>
+                          </value>
+                        </data>
+                      </attribute>
+                      <attribute name="referenceFrame">
+                        <data type="undefined">
+                          <value>http://www.opengis.net/def/trs/OGC/0/GPS</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:label">
+                        <data type="undefined">
+                          <value>Manufacture Date</value>
+                        </data>
+                      </element>
+                      <element name="swe:uom">
+                        <attribute name="xlink:href">
+                          <data type="undefined">
+                            <value>http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian</value>
+                          </data>
+                        </attribute>
+                      </element>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>2009-09-03T16:07:58Z now</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>FirmwareVersion</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://sensorml.com/ont/swe/property/firmwareVersion</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>16.3</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>AdditionalDocumentation</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://mvcodata.whoi.edu/documentation</value>
+                      </data>
+                    </attribute>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+          <element name="sml:event">
+            <element name="sml:Event">
+              <element name="swe:label">
+                <data type="undefined">
+                  <value>Temperature Sensor Deployed</value>
+                </data>
+              </element>
+              <element name="swe:description">
+                <data type="undefined">
+                  <value>Deployment data for Temperature Sensor</value>
+                </data>
+              </element>
+              <element name="sml:time">
+                <element name="gml:TimeInstant">
+                  <attribute name="gml:id">
+                    <data type="undefined">
+                      <value>he56d2</value>
+                    </data>
+                  </attribute>
+                  <element name="gml:timePosition">
+                    <data type="undefined">
+                      <value>
+                        2001-04-20
+                     </value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="sml:property">
+                <element name="swe:DataRecord">
+                  <element name="swe:label">
+                    <data type="undefined">
+                      <value>Deployment Metadata</value>
+                    </data>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>EventType</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://mmisw.org/ont/mvco/historyEventType</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>SensorDeployment</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ComponentID</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#TemperatureSensor</value>
+                      </data>
+                    </attribute>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ManufactureDate</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Time">
+                      <attribute name="referenceFrame">
+                        <data type="undefined">
+                          <value>http://www.opengis.net/def/trs/OGC/0/GPS</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:label">
+                        <data type="undefined">
+                          <value>Manufacture Date</value>
+                        </data>
+                      </element>
+                      <element name="swe:uom">
+                        <attribute name="xlink:href">
+                          <data type="undefined">
+                            <value>http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian</value>
+                          </data>
+                        </attribute>
+                      </element>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>2001-04-20Z</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>CalibrationDate</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Time">
+                      <attribute name="referenceFrame">
+                        <data type="undefined">
+                          <value>http://www.opengis.net/def/trs/OGC/0/GPS</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:label">
+                        <data type="undefined">
+                          <value>Manufacture Date</value>
+                        </data>
+                      </element>
+                      <element name="swe:uom">
+                        <attribute name="xlink:href">
+                          <data type="undefined">
+                            <value>http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian</value>
+                          </data>
+                        </attribute>
+                      </element>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>2001-04-20Z</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>CalibrationLocation</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>Manufacturer</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+          <element name="sml:event">
+            <element name="sml:Event">
+              <element name="swe:label">
+                <data type="undefined">
+                  <value>Temperature Sensor Change</value>
+                </data>
+              </element>
+              <element name="swe:description">
+                <data type="undefined">
+                  <value>Deployment data for Changed Temperature Sensor</value>
+                </data>
+              </element>
+              <element name="sml:time">
+                <element name="gml:TimeInstant">
+                  <attribute name="gml:id">
+                    <data type="undefined">
+                      <value>wte7u2</value>
+                    </data>
+                  </attribute>
+                  <element name="gml:timePosition">
+                    <data type="undefined">
+                      <value>
+                        2009-09-01Z
+                     </value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="sml:property">
+                <element name="swe:DataRecord">
+                  <element name="swe:label">
+                    <data type="undefined">
+                      <value>Sensor Change Parameters</value>
+                    </data>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>EventType</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://mmisw.org/ont/mvco/historyEventType</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>SensorChange</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ComponentID</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#TemperatureSensor</value>
+                      </data>
+                    </attribute>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ManufactureDate</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Time">
+                      <attribute name="referenceFrame">
+                        <data type="undefined">
+                          <value>http://www.opengis.net/def/trs/OGC/0/GPS</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:label">
+                        <data type="undefined">
+                          <value>Manufacture Date</value>
+                        </data>
+                      </element>
+                      <element name="swe:uom">
+                        <attribute name="xlink:href">
+                          <data type="undefined">
+                            <value>http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian</value>
+                          </data>
+                        </attribute>
+                      </element>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>2007-11-20Z</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>CalibrationDate</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Time">
+                      <attribute name="referenceFrame">
+                        <data type="undefined">
+                          <value>http://www.opengis.net/def/trs/OGC/0/GPS</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:label">
+                        <data type="undefined">
+                          <value>Manufacture Date</value>
+                        </data>
+                      </element>
+                      <element name="swe:uom">
+                        <attribute name="xlink:href">
+                          <data type="undefined">
+                            <value>http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian</value>
+                          </data>
+                        </attribute>
+                      </element>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>2007-11-20Z</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>CalibrationLocation</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>Manufacturer</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+          <element name="sml:event">
+            <element name="sml:Event">
+              <element name="swe:label">
+                <data type="undefined">
+                  <value> Pressure Sensor Deployed</value>
+                </data>
+              </element>
+              <element name="swe:description">
+                <data type="undefined">
+                  <value>Deployment data for Pressure Sensor</value>
+                </data>
+              </element>
+              <element name="sml:time">
+                <element name="gml:TimeInstant">
+                  <attribute name="gml:id">
+                    <data type="undefined">
+                      <value>t762erw</value>
+                    </data>
+                  </attribute>
+                  <element name="gml:timePosition">
+                    <data type="undefined">
+                      <value>
+                        2001-04-20Z
+                     </value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="sml:property">
+                <element name="swe:DataRecord">
+                  <element name="swe:label">
+                    <data type="undefined">
+                      <value>Deployment MetaData</value>
+                    </data>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>EventType</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://mmisw.org/ont/mvco/historyEventType</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>SensorDeployment</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ComponentID</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#PressureSensor</value>
+                      </data>
+                    </attribute>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ManufactureDate</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Time">
+                      <attribute name="referenceFrame">
+                        <data type="undefined">
+                          <value>http://www.opengis.net/def/trs/OGC/0/GPS</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:label">
+                        <data type="undefined">
+                          <value>Manufacture Date</value>
+                        </data>
+                      </element>
+                      <element name="swe:uom">
+                        <attribute name="xlink:href">
+                          <data type="undefined">
+                            <value>http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian</value>
+                          </data>
+                        </attribute>
+                      </element>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>2001-04-20Z</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>CalibrationDate</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Time">
+                      <attribute name="referenceFrame">
+                        <data type="undefined">
+                          <value>http://www.opengis.net/def/trs/OGC/0/GPS</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:label">
+                        <data type="undefined">
+                          <value>Manufacture Date</value>
+                        </data>
+                      </element>
+                      <element name="swe:uom">
+                        <attribute name="xlink:href">
+                          <data type="undefined">
+                            <value>http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian</value>
+                          </data>
+                        </attribute>
+                      </element>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>2001-04-20Z</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>CalibrationLocation</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>Manufacturer</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+          <element name="sml:event">
+            <element name="sml:Event">
+              <element name="swe:label">
+                <data type="undefined">
+                  <value>Sensor Change</value>
+                </data>
+              </element>
+              <element name="swe:description">
+                <data type="undefined">
+                  <value>Deployment data for Changed Pressure Sensor</value>
+                </data>
+              </element>
+              <element name="sml:time">
+                <element name="gml:TimeInstant">
+                  <attribute name="gml:id">
+                    <data type="undefined">
+                      <value>ue34t67</value>
+                    </data>
+                  </attribute>
+                  <element name="gml:timePosition">
+                    <data type="undefined">
+                      <value>
+                        2007-11-20Z
+                     </value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="sml:property">
+                <element name="swe:DataRecord">
+                  <element name="swe:label">
+                    <data type="undefined">
+                      <value>Sensor Change Parameter</value>
+                    </data>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>EventType</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://mmisw.org/ont/mvco/historyEventType</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>SensorChange</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ComponentID</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#PressureSensor</value>
+                      </data>
+                    </attribute>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ManufactureDate</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Time">
+                      <attribute name="referenceFrame">
+                        <data type="undefined">
+                          <value>http://www.opengis.net/def/trs/OGC/0/GPS</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:label">
+                        <data type="undefined">
+                          <value>Manufacture Date</value>
+                        </data>
+                      </element>
+                      <element name="swe:uom">
+                        <attribute name="xlink:href">
+                          <data type="undefined">
+                            <value>http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian</value>
+                          </data>
+                        </attribute>
+                      </element>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>2007-11-20Z</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>CalibrationDate</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Time">
+                      <attribute name="referenceFrame">
+                        <data type="undefined">
+                          <value>http://www.opengis.net/def/trs/OGC/0/GPS</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:label">
+                        <data type="undefined">
+                          <value>Manufacture Date</value>
+                        </data>
+                      </element>
+                      <element name="swe:uom">
+                        <attribute name="xlink:href">
+                          <data type="undefined">
+                            <value>http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian</value>
+                          </data>
+                        </attribute>
+                      </element>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>2007-11-20Z</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>CalibrationLocation</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>Manufacturer</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+          <element name="sml:event">
+            <element name="sml:Event">
+              <element name="swe:label">
+                <data type="undefined">
+                  <value>Transducer Deployment</value>
+                </data>
+              </element>
+              <element name="swe:description">
+                <data type="undefined">
+                  <value>Deployment data for Transducers</value>
+                </data>
+              </element>
+              <element name="sml:time">
+                <element name="gml:TimeInstant">
+                  <attribute name="gml:id">
+                    <data type="undefined">
+                      <value>guey840</value>
+                    </data>
+                  </attribute>
+                  <element name="gml:timePosition">
+                    <data type="undefined">
+                      <value>
+                        2001-04-20Z
+                     </value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="sml:property">
+                <element name="swe:DataRecord">
+                  <element name="swe:label">
+                    <data type="undefined">
+                      <value>Deployment Data</value>
+                    </data>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>EventType</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://mmisw.org/ont/mvco/historyEventType</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>SensorDeployment</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ComponentID</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer</value>
+                      </data>
+                    </attribute>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>manufacturerDate</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Time">
+                      <attribute name="referenceFrame">
+                        <data type="undefined">
+                          <value>http://www.opengis.net/def/trs/OGC/0/GPS</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:label">
+                        <data type="undefined">
+                          <value>Manufacture Date</value>
+                        </data>
+                      </element>
+                      <element name="swe:uom">
+                        <attribute name="xlink:href">
+                          <data type="undefined">
+                            <value>http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian</value>
+                          </data>
+                        </attribute>
+                      </element>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>2001-04-20Z</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+          <element name="sml:event">
+            <element name="sml:Event">
+              <element name="swe:label">
+                <data type="undefined">
+                  <value>Sensor Change</value>
+                </data>
+              </element>
+              <element name="swe:description">
+                <data type="undefined">
+                  <value>Deployment data for Changed Transducer</value>
+                </data>
+              </element>
+              <element name="sml:time">
+                <element name="gml:TimeInstant">
+                  <attribute name="gml:id">
+                    <data type="undefined">
+                      <value>gy809u</value>
+                    </data>
+                  </attribute>
+                  <element name="gml:timePosition">
+                    <data type="undefined">
+                      <value>
+                        2007-11-20Z
+                     </value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="sml:property">
+                <element name="swe:DataRecord">
+                  <element name="swe:label">
+                    <data type="undefined">
+                      <value>Sensor Change Parameters</value>
+                    </data>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>EventType</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://mmisw.org/ont/mvco/historyEventType</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>SensorChange</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ComponentID</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer</value>
+                      </data>
+                    </attribute>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>manufacturerDate</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Time">
+                      <attribute name="referenceFrame">
+                        <data type="undefined">
+                          <value>http://www.opengis.net/def/trs/OGC/0/GPS</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:label">
+                        <data type="undefined">
+                          <value>Manufacture Date</value>
+                        </data>
+                      </element>
+                      <element name="swe:uom">
+                        <attribute name="xlink:href">
+                          <data type="undefined">
+                            <value>http://www.opengis.net/def/uom/ISO‐8601/0/Gregorian</value>
+                          </data>
+                        </attribute>
+                      </element>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>2007-11-20Z</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+          <element name="sml:event">
+            <element name="sml:Event">
+              <element name="swe:label">
+                <data type="undefined">
+                  <value>Pressure Port Impacted</value>
+                </data>
+              </element>
+              <element name="swe:description">
+                <data type="undefined">
+                  <value>pressure port deployed with mud embedded (bad pressure)</value>
+                </data>
+              </element>
+              <element name="sml:time">
+                <element name="gml:TimeInstant">
+                  <attribute name="gml:id">
+                    <data type="undefined">
+                      <value>s42f35</value>
+                    </data>
+                  </attribute>
+                  <element name="gml:timePosition">
+                    <data type="undefined">
+                      <value>
+                        2003-04-14Z
+                     </value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="sml:property">
+                <element name="swe:DataRecord">
+                  <element name="swe:label">
+                    <data type="undefined">
+                      <value>Pressure Port Deployment Parameters</value>
+                    </data>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>EventType</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://mmisw.org/ont/mvco/historyEventType</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>SensorDeployment</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ComponentID</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#PressureSensor</value>
+                      </data>
+                    </attribute>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+          <element name="sml:event">
+            <element name="sml:Event">
+              <element name="swe:label">
+                <data type="undefined">
+                  <value>Replaced Pressure Port</value>
+                </data>
+              </element>
+              <element name="swe:description">
+                <data type="undefined">
+                  <value>pressure port replaced</value>
+                </data>
+              </element>
+              <element name="sml:time">
+                <element name="gml:TimeInstant">
+                  <attribute name="gml:id">
+                    <data type="undefined">
+                      <value>hey984</value>
+                    </data>
+                  </attribute>
+                  <element name="gml:timePosition">
+                    <data type="undefined">
+                      <value>
+                        2004-08-31Z
+                     </value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="sml:property">
+                <element name="swe:DataRecord">
+                  <element name="swe:label">
+                    <data type="undefined">
+                      <value>Pressure Port Deployment Parameters</value>
+                    </data>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>EventType</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://mmisw.org/ont/mvco/historyEventType</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>SensorChange</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ComponentID</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#PressureSensor</value>
+                      </data>
+                    </attribute>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+          <element name="sml:event">
+            <element name="sml:Event">
+              <element name="swe:label">
+                <data type="undefined">
+                  <value>Cleaned Faces</value>
+                </data>
+              </element>
+              <element name="swe:description">
+                <data type="undefined">
+                  <value>cleaned off ADCP faces</value>
+                </data>
+              </element>
+              <element name="sml:time">
+                <element name="gml:TimeInstant">
+                  <attribute name="gml:id">
+                    <data type="undefined">
+                      <value>g48h9</value>
+                    </data>
+                  </attribute>
+                  <element name="gml:timePosition">
+                    <data type="undefined">
+                      <value>
+                        2003-10-29Z
+                     </value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="sml:property">
+                <element name="swe:DataRecord">
+                  <element name="swe:label">
+                    <data type="undefined">
+                      <value>Cleaned Faces Parameters</value>
+                    </data>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>EventType</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://mmisw.org/ont/mvco/historyEventType</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>CleanedFaces</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ComponentID</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer</value>
+                      </data>
+                    </attribute>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+          <element name="sml:event">
+            <element name="sml:Event">
+              <element name="swe:label">
+                <data type="undefined">
+                  <value>Cleaned Faces</value>
+                </data>
+              </element>
+              <element name="swe:description">
+                <data type="undefined">
+                  <value>cleaned off ADCP faces</value>
+                </data>
+              </element>
+              <element name="sml:time">
+                <element name="gml:TimeInstant">
+                  <attribute name="gml:id">
+                    <data type="undefined">
+                      <value>h9y76</value>
+                    </data>
+                  </attribute>
+                  <element name="gml:timePosition">
+                    <data type="undefined">
+                      <value>
+                        2004-12-06Z
+                     </value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="sml:property">
+                <element name="swe:DataRecord">
+                  <element name="swe:label">
+                    <data type="undefined">
+                      <value>Cleaned Faces Parameters</value>
+                    </data>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>EventType</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://mmisw.org/ont/mvco/historyEventType</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>CleanedFaces</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ComponentID</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer</value>
+                      </data>
+                    </attribute>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+          <element name="sml:event">
+            <element name="sml:Event">
+              <element name="swe:label">
+                <data type="undefined">
+                  <value>Cleaned Faces</value>
+                </data>
+              </element>
+              <element name="swe:description">
+                <data type="undefined">
+                  <value>cleaned off ADCP faces</value>
+                </data>
+              </element>
+              <element name="sml:time">
+                <element name="gml:TimeInstant">
+                  <attribute name="gml:id">
+                    <data type="undefined">
+                      <value>l0uy69</value>
+                    </data>
+                  </attribute>
+                  <element name="gml:timePosition">
+                    <data type="undefined">
+                      <value>
+                        2005-05-12Z
+                     </value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="sml:property">
+                <element name="swe:DataRecord">
+                  <element name="swe:label">
+                    <data type="undefined">
+                      <value>Cleaned Faces Parameters</value>
+                    </data>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>EventType</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://mmisw.org/ont/mvco/historyEventType</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>CleanedFaces</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ComponentID</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer</value>
+                      </data>
+                    </attribute>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+          <element name="sml:event">
+            <element name="sml:Event">
+              <element name="swe:label">
+                <data type="undefined">
+                  <value>Cleaned Faces</value>
+                </data>
+              </element>
+              <element name="swe:description">
+                <data type="undefined">
+                  <value>cleaned off ADCP faces</value>
+                </data>
+              </element>
+              <element name="sml:time">
+                <element name="gml:TimeInstant">
+                  <attribute name="gml:id">
+                    <data type="undefined">
+                      <value>ht4r3e</value>
+                    </data>
+                  </attribute>
+                  <element name="gml:timePosition">
+                    <data type="undefined">
+                      <value>
+                        2005-11-12Z
+                     </value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="sml:property">
+                <element name="swe:DataRecord">
+                  <element name="swe:label">
+                    <data type="undefined">
+                      <value>Cleaned Faces Parameters</value>
+                    </data>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>EventType</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://mmisw.org/ont/mvco/historyEventType</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>CleanedFaces</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ComponentID</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer</value>
+                      </data>
+                    </attribute>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+          <element name="sml:event">
+            <element name="sml:Event">
+              <element name="swe:label">
+                <data type="undefined">
+                  <value>Cleaned Faces</value>
+                </data>
+              </element>
+              <element name="swe:description">
+                <data type="undefined">
+                  <value>cleaned off ADCP faces</value>
+                </data>
+              </element>
+              <element name="sml:time">
+                <element name="gml:TimeInstant">
+                  <attribute name="gml:id">
+                    <data type="undefined">
+                      <value>r5y2nk</value>
+                    </data>
+                  </attribute>
+                  <element name="gml:timePosition">
+                    <data type="undefined">
+                      <value>
+                        2006-03-07Z
+                     </value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="sml:property">
+                <element name="swe:DataRecord">
+                  <element name="swe:label">
+                    <data type="undefined">
+                      <value>Cleaned Faces Parameters</value>
+                    </data>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>EventType</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://mmisw.org/ont/mvco/historyEventType</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>CleanedFaces</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ComponentID</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer</value>
+                      </data>
+                    </attribute>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+          <element name="sml:event">
+            <element name="sml:Event">
+              <element name="swe:label">
+                <data type="undefined">
+                  <value>New Tray</value>
+                </data>
+              </element>
+              <element name="swe:description">
+                <data type="undefined">
+                  <value>instrument maintenance new tray installed; ht above bottom
+                        raised to 2.25 m</value>
+                </data>
+              </element>
+              <element name="sml:time">
+                <element name="gml:TimeInstant">
+                  <attribute name="gml:id">
+                    <data type="undefined">
+                      <value>r3t7w8</value>
+                    </data>
+                  </attribute>
+                  <element name="gml:timePosition">
+                    <data type="undefined">
+                      <value>
+                        2006-09-01Z
+                     </value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="sml:property">
+                <element name="swe:DataRecord">
+                  <element name="swe:label">
+                    <data type="undefined">
+                      <value>Cleaned Faces Parameters</value>
+                    </data>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>EventType</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://mmisw.org/ont/mvco/historyEventType</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>New Tray</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ComponentID</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://www.sensorml.com/2.0/mvco/sensor/MVCO_ObservingSystem.xml#12mNode</value>
+                      </data>
+                    </attribute>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+          <element name="sml:event">
+            <element name="sml:Event">
+              <element name="swe:label">
+                <data type="undefined">
+                  <value>Cleaned Faces</value>
+                </data>
+              </element>
+              <element name="swe:description">
+                <data type="undefined">
+                  <value>cleaned off ADCP faces</value>
+                </data>
+              </element>
+              <element name="sml:time">
+                <element name="gml:TimeInstant">
+                  <attribute name="gml:id">
+                    <data type="undefined">
+                      <value>w9ue83</value>
+                    </data>
+                  </attribute>
+                  <element name="gml:timePosition">
+                    <data type="undefined">
+                      <value>
+                        2008-01-29Z
+                     </value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="sml:property">
+                <element name="swe:DataRecord">
+                  <element name="swe:label">
+                    <data type="undefined">
+                      <value>Cleaned Faces Parameters</value>
+                    </data>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>EventType</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://mmisw.org/ont/mvco/historyEventType</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>CleanedFaces</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ComponentID</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer</value>
+                      </data>
+                    </attribute>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+          <element name="sml:event">
+            <element name="sml:Event">
+              <element name="swe:label">
+                <data type="undefined">
+                  <value>Cleaned Faces</value>
+                </data>
+              </element>
+              <element name="swe:description">
+                <data type="undefined">
+                  <value>cleaned off ADCP faces</value>
+                </data>
+              </element>
+              <element name="sml:time">
+                <element name="gml:TimeInstant">
+                  <attribute name="gml:id">
+                    <data type="undefined">
+                      <value>qi87hj</value>
+                    </data>
+                  </attribute>
+                  <element name="gml:timePosition">
+                    <data type="undefined">
+                      <value>
+                        2008-04-25Z
+                     </value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="sml:property">
+                <element name="swe:DataRecord">
+                  <element name="swe:label">
+                    <data type="undefined">
+                      <value>Cleaned Faces Parameters</value>
+                    </data>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>EventType</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://mmisw.org/ont/mvco/historyEventType</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>CleanedFaces</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ComponentID</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer</value>
+                      </data>
+                    </attribute>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+          <element name="sml:event">
+            <element name="sml:Event">
+              <element name="swe:label">
+                <data type="undefined">
+                  <value>Cleaned Faces</value>
+                </data>
+              </element>
+              <element name="swe:description">
+                <data type="undefined">
+                  <value>cleaned off ADCP faces</value>
+                </data>
+              </element>
+              <element name="sml:time">
+                <element name="gml:TimeInstant">
+                  <attribute name="gml:id">
+                    <data type="undefined">
+                      <value>o9ut67</value>
+                    </data>
+                  </attribute>
+                  <element name="gml:timePosition">
+                    <data type="undefined">
+                      <value>
+                        2009-03-21T19:00:00Z
+                     </value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="sml:property">
+                <element name="swe:DataRecord">
+                  <element name="swe:label">
+                    <data type="undefined">
+                      <value>Cleaned Faces Parameters</value>
+                    </data>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>EventType</value>
+                      </data>
+                    </attribute>
+                    <element name="swe:Category">
+                      <attribute name="definition">
+                        <data type="undefined">
+                          <value>http://mmisw.org/ont/mvco/historyEventType</value>
+                        </data>
+                      </attribute>
+                      <element name="swe:value">
+                        <data type="undefined">
+                          <value>CleanedFaces</value>
+                        </data>
+                      </element>
+                    </element>
+                  </element>
+                  <element name="swe:field">
+                    <attribute name="name">
+                      <data type="undefined">
+                        <value>ComponentID</value>
+                      </data>
+                    </attribute>
+                    <attribute name="xlink:href">
+                      <data type="undefined">
+                        <value>http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml#Transducer</value>
+                      </data>
+                    </attribute>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+        </element>
+      </element>
+
+      <!--============        Type Of parent            ============-->
+
+      <element name="sml:typeOf">
+        <attribute name="xlink:title">
+          <data type="undefined">
+            <value>urn:teledyne_rdi:workhorse_1200</value>
+          </data>
+        </attribute>
+        <attribute name="xlink:href">
+          <data type="undefined">
+            <value>http://www.sensorml.com/2.0/mvco/sensor/RDI_Workhorse_1200.xml</value>
+          </data>
+        </attribute>
+      </element>
+
+      <!--============        ConfigurationSystem Parameters         ============-->
+ 
+      <element name="sml:configuration">
+        <element name="sml:Settings">
+          <element name="sml:setValue">
+            <attribute name="ref">
+              <data type="undefined">
+                <value>parameters/dopplerParameters/reportingFrequency</value>
+              </data>
+            </attribute>
+            <data type="undefined">
+              <value> 20 </value>
+            </data>
+          </element>
+          <element name="sml:setValue">
+            <attribute name="ref">
+              <data type="undefined">
+                <value>parameters/dopplerParameters/samplingFrequency</value>
+              </data>
+            </attribute>
+            <data type="undefined">
+              <value> 2 </value>
+            </data>
+          </element>
+          <element name="sml:setValue">
+            <attribute name="ref">
+              <data type="undefined">
+                <value>parameters/dopplerParameters/distanceToFirstBin</value>
+              </data>
+            </attribute>
+            <data type="undefined">
+              <value> 122 </value>
+            </data>
+          </element>
+          <element name="sml:setValue">
+            <attribute name="ref">
+              <data type="undefined">
+                <value>parameters/dopplerParameters/pingInterval</value>
+              </data>
+            </attribute>
+            <data type="undefined">
+              <value> 0.5 </value>
+            </data>
+          </element>
+          <element name="sml:setMode">
+            <attribute name="ref">
+              <data type="undefined">
+                <value>modes/depthOption</value>
+              </data>
+            </attribute>
+            <data type="undefined">
+              <value>depthOption_200m</value>
+            </data>
+          </element>
+        </element>
+      </element>
+<!-- ================================================= -->
+ <!--     Station Location and Orientation              -->
+<!-- ================================================= -->
+      <element name="sml:position">
+        <element name="swe:DataRecord">
+          <element name="swe:field">
+            <attribute name="name">
+              <data type="undefined">
+                <value>location</value>
+              </data>
+            </attribute>
+            <element name="swe:Vector">
+              <attribute name="definition">
+                <data type="undefined">
+                  <value>http://sensorml.com/ont/swe/property/SensorLocation</value>
+                </data>
+              </attribute>
+              <attribute name="referenceFrame">
+                <data type="undefined">
+                  <value>http://www.opengis.net/def/crs/EPSG/6.7/4326</value>
+                </data>
+              </attribute>
+              <attribute name="localFrame">
+                <data type="undefined">
+                  <value>#SENSOR_FRAME</value>
+                </data>
+              </attribute>
+              <element name="swe:coordinate">
+                <attribute name="name">
+                  <data type="undefined">
+                    <value>Lat</value>
+                  </data>
+                </attribute>
+                <element name="swe:Quantity">
+                  <attribute name="definition">
+                    <data type="undefined">
+                      <value>http://sensorml.com/ont/swe/property/Latitude</value>
+                    </data>
+                  </attribute>
+                  <attribute name="axisID">
+                    <data type="undefined">
+                      <value>Lat</value>
+                    </data>
+                  </attribute>
+                  <element name="swe:uom">
+                    <attribute name="code">
+                      <data type="undefined">
+                        <value>deg</value>
+                      </data>
+                    </attribute>
+                  </element>
+                  <element name="swe:value">
+                    <data type="undefined">
+                      <value>41.3366</value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="swe:coordinate">
+                <attribute name="name">
+                  <data type="undefined">
+                    <value>Lon</value>
+                  </data>
+                </attribute>
+                <element name="swe:Quantity">
+                  <attribute name="definition">
+                    <data type="undefined">
+                      <value>http://sensorml.com/ont/swe/property/Longitude</value>
+                    </data>
+                  </attribute>
+                  <attribute name="axisID">
+                    <data type="undefined">
+                      <value>Long</value>
+                    </data>
+                  </attribute>
+                  <element name="swe:uom">
+                    <attribute name="code">
+                      <data type="undefined">
+                        <value>deg</value>
+                      </data>
+                    </attribute>
+                  </element>
+                  <element name="swe:value">
+                    <data type="undefined">
+                      <value>-70.5564</value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+              <element name="swe:coordinate">
+                <attribute name="name">
+                  <data type="undefined">
+                    <value>Alt</value>
+                  </data>
+                </attribute>
+                <element name="swe:Quantity">
+                  <attribute name="definition">
+                    <data type="undefined">
+                      <value>http://sensorml.com/ont/swe/property/Altitude</value>
+                    </data>
+                  </attribute>
+                  <attribute name="axisID">
+                    <data type="undefined">
+                      <value>Alt</value>
+                    </data>
+                  </attribute>
+                  <element name="swe:uom">
+                    <attribute name="code">
+                      <data type="undefined">
+                        <value>m</value>
+                      </data>
+                    </attribute>
+                  </element>
+                  <element name="swe:value">
+                    <data type="undefined">
+                      <value>0</value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+          <element name="swe:field">
+            <attribute name="name">
+              <data type="undefined">
+                <value>orientation</value>
+              </data>
+            </attribute>
+            <element name="swe:Vector">
+              <attribute name="definition">
+                <data type="undefined">
+                  <value>http://sensorml.com/ont/swe/property/SensorOrientation</value>
+                </data>
+              </attribute>
+              <attribute name="referenceFrame">
+                <data type="undefined">
+                  <value>http://www.opengis.net/def/crs/NED</value>
+                </data>
+              </attribute>
+              <attribute name="localFrame">
+                <data type="undefined">
+                  <value>#SENSOR_FRAME</value>
+                </data>
+              </attribute>
+              <element name="swe:coordinate">
+                <attribute name="name">
+                  <data type="undefined">
+                    <value>trueHeading</value>
+                  </data>
+                </attribute>
+                <element name="swe:Quantity">
+                  <attribute name="definition">
+                    <data type="undefined">
+                      <value>http://sensorml.com/ont/swe/property/TrueHeading</value>
+                    </data>
+                  </attribute>
+                  <attribute name="axisID">
+                    <data type="undefined">
+                      <value>Z</value>
+                    </data>
+                  </attribute>
+                  <element name="swe:label">
+                    <data type="undefined">
+                      <value>True Heading</value>
+                    </data>
+                  </element>
+                  <element name="swe:uom">
+                    <attribute name="code">
+                      <data type="undefined">
+                        <value>deg</value>
+                      </data>
+                    </attribute>
+                  </element>
+                  <element name="swe:value">
+                    <data type="undefined">
+                      <value>244</value>
+                    </data>
+                  </element>
+                </element>
+              </element>
+            </element>
+          </element>
+        </element>
+      </element>
+    </element>
+  </start>
+</grammar>

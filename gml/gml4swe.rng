@@ -487,8 +487,6 @@
    <define name="gml.TimeUnit">
       <data type="string"/>   
    </define>
-
-
    
    
    <!-- TODO: ADD LOCATION -->
@@ -522,7 +520,7 @@
    <!-- MD_LegalConstraints -->
    <define name="gmd.MD_LegalConstraints">
       <element name="gmd:MD_LegalConstraints">
-		  <ref name="gml.idGroup"/>
+         <ref name="gml.GmlObjectGroup"/>
 		  <zeroOrMore>
 			 <element name="gmd:useLimitation">
 				<ref name="gco.codeAttributes"/>
@@ -550,10 +548,7 @@
    <define name="gmd.CI_ResponsibleParty">
       <element name="gmd:CI_ResponsibleParty">
 		  <optional>
-			 <ref name="gml.id"/>
-		  </optional>
-		  <optional>
-			 <ref name="gml.uuid"/>
+		     <ref name="gml.GmlObjectGroup"/>
 		  </optional>
 		  <optional>
 			 <element name="gmd:individualName">
@@ -593,7 +588,7 @@
    <!-- CI_Contact -->
    <define name="gmd.CI_Contact">
       <element name="gmd:CI_Contact">
-         <ref name="gml.idGroup"/>
+         <ref name="gml.GmlObjectGroup"/>
 		 <optional>
 			 <element name="gmd:phone">
 			    <ref name="gml.xlink"/>
@@ -628,7 +623,7 @@
    <!-- CI_Telephone -->
    <define name="gmd.CI_Telephone">
       <element name="gmd:CI_Telephone">
-         <ref name="gml.idGroup"/>
+         <ref name="gml.GmlObjectGroup"/>
          <zeroOrMore>
 			 <element name="gmd:voice">
 				<ref name="gco.characterString"/>
@@ -646,7 +641,7 @@
     <!-- CI_Address -->
    <define name="gmd.CI_Address">
       <element name="gmd:CI_Address">
-         <ref name="gml.idGroup"/>
+         <ref name="gml.GmlObjectGroup"/>
          <zeroOrMore>
 			 <element name="gmd:deliveryPoint">
 				<ref name="gco.characterString"/>
@@ -684,7 +679,7 @@
    <!-- CI_OnlineResource -->
    <define name="gmd.CI_OnlineResource">
       <element name="gmd:CI_OnlineResource">
-         <ref name="gml.idGroup"/>
+         <ref name="gml.GmlObjectGroup"/>
 		 <element name="gmd:linkage">
 			<data type="anyURI"/>
 		 </element>              

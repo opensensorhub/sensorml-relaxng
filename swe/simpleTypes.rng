@@ -6,7 +6,7 @@
    xmlns:gml="http://www.opengis.net/gml"
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
    <!-- -->
-   <include href="encoding.rng"/> 
+   <include href="./encoding.rng"/> 
    
    <!-- AbstractSWEIdentifiable -->
    <define name="swe.AbstractSWEIdentifiable">
@@ -686,12 +686,16 @@
       </element>
    </define>
    
+   <!-- NOTE: ADD SPECIFIC EXTENSIONS WHEN YOU SUPPORT THEM -->
    <!-- extensions -->
+   <!--
    <define name="swe.extensions">
       <zeroOrMore>
          <element name="swe:extension">
             <anyName/>
          </element>
       </zeroOrMore>
-   </define>
+    </define>    -->
+   
+   
 </grammar>
