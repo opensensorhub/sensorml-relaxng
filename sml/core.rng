@@ -364,8 +364,8 @@
 		  <optional>
 			 <ref name="sml.documentation"/>
 		  </optional>
-  		  <element name="sml.time">
-  		     <ref name="gml.TimeGroup"/>
+  		  <element name="sml:time">
+			 <ref name="gml.TimeGroup"/>
   		  </element>
   		  <element name="property">
   		     <ref name="swe.AnyData"/>

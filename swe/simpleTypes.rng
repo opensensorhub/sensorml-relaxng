@@ -236,12 +236,12 @@
       <element name="swe:nilValues">
          <choice>
             <ref name="xlink.href"/>
-            <element name="swe.NilValues">
+            <element name="swe:NilValues">
                <optional>
                   <ref name="swe.objectID"/>
                </optional>
                <oneOrMore>
-                  <element name="nilValue">
+                  <element name="swe:nilValue">
                      <attribute name="reason">
                        <data type="anyURI"/>
                      </attribute>

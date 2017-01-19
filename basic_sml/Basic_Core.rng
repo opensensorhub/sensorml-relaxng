@@ -425,7 +425,7 @@
 		  <optional>
 			 <ref name="sml.documentation"/>
 		  </optional>
-  		  <element name="sml.time">
+  		  <element name="sml:time">
   		     <ref name="gml.TimeGroup"/>
   		  </element>
   		  <element name="property">
