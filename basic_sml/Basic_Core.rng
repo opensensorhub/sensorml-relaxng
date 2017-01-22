@@ -1,123 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<grammar
-   xmlns="http://relaxng.org/ns/structure/1.0"
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-   xmlns:sml="http://www.opengis.net/sensorml/2.0" 
-   xmlns:gml="http://www.opengis.net/gml/3.2" 
-   xmlns:swe="http://www.opengis.net/swe/2.0"
-   xmlns:ism="urn:us:gov:ic:ism:v2"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:ism="urn:us:gov:ic:ism:v2"
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
-   
+
    <!-- -->
    <include href="../swe/data.rng"/>
-   
+
    <!-- GML Object Group with SML modification-->
    <define name="sml.GmlObjectGroup">
-      <group>
-         <element name="gml:identifier">
-            <attribute name="codeSpace">
-               <value type="string">uniqueID</value>
-            </attribute>
-            <data type="ID"/>
-         </element>	
-         <optional>
-            <ref name="gml.name"/>
-         </optional>
-      </group>
-   </define>   
-   
+      <element name="gml:identifier">
+         <attribute name="codeSpace">
+            <value>uniqueID</value>
+         </attribute>
+      </element>
+      <optional>
+         <ref name="gml.name"/>
+      </optional>
+   </define>
+
    <!-- Described Object -->
    <define name="sml.DescribedObject">
-      <group>		  	  
-  		  <ref name="sml.GmlObjectGroup"/>            
-  		  <zeroOrMore>
-  			 <ref name="sml.keywords"/>
-  		  </zeroOrMore>
-  		  <zeroOrMore>
-  			 <ref name="sml.identification"/>
-  		  </zeroOrMore>
-  		  <zeroOrMore>
-  			 <ref name="sml.classification"/>
-  		  </zeroOrMore>
-  		  <optional>
-  			 <ref name="sml.validTime"/>
-  		  </optional>
-  		  <optional>
-  			 <ref name="sml.securityConstraint"/>
-  		  </optional>        
-  		  <zeroOrMore>           
-  			 <ref name="sml.legalConstraint"/>        
-  		  </zeroOrMore>
-  		  <zeroOrMore>
-  			 <ref name="sml.characteristics"/>
-  		  </zeroOrMore>
-  		  <zeroOrMore>
-  			 <ref name="sml.capabilities"/>
-  		  </zeroOrMore>
-  		  <zeroOrMore>
-  			 <ref name="sml.contacts"/>
-  		  </zeroOrMore>
-  		  <zeroOrMore>
-  			 <ref name="sml.documentation"/>
-  		  </zeroOrMore>
-  		   <zeroOrMore>
-  			 <ref name="sml.history"/>
-  		  </zeroOrMore>
+      <group>
+         <ref name="sml.GmlObjectGroup"/>
+         <zeroOrMore>
+            <ref name="sml.keywords"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="sml.identification"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="sml.classification"/>
+         </zeroOrMore>
+         <optional>
+            <ref name="sml.validTime"/>
+         </optional>
+         <optional>
+            <ref name="sml.securityConstraint"/>
+         </optional>
+         <zeroOrMore>
+            <ref name="sml.legalConstraint"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="sml.characteristics"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="sml.capabilities"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="sml.contacts"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="sml.documentation"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="sml.history"/>
+         </zeroOrMore>
       </group>
    </define>
-  
+
    <!-- Keywords -->
    <define name="sml.keywords">
       <a:documentation>Keywords</a:documentation>
       <element name="sml:keywords">
-            <element name="sml:KeywordList">
-               <ref name="sml.metadataList"/>               
-               <optional>
-                 <ref name="sml.codeSpace"/>
-               </optional>               
-               <oneOrMore>                  
-                  <element name="sml:keyword">
-                     <data type="token"/>
-                  </element>
-               </oneOrMore>
-            </element>
+         <element name="sml:KeywordList">
+            <ref name="sml.metadataList"/>
+            <optional>
+               <ref name="sml.codeSpace"/>
+            </optional>
+            <oneOrMore>
+               <element name="sml:keyword">
+                  <data type="token"/>
+               </element>
+            </oneOrMore>
+         </element>
       </element>
    </define>
-   
+
    <!-- Standard Identifier List -->
    <define name="sml.identification">
       <a:documentation>Identification</a:documentation>
       <element name="sml:identification">
-      <element name="sml:IdentifierList">
-         <ref name="sml.metadataList"/> 
-         
-         <!-- shortname -->
-         <element name="sml:identifier">
-            <element name="sml:Term">
-               <attribute name="definition">
-                  <value>
-                     http://sensorml.com/ont/swe/property/ShortName
-                  </value>
-               </attribute>           
-               <element name="sml:label">
-                  <value>Short Name</value>
+         <element name="sml:IdentifierList">
+            <ref name="sml.metadataList"/>
+
+            <!-- shortname -->
+            <element name="sml:identifier">
+               <element name="sml:Term">
+                  <attribute name="definition">
+                     <value> http://sensorml.com/ont/swe/property/ShortName </value>
+                  </attribute>
+                  <element name="sml:label">
+                     <value>Short Name</value>
+                  </element>
+                  <element name="sml:value">
+                     <data type="token">
+                        <param name="minLength">1</param>
+                     </data>
+                  </element>
                </element>
-               <element name="sml:value">
-                  <data type="token">
-                     <param name="minLength">1</param>
-                  </data>
-                </element>
             </element>
-         </element>
-            
+
             <!-- longname -->
             <element name="sml:identifier">
                <element name="sml:Term">
                   <attribute name="definition">
-                     <value>
-                        http://sensorml.com/ont/swe/property/LongName
-                     </value>
-                  </attribute>           
+                     <value> http://sensorml.com/ont/swe/property/LongName </value>
+                  </attribute>
                   <element name="sml:label">
                      <value>Long Name</value>
                   </element>
@@ -128,32 +118,30 @@
                   </element>
                </element>
             </element>
-                                    
-           </element>
-           <zeroOrMore>
+
+         </element>
+         <zeroOrMore>
             <element name="sml:identifier">
                <ref name="sml.Term"/>
             </element>
-          </zeroOrMore>
+         </zeroOrMore>
       </element>
    </define>
-   
+
    <!-- Classification -->
    <define name="sml.classification">
       <a:documentation>Classification</a:documentation>
       <element name="sml:classification">
-            <element name="sml:ClassifierList">
-               <ref name="sml.metadataList"/> 
-               
-               <!-- intendedApplication -->
-             <oneOrMore>
+         <element name="sml:ClassifierList">
+            <ref name="sml.metadataList"/>
+
+            <!-- intendedApplication -->
+            <oneOrMore>
                <element name="sml:classifier">
                   <element name="sml:Term">
                      <attribute name="definition">
-                        <value>
-                           http://sensorml.com/ont/swe/property/IntendedApplication
-                        </value>
-                     </attribute>           
+                        <value> http://sensorml.com/ont/swe/property/IntendedApplication </value>
+                     </attribute>
                      <element name="sml:label">
                         <value>Intended Application</value>
                      </element>
@@ -164,38 +152,38 @@
                      </element>
                   </element>
                </element>
-             </oneOrMore>
-               
-               <zeroOrMore>
-                  <element name="sml:classifier">
-                     <ref name="sml.Term"/>
-                  </element>
-               </zeroOrMore>
-            </element>
+            </oneOrMore>
+
+            <zeroOrMore>
+               <element name="sml:classifier">
+                  <ref name="sml.Term"/>
+               </element>
+            </zeroOrMore>
+         </element>
       </element>
    </define>
-   
+
    <!-- Term -->
    <define name="sml.Term">
       <a:documentation>Term</a:documentation>
       <element name="sml:Term">
- <!--        <optional>  -->
-            <attribute name="definition">
-               <data type="anyURI"/>
-            </attribute>           
-<!--         </optional>   -->
+         <!--        <optional>  -->
+         <attribute name="definition">
+            <data type="anyURI"/>
+         </attribute>
+         <!--         </optional>   -->
          <element name="sml:label">
             <data type="string">
                <param name="minLength">1</param>
             </data>
          </element>
- <!--        <optional>
+         <!--        <optional>
             <element name="sml:codeSpace">
                <ref name="xlink.href">
                   <a:documentation>Code Space</a:documentation>
                </ref>
             </element>
-         </optional>  -->       
+         </optional>  -->
          <element name="sml:value">
             <data type="token">
                <param name="minLength">1</param>
@@ -203,8 +191,8 @@
          </element>
       </element>
    </define>
-   
-   
+
+
    <!-- Term -->
    <define name="Term">
       <a:documentation>Term</a:documentation>
@@ -212,28 +200,28 @@
          <optional>
             <attribute name="definition">
                <data type="anyURI"/>
-            </attribute>           
+            </attribute>
          </optional>
          <element name="sml:label">
-		     <data type="string">
-			      <param name="minLength">1</param>
-		     </data>
-	      </element>
+            <data type="string">
+               <param name="minLength">1</param>
+            </data>
+         </element>
          <optional>
             <element name="sml:codeSpace">
                <ref name="xlink.href">
                   <a:documentation>Code Space</a:documentation>
                </ref>
             </element>
-         </optional>         
-      	 <element name="sml:value">
+         </optional>
+         <element name="sml:value">
             <data type="token">
                <param name="minLength">1</param>
             </data>
          </element>
       </element>
    </define>
-   
+
    <!-- Valid Time -->
    <define name="sml.validTime">
       <a:documentation>Temporal Validity</a:documentation>
@@ -241,14 +229,14 @@
          <ref name="gml.TimeGroup"/>
       </element>
    </define>
-   
+
    <!-- securityConstraint -->
    <define name="sml.securityConstraint">
-	  <a:documentation>Security Constraint</a:documentation>
+      <a:documentation>Security Constraint</a:documentation>
       <empty/>
-	  <!-- HOW DO WE DECLARE xsd:any IN RELAXNG -->
+      <!-- HOW DO WE DECLARE xsd:any IN RELAXNG -->
    </define>
-   
+
    <!-- Legal Constraint -->
    <define name="sml.legalConstraint">
       <a:documentation>Legal Constraints</a:documentation>
@@ -260,54 +248,54 @@
             <a:documentation>Inline or By Reference</a:documentation>
             <ref name="xlink.href"/>
             <ref name="gmd.MD_LegalConstraints"/>
-         </choice>         
+         </choice>
       </element>
    </define>
-   
+
    <!-- Characteristics -->
    <define name="sml.characteristics">
       <a:documentation>Characteristics</a:documentation>
       <element name="sml:characteristics">
-<!--         <optional>
+         <!--         <optional>
             <ref name="xlink.roles"/>
          </optional> -->
-<!--         <choice>
+         <!--         <choice>
             <a:documentation>Inline or By Reference</a:documentation>
             <ref name="xlink.href"/> -->
-            <element name="sml:CharacteristicList">
-               <ref name="sml.metadataList"/>
-               <oneOrMore>
-                  <element name="sml:characteristic">
-                    <ref name="swe.dataComponentPropertyWithName"/>
-                  </element>
-               </oneOrMore>
-            </element>
- <!--        </choice>    -->     
+         <element name="sml:CharacteristicList">
+            <ref name="sml.metadataList"/>
+            <oneOrMore>
+               <element name="sml:characteristic">
+                  <ref name="swe.dataComponentPropertyWithName"/>
+               </element>
+            </oneOrMore>
+         </element>
+         <!--        </choice>    -->
       </element>
    </define>
-      
+
    <!-- Capabilities -->
    <define name="sml.capabilities">
       <a:documentation>Capabilities</a:documentation>
       <element name="sml:capabilities">
- <!--        <optional>
+         <!--        <optional>
             <ref name="xlink.roles"/>
          </optional>   -->
-<!--         <choice>
+         <!--         <choice>
             <a:documentation>Inline or By Reference</a:documentation>
             <ref name="xlink.href"/>  -->
-            <element name="sml:CapabilityList">
-               <ref name="sml.metadataList"/>
-               <oneOrMore>
-                  <element name="sml:capability">
-                    <ref name="swe.dataComponentPropertyWithName"/>
-                  </element>
-               </oneOrMore>
-            </element>
-<!--         </choice>       -->  
+         <element name="sml:CapabilityList">
+            <ref name="sml.metadataList"/>
+            <oneOrMore>
+               <element name="sml:capability">
+                  <ref name="swe.dataComponentPropertyWithName"/>
+               </element>
+            </oneOrMore>
+         </element>
+         <!--         </choice>       -->
       </element>
    </define>
-   
+
    <!-- Contacts -->
    <define name="sml.contacts">
       <a:documentation>Contacts</a:documentation>
@@ -315,37 +303,37 @@
          <optional>
             <ref name="xlink.roles"/>
          </optional>
-<!--         <choice>
+         <!--         <choice>
             <a:documentation>Inline or By Reference</a:documentation>
             <ref name="xlink.href"/> -->
-            <element name="sml:ContactList">
-               <ref name="sml.metadataList"/>
-               <oneOrMore>
-                  <element name="sml.member">
-                     <ref name="gmd.CI_ResponsibleParty"/>             
-                  </element>
-               </oneOrMore>
-            </element>
-<!--         </choice>          -->        
-       </element>
-    </define>     
+         <element name="sml:ContactList">
+            <ref name="sml.metadataList"/>
+            <oneOrMore>
+               <element name="sml.member">
+                  <ref name="gmd.CI_ResponsibleParty"/>
+               </element>
+            </oneOrMore>
+         </element>
+         <!--         </choice>          -->
+      </element>
+   </define>
 
-   
+
    <!-- documentation -->
    <define name="sml.documentation">
       <a:documentation>Documentation</a:documentation>
       <element name="sml:documentation">
-          <optional>
+         <optional>
             <ref name="xlink.roles"/>
          </optional>
          <choice>
             <a:documentation>Inline or By Reference</a:documentation>
             <ref name="xlink.href"/>
             <ref name="sml.DocumentList"/>
-         </choice>         
+         </choice>
       </element>
    </define>
-      
+
    <!-- Document List -->
    <define name="sml.DocumentList">
       <a:documentation>Document List</a:documentation>
@@ -358,16 +346,16 @@
                </optional>
                <choice>
                   <ref name="xlink.href"/>
-			            <group>
+                  <group>
                      <ref name="gmd.CI_OnlineResource"/>
-	                </group>
+                  </group>
                </choice>
             </element>
          </oneOrMore>
       </element>
    </define>
-   
-   
+
+
    <!-- history -->
    <define name="sml.history">
       <a:documentation>History</a:documentation>
@@ -395,46 +383,46 @@
                </optional>
                <choice>
                   <ref name="xlink.href"/>
-			      <group>
+                  <group>
                      <ref name="sml.Event"/>
-	              </group>
+                  </group>
                </choice>
             </element>
          </oneOrMore>
       </element>
    </define>
-   
+
 
    <!-- Event -->
    <define name="sml.Event">
       <a:documentation>Event</a:documentation>
       <element name="sml:Event">
          <ref name="sml.metadataList"/>
-		  <optional>
-			 <ref name="sml.keywords"/>
-		  </optional>
-		  <optional>
-			 <ref name="sml.identification"/>
-		  </optional>
-		  <optional>
-			 <ref name="sml.classification"/>
-		  </optional>
-		  <optional>
-			 <ref name="sml.contacts"/>
-		  </optional>
-		  <optional>
-			 <ref name="sml.documentation"/>
-		  </optional>
-  		  <element name="sml:time">
-  		     <ref name="gml.TimeGroup"/>
-  		  </element>
-  		  <element name="property">
-  		     <ref name="swe.AnyData"/>
-  		  </element>
-          <ref name="sml.configuration"/>   
-       </element>   
+         <optional>
+            <ref name="sml.keywords"/>
+         </optional>
+         <optional>
+            <ref name="sml.identification"/>
+         </optional>
+         <optional>
+            <ref name="sml.classification"/>
+         </optional>
+         <optional>
+            <ref name="sml.contacts"/>
+         </optional>
+         <optional>
+            <ref name="sml.documentation"/>
+         </optional>
+         <element name="sml:time">
+            <ref name="gml.TimeGroup"/>
+         </element>
+         <element name="property">
+            <ref name="swe.AnyData"/>
+         </element>
+         <ref name="sml.configuration"/>
+      </element>
    </define>
- 
+
    <!-- configuration -->
    <define name="sml.configuration">
       <element name="sml:configuration">
@@ -458,7 +446,7 @@
             <zeroOrMore>
                <element name="sml:setConstraint">
                   <choice>
-                     <ref name="swe.AllowedTimes"/>  
+                     <ref name="swe.AllowedTimes"/>
                      <ref name="swe.AllowedTokens"/>
                      <ref name="swe.AllowedValues"/>
                   </choice>
@@ -479,20 +467,20 @@
          </element>
       </element>
    </define>
-   
+
    <!-- common content of metadata lists -->
    <define name="sml.metadataList">
-<!--      <optional>
+      <!--      <optional>
          <ref name="swe.objectID"/>
       </optional> -->
-      <optional> 
+      <optional>
          <ref name="swe.label"/>
-      </optional>  
+      </optional>
       <optional>
          <ref name="swe.description"/>
-      </optional>        
-   </define>   
-     
+      </optional>
+   </define>
+
    <!-- codeSpace -->
    <define name="sml.codeSpace">
       <a:documentation>Codespace</a:documentation>
@@ -500,14 +488,14 @@
          <ref name="xlink.href"/>
       </element>
    </define>
-   
+
    <!-- ref -->
    <define name="sml.ref">
       <attribute name="sml:ref">
          <data type="token">
-            <param name="pattern">([a-zA-Z_][a-zA-Z0-9_\-\.]*)(/[a-zA-Z_][a-zA-Z0-9_\-\.]*)*</param>         
+            <param name="pattern">([a-zA-Z_][a-zA-Z0-9_\-\.]*)(/[a-zA-Z_][a-zA-Z0-9_\-\.]*)*</param>
          </data>
       </attribute>
    </define>
-   
+
 </grammar>

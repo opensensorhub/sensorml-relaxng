@@ -2,17 +2,26 @@
 <grammar xmlns="http://relaxng.org/ns/structure/1.0"
    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
    xmlns:sml="http://www.opengis.net/sensorml/2.0" 
-   xmlns:gml="http://www.opengis.net/gml/3.2" 
+   xmlns:gml="http://www.opengis.net/gml/3.2"
    xmlns:swe="http://www.opengis.net/swe/2.0"
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
-   
+
    <!-- -->
    <include href="./Basic_Process.rng">
       <start>
          <ref name="sml.ProcessGroup"/>
       </start>
    </include>
-       
+
+   <!-- All Processes -->
+   <define name="sml.ProcessGroup" combine="choice">
+      <choice>
+         <ref name="sml.PhysicalComponent"/>
+         <ref name="sml.PhysicalSystem"/>
+      </choice>
+   </define>
+   
+   
    <!-- Definition of Physical Component -->
    <define name="sml.PhysicalComponent">
       <a:documentation>Physical Component</a:documentation>
@@ -24,6 +33,7 @@
       </element>
    </define>
    
+
    <!-- Definition of Physical System -->
    <define name="sml.PhysicalSystem">
       <a:documentation>Physical System</a:documentation>
@@ -39,15 +49,8 @@
          </optional>
       </element>
    </define>
-   
-   <!-- All Processes -->
-   <define name="sml.ProcessGroup" combine="choice">
-      <choice>
-         <ref name="sml.PhysicalComponent"/>
-         <ref name="sml.PhysicalSystem"/>
-      </choice>
-   </define>
-   
+
+
 
    <!-- Physical Contents -->
    <define name="sml.PhysicalContents">
@@ -56,65 +59,39 @@
          <element name="sml:attachedTo">
             <ref name="xlink.hrefWithTitle"/>
          </element>
-     </optional>
-     <optional>
-        <element name="localReferenceFrame">
-           <ref name="sml.ReferenceFrame"/>
-        </element>     
-     </optional>
-     <zeroOrMore>
-        <element name="sml:temporalReferenceFrame">
-           <ref name="gml.TimeCoordinateSystem" />     
-        </element>
-     </zeroOrMore>
-     <optional>
-        <ref name="sml.position"/>   
-     </optional>
+      </optional>
+      <optional>
+         <element name="localReferenceFrame">
+            <ref name="sml.ReferenceFrame"/>
+         </element>
+      </optional>
+      <zeroOrMore>
+         <element name="sml:temporalReferenceFrame">
+            <ref name="gml.TimeCoordinateSystem"/>
+         </element>
+      </zeroOrMore>
+      <optional>
+         <ref name="sml.position"/>
+      </optional>
    </define>
-   
-   <!-- Reference Frame -->
+
+   <!-- General Reference Frame -->
    <define name="sml.ReferenceFrame">
       <element name="sml:ReferenceFrame">
+         <ref name="swe.AbstractSWEIdentifiable"/>         
          <element name="sml:origin">
-            <data type="string"/>       
+            <data type="string"/>
          </element>
          <oneOrMore>
             <element name="sml:axis">
                <attribute name="sml:name"/>
-               <data type="string"/>           
+               <data type="string"/>
             </element>
-         </oneOrMore>           
+         </oneOrMore>
       </element>
    </define>
-   
-   <!-- Reference Frame XYZ -->
-   <define name="sml.ReferenceFrame_XYZ">
-      <element name="sml:ReferenceFrame">
-         <element name="sml:origin">
-            <data type="string"/>       
-         </element>
-         <element name="sml:axis">
-            <attribute name="sml:name">
-               <value>x</value>
-            </attribute>
-            <data type="string"/>           
-         </element>        
-         <element name="sml:axis">
-            <attribute name="sml:name">
-               <value>y</value>
-            </attribute>
-            <data type="string"/>           
-         </element>        
-         <element name="sml:axis">
-            <attribute name="sml:name">
-               <value>z</value>
-            </attribute>
-            <data type="string"/>           
-         </element>        
-      </element>
-   </define>
-   
-   <!-- position -->
+ 
+   <!-- general position -->
    <define name="sml.position">
       <element name="sml:position">
          <optional>
@@ -131,9 +108,9 @@
                <ref name="swe.DataArray"/>
                <ref name="swe.Matrix"/>
                <ref name="sml.ProcessGroup"/>
-            </choice>   
+            </choice>
          </choice>
       </element>
    </define>
-   
+
 </grammar>

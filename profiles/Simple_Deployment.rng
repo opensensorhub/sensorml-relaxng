@@ -1,33 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <grammar xmlns="http://relaxng.org/ns/structure/1.0"
    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-   xmlns:sml="http://www.opengis.net/sensorml/2.0" 
-   xmlns:gml="http://www.opengis.net/gml/3.2" 
+   xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:gml="http://www.opengis.net/gml/3.2"
    xmlns:swe="http://www.opengis.net/swe/2.0"
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
-   
-   <include href="../basic_sml/Basic_Process.rng"/>
 
+   <include href="../extensions/Position.rng"/>
+   <include href="../extensions/Identify_Classify.rng"/>
+   <!-- replace the definition for general PhysicalComponent with this one -->
+   <include href="../basic_sml/Basic_PhysicalProcess.rng">
+      <start>
+         <!-- <define name="sml.SimpleDeployedSensor"> -->
+           <element name="sml.PhysicalComponent">
+              <ref name="sml.deployed_DescribedObject"/>
+              <ref name="sml.ProcessContents"/> 
+              <ref name="sml.deployed_PhysicalContents"/>
+              <ref name="sml.method"/>   
+           </element>
+    <!--     </define> -->
+      </start>       
+   </include>
+
+<!--
    <start>
-      <a:documentation>Physical Component</a:documentation>
-      <element name="sml:PhysicalComponent">
-            <ref name="sml.deployed_DescribedObject"/>
-            <ref name="sml.ProcessContents"/>
-            <ref name="sml.PhysicalContents"/>
-            <ref name="sml.method"/>
-      </element>     
-    </start>
+      <ref name="sml.ProcessGroup"/>
+    </start> -->
    
+
+   <!-- All Processes -->
+<!--   <define name="sml.ProcessGroup" combine="choice">
+      <choice>
+         <ref name="sml.PhysicalComponent"/>
+ 
+      </choice>
+   </define> -->
    
-   <!-- Described Object -->
+
+   <!-- Simple deployed stationary sensor -->
+<!--   <a:documentation>Simple Deployed Sensor</a:documentation>
+   <define name="sml.SimpleDeployedSensor">
+      <element name="sml.PhysicalComponent">
+         <ref name="sml.deployed_DescribedObject"/>
+         <ref name="sml.ProcessContents"/>
+         <ref name="sml.deployed_PhysicalContents"/>
+         <ref name="sml.method"/>   
+      </element>
+   </define> -->
+   
+
+   <!-- Described Deployed Object -->
    <define name="sml.deployed_DescribedObject">
-      <group>		  	  
-         <ref name="sml.GmlObjectGroup"/>            
+      <group>
+         <ref name="sml.GmlObjectGroup"/>
          <zeroOrMore>
             <ref name="sml.keywords"/>
          </zeroOrMore>
          <zeroOrMore>
-            <ref name="sml.deployed_identification"/>
+            <ref name="sml.deployment_identifiers"/>
          </zeroOrMore>
          <zeroOrMore>
             <ref name="sml.classification"/>
@@ -35,12 +64,12 @@
          <optional>
             <ref name="sml.validTime"/>
          </optional>
-         <optional>
+<!--         <optional>
             <ref name="sml.securityConstraint"/>
-         </optional>        
-         <zeroOrMore>           
-            <ref name="sml.legalConstraint"/>        
-         </zeroOrMore>
+         </optional>
+         <zeroOrMore>
+            <ref name="sml.legalConstraint"/>
+         </zeroOrMore>  -->
          <zeroOrMore>
             <ref name="sml.characteristics"/>
          </zeroOrMore>
@@ -53,197 +82,60 @@
          <zeroOrMore>
             <ref name="sml.documentation"/>
          </zeroOrMore>
-         <zeroOrMore>
+         <!-- REMOVE HISTORY FOR NOW - REQUIRE IT TO BE LINKED -->
+<!--         <zeroOrMore>
             <ref name="sml.history"/>
-         </zeroOrMore>
+         </zeroOrMore> -->
       </group>
    </define>
-   
-   
-   <!-- Deployed Identifier List -->
-   <define name="sml.deployed_identification">
-      <a:documentation>Identification</a:documentation>
+
+   <!-- Deployment Identifiers -->
+   <!-- supports both discovery and deployment identifiers -->
+   <define name="sml.deployment_identifiers">
+      <a:documentation>Deployment Identifiers</a:documentation>
       <element name="sml:identification">
          <element name="sml:IdentifierList">
             <ref name="sml.metadataList"/> 
-            
-            <!-- shortname -->
-            <element name="sml:identifier">
-               <element name="sml:Term">
-                  <attribute name="definition">
-                     <value>
-                        http://sensorml.com/ont/swe/property/ShortName
-                     </value>
-                  </attribute>           
-                  <element name="sml:label">
-                     <value>Short Name</value>
-                  </element>
-                  <element name="sml:value">
-                     <data type="token">
-                        <param name="minLength">1</param>
-                     </data>
-                  </element>
+            <ref name="sml.discovery_identifiers"/>
+            <ref name="sml.hardware_identifiers"/>
+            <zeroOrMore>
+               <element name="sml:identifier">
+                  <ref name="sml.Term"/>
                </element>
-            </element>
-            
-            <!-- longname -->
-            <element name="sml:identifier">
-               <element name="sml:Term">
-                  <attribute name="definition">
-                     <value>
-                        http://sensorml.com/ont/swe/property/LongName
-                     </value>
-                  </attribute>           
-                  <element name="sml:label">
-                     <value>Long Name</value>
-                  </element>
-                  <element name="sml:value">
-                     <data type="token">
-                        <param name="minLength">1</param>
-                     </data>
-                  </element>
-               </element>
-            </element>
-            
-            <!-- manufacturer -->
-          <optional>
-            <element name="sml:identifier">
-               <element name="sml:Term">
-                  <attribute name="definition">
-                     <value>
-                        http://sensorml.com/ont/swe/property/Manufacturer
-                     </value>
-                  </attribute>           
-                  <element name="sml:label">
-                     <value>Manufacturer</value>
-                  </element>
-                  <element name="sml:value">
-                     <data type="token">
-                        <param name="minLength">1</param>
-                     </data>
-                  </element>
-               </element>
-            </element>
-          </optional>
-            
-            <!-- model number -->
-          <optional>
-             <element name="sml:identifier">
-               <element name="sml:Term">
-                  <attribute name="definition">
-                     <value>
-                        http://sensorml.com/ont/swe/property/ModelNumber
-                     </value>
-                  </attribute>           
-                  <element name="sml:label">
-                     <value>Model Number</value>
-                  </element>
-                  <element name="sml:value">
-                     <data type="token">
-                        <param name="minLength">1</param>
-                     </data>
-                  </element>
-               </element>
-            </element>
-            </optional>
-            
-            <!-- serial number -->
-          <optional>
-            <element name="sml:identifier">
-               <element name="sml:Term">
-                  <attribute name="definition">
-                     <value>
-                        http://sensorml.com/ont/swe/property/SerialNumber
-                     </value>
-                  </attribute>           
-                  <element name="sml:label">
-                     <value>Serial Number</value>
-                  </element>
-                  <element name="sml:value">
-                     <data type="token">
-                        <param name="minLength">1</param>
-                     </data>
-                  </element>
-               </element>
-            </element>
-          </optional>          
-
-         </element>
-         <zeroOrMore>
-            <element name="sml:identifier">
-               <ref name="sml.Term"/>
-            </element>
-         </zeroOrMore>
+            </zeroOrMore>
+          </element>        
       </element>
    </define>
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
 
-   <!-- Physical Contents -->
-   <define name="sml.PhysicalContents">
+
+   <!-- Deployed Physical Contents -->
+   <define name="sml.deployed_PhysicalContents">
       <optional>
          <a:documentation>Link to Platform</a:documentation>
          <element name="sml:attachedTo">
             <ref name="xlink.hrefWithTitle"/>
          </element>
-     </optional>
-     <optional>
-        <element name="localReferenceFrame">
-           <ref name="sml.ReferenceFrame"/>
-        </element>     
-     </optional>
-     <zeroOrMore>
-        <element name="sml:temporalReferenceFrame">
-           <ref name="gml.TimeCoordinateSystem" />     
-        </element>
-     </zeroOrMore>
-     <optional>
-        <ref name="sml.deployedPosition"/>   
-     </optional>
-   </define>
-   
-   <!-- Reference Frame -->
-   <define name="sml.ReferenceFrame">
-      <element name="sml:ReferenceFrame">
-         <element name="sml:origin">
-            <data type="string"/>       
+      </optional>
+      
+      <!-- use XYZ Reference Frame -->
+      <optional>
+         <element name="localReferenceFrame">
+            <ref name="sml.ReferenceFrame_XYZ"/>
          </element>
-         <oneOrMore>
-            <element name="sml:axis">
-               <attribute name="sml:name"/>
-               <data type="string"/>           
-            </element>
-         </oneOrMore>           
-      </element>
+      </optional>
+      
+      <!-- Ignore Time Reference Frame for NOW -->
+<!--      <zeroOrMore>
+         <element name="sml:temporalReferenceFrame">
+            <ref name="gml.TimeCoordinateSystem"/>
+         </element>
+         </zeroOrMore> -->
+      
+      <!-- choose between stationary location or position (with orientation) -->
+      <choice>
+         <ref name="sml.stationary_location"/>
+         <ref name="sml.stationary_position"/>
+      </choice>
    </define>
-   
-   <!-- position -->
-   <define name="sml.deployedPosition">
-      <element name="sml:position">
-         <optional>
-            <ref name="xlink.roles"/>
-         </optional>
-         <choice>
-<!--              <ref name="swe.Text"/>  -->
-               <ref name="gml.Point"/>
-               <ref name="swe.Vector"/>
-<!--               <ref name="swe.DataRecord"/>
-               <ref name="swe.DataArray"/>
-               <ref name="swe.Matrix"/>
-               <ref name="sml.ProcessGroup"/>
--->              
-         </choice>
-      </element>
-   </define>
-   
+
 </grammar>

@@ -12,7 +12,16 @@
             <ref name="sml.ProcessGroup"/>
       </start>
    </include>
-      
+
+   <!-- Nonphysical Processes -->
+   <define name="sml.ProcessGroup" combine="choice">
+      <choice>
+         <ref name="sml.SimpleProcess"/>
+         <ref name="sml.AggregateProcess"/>
+      </choice>
+   </define>
+   
+   
    
    <!-- Definition of Simple Process -->
    <define name="sml.SimpleProcess">
@@ -330,14 +339,6 @@
       </element>
    </define>
    
-   <!-- Nonphysical Processes -->
-   <define name="sml.ProcessGroup" combine="choice">
-      <choice>
-         <ref name="sml.SimpleProcess"/>
-         <ref name="sml.AggregateProcess"/>
-      </choice>
-   </define>
-   
    <!-- Observable Property -->
    <define name="sml.ObservableProperty">
       <a:documentation>Observable Property</a:documentation>
@@ -383,6 +384,30 @@
           <ref name="xlink.hrefWithTitle"/>
        </element>
    </define>   
+   
+   <!--=============-->
+   <!-- DataComponent attributes -->
+   <!--=============-->
+   <define name="sml.DataComponentAttributes">
+      <!-- attributes -->
+      <optional>
+         <attribute name="definition">
+            <data type="anyURI"/>
+         </attribute>
+      </optional>
+      <optional>
+         <attribute name="optional">
+            <data type="boolean"/>
+         </attribute>
+      </optional>
+      <optional>
+         <attribute name="updatable">
+            <data type="boolean"/>
+         </attribute>
+      </optional>
+   </define>
+   
+   
    
 </grammar>
    

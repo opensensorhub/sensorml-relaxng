@@ -8,9 +8,11 @@
    <!-- -->
    <include href="./simpleTypes.rng"/>
    <!--  -->
+   
+   <!--
    <start combine="choice">
       <ref name="swe.AnyData"/>
-   </start>
+   </start> -->
    
    <!-- DataRecord -->
    <define name="swe.DataRecord">
@@ -168,6 +170,7 @@
          <ref name="swe.AnyDataList"/>
       </choice>
    </define>
+   
    <define name="swe.AnyDataList">
       <ref name="swe.AnySimpleList"/>
       <ref name="swe.DataRecord"/>

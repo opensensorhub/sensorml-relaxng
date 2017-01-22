@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+   xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+   <!-- -->
+   <include href="../basic_sml/Basic_PhysicalProcess.rng"/>   
+   
+ <!--     <start>
+         <ref name="sml.ProcessGroup"/>
+      </start> 
+      </include>   -->
+
+
+   <!-- REFERENCE FRAMES -->
+
+   <!-- Reference Frame XYZ -->
+   <define name="sml.ReferenceFrame_XYZ">
+      <element name="sml:ReferenceFrame">
+         <ref name="swe.objectID"/>
+         <element name="swe:identifier">
+            <value>http://sensorml.com/ont/swe/position/CartesianFrame</value>
+         </element>
+         <ref name="swe.label"/>
+         <optional>
+            <ref name="swe.description"/>  
+         </optional>  
+         <element name="sml:origin">
+            <data type="string"/>
+         </element>
+         <element name="sml:axis">
+            <attribute name="sml:name">
+               <value>x</value>
+            </attribute>
+            <data type="string"/>
+         </element>
+         <element name="sml:axis">
+            <attribute name="sml:name">
+               <value>y</value>
+            </attribute>
+            <data type="string"/>
+         </element>
+         <element name="sml:axis">
+            <attribute name="sml:name">
+               <value>z</value>
+            </attribute>
+            <data type="string"/>
+         </element>
+      </element>
+   </define>
+
+   <!-- Reference Frame Lat-Lon-Alt (GPS) -->
+   <!--  NOT NEEDED ?? 
+   <define name="sml.ReferenceFrame_GPS">
+      <element name="sml:ReferenceFrame">
+         <ref name="swe.objectID"/>
+         <element name="swe:identifier">
+            <value>http://sensorml.com/ont/swe/position/GPS_Frame</value>
+         </element>
+         <ref name="swe.label"/>
+         <optional>
+            <ref name="swe.description"/>  
+         </optional>  
+         <element name="sml:origin">
+            <data type="string"/>
+         </element>
+         <element name="sml:axis">
+            <attribute name="sml:name">
+               <value>longitude</value>
+            </attribute>
+            <data type="string"/>
+         </element>
+         <element name="sml:axis">
+            <attribute name="sml:name">
+               <value>latitude</value>
+            </attribute>
+            <data type="string"/>
+         </element>
+         <element name="sml:axis">
+            <attribute name="sml:name">
+               <value>altitude</value>
+            </attribute>
+            <data type="string"/>
+         </element>
+      </element>
+   </define>  -->
+   
+
+   <!-- POSITIONS -->
+  
+   <!-- stationary location -->
+   <define name="sml.stationary_location">
+      <element name="sml:position">
+         <ref name="sml.xyzLocationVector"/>
+      </element>
+   </define>
+   
+
+   <!-- stationary position -->
+   <define name="sml.stationary_position">
+      <element name="sml:position">
+         <element name="swe:DataRecord">
+            <optional>
+               <attribute name="definition">
+                  <choice>
+                     <value>http://sensorml.com/ont/swe/property/SensorPosition</value>
+                     <value>http://sensorml.com/ont/swe/property/PlatformPosition</value>
+                     <value>http://sensorml.com/ont/swe/property/Position</value>
+                  </choice>
+               </attribute>
+            </optional>
+            <element name="label">
+               <data type="string"/>
+            </element>
+
+            <element name="swe:field">
+               <ref name="sml.xyzLocationVector"/>
+            </element>
+            <element name="swe:field">
+               <ref name="sml.xyzOrientationVector"/>
+            </element>
+         </element>
+      </element>
+   </define>
+
+
+
+<!-- COORDINATES / VECTORS  -->
+    
+ <!-- xyz Location Vector -->  
+ <define name="sml.xyzLocationVector">  
+   <element name="swe:Vector">
+      <optional>
+         <attribute name="id">
+            <data type="ID"/>
+         </attribute>
+      </optional>
+      <attribute name="definition">
+         <choice>
+            <value>http://sensorml.com/ont/swe/property/SensorLocation</value>
+            <value>http://sensorml.com/ont/swe/property/PlatformLocation</value>
+            <value>http://sensorml.com/ont/swe/property/Location</value>
+         </choice>
+      </attribute>
+      <attribute name="referenceFrame">
+         <data type="anyURI"/>
+      </attribute>
+      <optional>
+         <attribute name="localFrame">
+            <data type="anyURI"/>
+         </attribute>
+      </optional>
+      <element name="sml:label">
+         <data type="string"/>
+      </element>
+      <optional>
+         <element name="sml:description">
+            <data type="string"/>
+         </element>
+      </optional>
+      <!-- x coordinate -->
+      <element name="swe:coordinate">
+         <attribute name="name">
+            <value>x</value>
+         </attribute>
+         <attribute name="axisID">
+            <value>x</value>
+         </attribute>
+         <attribute name="definition">
+            <value>http://sensorml/ont/swe/position/X-Location</value>
+         </attribute>
+         <element name="uom">
+            <attribute name="code">
+               <value>m</value>
+            </attribute>
+         </element>
+         <element name="swe:value">
+            <data type="double"/>
+         </element>
+      </element>  
+      <!-- y coordinate -->
+      <element name="swe:coordinate">
+         <attribute name="name">
+            <value>y</value>
+         </attribute>
+         <attribute name="axisID">
+            <value>y</value>
+         </attribute>
+         <attribute name="definition">
+            <value>http://sensorml/ont/swe/position/Y-Location</value>
+         </attribute>
+         <element name="uom">
+            <attribute name="code">
+               <value>m</value>
+            </attribute>
+         </element>
+         <element name="swe:value">
+            <data type="double"/>
+         </element>
+      </element>  
+      <!-- z coordinate -->
+      <element name="swe:coordinate">
+         <attribute name="name">
+            <value>z</value>
+         </attribute>
+         <attribute name="axisID">
+            <value>z</value>
+         </attribute>
+         <attribute name="definition">
+            <value>http://sensorml/ont/swe/position/Z-Location</value>
+         </attribute>
+         <element name="uom">
+            <attribute name="code">
+               <value>m</value>
+            </attribute>
+         </element>
+         <element name="swe:value">
+            <data type="double"/>
+         </element>
+      </element>  
+   </element>
+  </define> 
+
+   <!-- xyz Orientation Vector -->  
+   <define name="sml.xyzOrientationVector">  
+      <element name="swe:Vector">
+         <optional>
+            <attribute name="id">
+               <data type="ID"/>
+            </attribute>
+         </optional>
+         <attribute name="definition">
+            <choice>
+               <value>http://sensorml.com/ont/swe/property/SensorOrientation</value>
+               <value>http://sensorml.com/ont/swe/property/PlatformOrientatiomn</value>
+               <value>http://sensorml.com/ont/swe/property/Orientation</value>
+            </choice>
+         </attribute>
+         <attribute name="referenceFrame">
+            <data type="anyURI"/>
+         </attribute>
+         <optional>
+            <attribute name="localFrame">
+               <data type="anyURI"/>
+            </attribute>
+         </optional>
+         <element name="sml:label">
+            <data type="string"/>
+         </element>
+         <optional>
+            <element name="sml:description">
+               <data type="string"/>
+            </element>
+         </optional>
+         <!-- x coordinate -->
+         <element name="swe:coordinate">
+            <attribute name="name">
+               <value>x</value>
+            </attribute>
+            <attribute name="axisID">
+               <value>x</value>
+            </attribute>
+            <attribute name="definition">
+               <value>http://sensorml/ont/swe/position/OrientationAboutX</value>
+            </attribute>
+            <element name="uom">
+               <attribute name="code">
+                  <value>deg</value>
+               </attribute>
+            </element>
+            <element name="swe:value">
+               <data type="double"/>
+            </element>
+         </element>  
+         <!-- y coordinate -->
+         <element name="swe:coordinate">
+            <attribute name="name">
+               <value>y</value>
+            </attribute>
+            <attribute name="axisID">
+               <value>y</value>
+            </attribute>
+            <attribute name="definition">
+               <value>http://sensorml/ont/swe/position/OrientationAboutY</value>
+            </attribute>
+            <element name="uom">
+               <attribute name="code">
+                  <value>deg</value>
+               </attribute>
+            </element>
+            <element name="swe:value">
+               <data type="double"/>
+            </element>
+         </element>  
+         <!-- z coordinate -->
+         <element name="swe:coordinate">
+            <attribute name="name">
+               <value>z</value>
+            </attribute>
+            <attribute name="axisID">
+               <value>z</value>
+            </attribute>
+            <attribute name="definition">
+               <value>http://sensorml/ont/swe/position/OrientationAboutZ</value>
+            </attribute>
+            <element name="uom">
+               <attribute name="code">
+                  <value>deg</value>
+               </attribute>
+            </element>
+            <element name="swe:value">
+               <data type="double"/>
+            </element>
+         </element>  
+      </element>
+   </define> 
+ 
+   <!-- GPS Location Vector -->  
+   <define name="sml.gpsLocationVector">  
+      <element name="swe:Vector">
+         <optional>
+            <attribute name="id">
+               <data type="ID"/>
+            </attribute>
+         </optional>
+         <attribute name="definition">
+            <choice>
+               <value>http://sensorml.com/ont/swe/property/SensorLocation</value>
+               <value>http://sensorml.com/ont/swe/property/PlatformLocation</value>
+               <value>http://sensorml.com/ont/swe/property/Location</value>
+            </choice>
+         </attribute>
+         <attribute name="referenceFrame">
+            <value>http://www.opengis.net/def/crs/EPSG/6.7/4979</value>
+         </attribute>
+         <optional>
+            <attribute name="localFrame">
+               <data type="anyURI"/>
+            </attribute>
+         </optional>
+         <element name="sml:label">
+            <data type="string"/>
+         </element>
+         <optional>
+            <element name="sml:description">
+               <data type="string"/>
+            </element>
+         </optional>
+         <!-- x coordinate -->
+         <element name="swe:coordinate">
+            <attribute name="name">
+               <value>longitude</value>
+            </attribute>
+            <attribute name="axisID">
+               <value>lon</value>
+            </attribute>
+            <attribute name="definition">
+               <value>http://sensorml/ont/swe/position/Longitude</value>
+            </attribute>
+            <element name="uom">
+               <attribute name="code">
+                  <value>deg</value>
+               </attribute>
+            </element>
+            <element name="swe:value">
+               <data type="double"/>
+            </element>
+         </element>  
+         <!-- y coordinate -->
+         <element name="swe:coordinate">
+            <attribute name="name">
+               <value>latitude</value>
+            </attribute>
+            <attribute name="axisID">
+               <value>lat</value>
+            </attribute>
+            <attribute name="definition">
+               <value>http://sensorml/ont/swe/position/Latitude</value>
+            </attribute>
+            <element name="uom">
+               <attribute name="code">
+                  <value>deg</value>
+               </attribute>
+            </element>
+            <element name="swe:value">
+               <data type="double"/>
+            </element>
+         </element>  
+         <!-- z coordinate -->
+         <element name="swe:coordinate">
+            <attribute name="name">
+               <value>altitude</value>
+            </attribute>
+            <attribute name="axisID">
+               <value>alt</value>
+            </attribute>
+            <attribute name="definition">
+               <value>http://sensorml/ont/swe/position/Altitude</value>
+            </attribute>
+            <element name="uom">
+               <attribute name="code">
+                  <value>m</value>
+               </attribute>
+            </element>
+            <element name="swe:value">
+               <data type="double"/>
+            </element>
+         </element>  
+      </element>
+   </define> 
+   
+ 
+ 
+   <!-- general position 
+      <define name="sml.position">
+      <element name="sml:position">
+      <optional>
+      <ref name="xlink.roles"/>
+      </optional>
+      <choice>
+      <a:documentation>Inline or By Reference</a:documentation>
+      <ref name="xlink.href"/>
+      <choice>
+      <ref name="swe.Text"/>
+      <ref name="gml.Point"/>
+      <ref name="swe.Vector"/>
+      <ref name="swe.DataRecord"/>
+      <ref name="swe.DataArray"/>
+      <ref name="swe.Matrix"/>
+      <ref name="sml.ProcessGroup"/>
+      </choice>   
+      </choice>
+      </element>
+      </define>  -->
+   
+   
+ 
+ 
+ 
+   <!--=============-->
+   <!-- Physical DataComponent attributes -->
+   <!--=============-->
+   <define name="sml.PhysicalDataInfo">
+      <!-- attributes -->
+      <optional>
+         <attribute name="definition">
+            <data type="anyURI"/>
+         </attribute>
+      </optional>
+      <!--     <optional>
+         <attribute name="optional">
+         <data type="boolean"/>
+         </attribute>
+         </optional>
+         <optional>
+         <attribute name="updatable">
+         <data type="boolean"/>
+         </attribute>
+         </optional>  -->
+      <optional>
+         <attribute name="referenceFrame">
+            <data type="anyURI"/>
+         </attribute>
+      </optional>
+      <optional>
+         <attribute name="localFrame">
+            <data type="anyURI"/>
+         </attribute>
+      </optional>
+      <optional>
+         <attribute name="axisID">
+            <data type="token"/>
+         </attribute>
+      </optional>
+      <!-- AbstractSWEIdentifiable Properties -->
+      <optional>
+         <attribute name="id">
+            <data type="ID"/>
+         </attribute>
+      </optional>
+      <!--      <optional>
+         <element name="swe:identifier">
+         <data type="anyURI"/>
+         </element>
+         </optional>  -->
+      <!--      <optional>  -->
+      <element name="swe:label">
+         <data type="token">
+            <param name="minLength">1</param>
+         </data>
+      </element>
+      <!--       </optional>  -->
+      <optional>
+         <element name="swe:description">
+            <data type="string">
+               <param name="minLength">1</param>
+            </data>
+         </element>
+      </optional>
+   </define>
+   
+   
+</grammar>

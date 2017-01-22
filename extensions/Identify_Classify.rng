@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+   xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0" 
+   xmlns:gml="http://www.opengis.net/gml/3.2" 
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+   
+   <!-- includes -->
+   <include href="../basic_sml/Basic_Core.rng"/>
+      
+   
+   <!-- Discovery Identifiers -->
+   <define name="sml.discovery_identifiers">
+      
+      <!-- shortname -->
+      <element name="sml:identifier">
+         <element name="sml:Term">
+            <attribute name="definition">
+               <value> http://sensorml.com/ont/swe/property/ShortName </value>
+            </attribute>
+            <element name="sml:label">
+               <value>Short Name</value>
+            </element>
+            <element name="sml:value">
+               <data type="token">
+                  <param name="minLength">1</param>
+               </data>
+            </element>
+         </element>
+      </element>
+      
+      <!-- longname -->
+      <element name="sml:identifier">
+         <element name="sml:Term">
+            <attribute name="definition">
+               <value> http://sensorml.com/ont/swe/property/LongName </value>
+            </attribute>
+            <element name="sml:label">
+               <value>Long Name</value>
+            </element>
+            <element name="sml:value">
+               <data type="token">
+                  <param name="minLength">1</param>
+               </data>
+            </element>
+         </element>
+      </element>
+      
+   </define>
+
+   
+   <define name="sml.hardware_identifiers">
+      
+      <!-- manufacturer -->
+      <optional>
+         <element name="sml:identifier">
+            <element name="sml:Term">
+               <attribute name="definition">
+                  <value> http://sensorml.com/ont/swe/property/Manufacturer </value>
+               </attribute>
+               <element name="sml:label">
+                  <value>Manufacturer Name</value>
+               </element>
+               <element name="sml:value">
+                  <data type="token">
+                     <param name="minLength">1</param>
+                  </data>
+               </element>
+            </element>
+         </element>
+      </optional>
+      
+      <!-- model number -->
+      <optional>
+         <element name="sml:identifier">
+            <element name="sml:Term">
+               <attribute name="definition">
+                  <value> http://sensorml.com/ont/swe/property/ModelNumber </value>
+               </attribute>
+               <element name="sml:label">
+                  <value>Model</value>
+               </element>
+               <element name="sml:value">
+                  <data type="token">
+                     <param name="minLength">1</param>
+                  </data>
+               </element>
+            </element>
+         </element>
+      </optional>
+      
+      <!-- serial number -->
+      <optional>
+         <element name="sml:identifier">
+            <element name="sml:Term">
+               <attribute name="definition">
+                  <value> http://sensorml.com/ont/swe/property/SerialNumber </value>
+               </attribute>
+               <element name="sml:label">
+                  <value>Serial Number</value>
+               </element>
+               <element name="sml:value">
+                  <data type="token">
+                     <param name="minLength">1</param>
+                  </data>
+               </element>
+            </element>
+         </element>
+      </optional>
+      
+    </define>
+</grammar>
+   
+    

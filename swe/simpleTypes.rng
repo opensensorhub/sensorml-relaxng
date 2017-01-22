@@ -27,15 +27,16 @@
    <!-- AbstractDataComponent -->
    <define name="swe.AbstractDataComponent">
       <ref name="swe.AbstractSWEIdentifiable"/>
+      <!-- attributes -->
       <optional>
          <ref name="swe.definition"/>
       </optional>
-      <!--<optional>
+      <optional>
          <ref name="swe.optional"/>
-      </optional>-->
-      <!--<optional>
+      </optional>
+      <optional>
          <ref name="swe.updatable"/>
-      </optional>-->     
+      </optional>    
    </define>   
    
    <!-- AbstractSimpleComponent -->
@@ -460,6 +461,14 @@
       <a:documentation>Definition</a:documentation>
       <attribute name="definition">
          <data type="anyURI"/>
+      </attribute>
+   </define>
+   
+   <!-- optional -->
+   <define name="swe.optional">
+      <a:documentation>Optional Declaration</a:documentation>
+      <attribute name="optional">
+         <data type="boolean"/>
       </attribute>
    </define>
    

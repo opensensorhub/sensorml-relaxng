@@ -7,7 +7,7 @@
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
    
    <!-- -->
-   <include href="./Process.rng"/>
+   <!-- <include href="./Process.rng"/> -->
    <include href="./PhysicalProcess.rng"/>    
    
 </grammar>

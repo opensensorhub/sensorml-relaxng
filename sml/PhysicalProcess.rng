@@ -12,7 +12,16 @@
          <ref name="sml.ProcessGroup"/>
       </start>
    </include>
-       
+
+   <!-- All Processes -->
+   <define name="sml.ProcessGroup" combine="choice">
+      <choice>
+         <ref name="sml.PhysicalComponent"/>
+         <ref name="sml.PhysicalSystem"/>
+      </choice>
+   </define>
+   
+   
    <!-- Definition of Physical Component -->
    <define name="sml.PhysicalComponent">
       <a:documentation>Physical Component</a:documentation>
@@ -38,14 +47,6 @@
             <ref name="sml.connections"/>
          </optional>
       </element>
-   </define>
-   
-   <!-- All Processes -->
-   <define name="sml.ProcessGroup" combine="choice">
-      <choice>
-         <ref name="sml.PhysicalComponent"/>
-         <ref name="sml.PhysicalSystem"/>
-      </choice>
    </define>
    
 
@@ -75,6 +76,7 @@
    <!-- Reference Frame -->
    <define name="sml.ReferenceFrame">
       <element name="sml:ReferenceFrame">
+         <ref name="swe.AbstractSWEIdentifiable"/>
          <element name="sml:origin">
             <data type="string"/>       
          </element>

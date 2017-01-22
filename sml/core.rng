@@ -22,9 +22,8 @@
          </optional>
          <element name="gml:identifier">
             <attribute name="codeSpace">
-               <value type="string">uniqueID</value>
+               <value>uniqueID</value>
             </attribute>
-            <data type="ID"/>
          </element>	
          <optional>
             <ref name="gml.name"/>

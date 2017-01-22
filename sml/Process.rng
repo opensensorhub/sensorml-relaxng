@@ -12,7 +12,16 @@
             <ref name="sml.ProcessGroup"/>
       </start>
    </include>
-      
+ 
+   <!-- Nonphysical Processes -->
+   <define name="sml.ProcessGroup" combine="choice">
+      <choice>
+         <ref name="sml.SimpleProcess"/>
+         <ref name="sml.AggregateProcess"/>
+      </choice>
+   </define>
+   
+   
    
    <!-- Definition of Simple Process -->
    <define name="sml.SimpleProcess">
@@ -328,14 +337,6 @@
             </element>
          </element>
       </element>
-   </define>
-   
-   <!-- Nonphysical Processes -->
-   <define name="sml.ProcessGroup" combine="choice">
-      <choice>
-         <ref name="sml.SimpleProcess"/>
-         <ref name="sml.AggregateProcess"/>
-      </choice>
    </define>
    
    <!-- Observable Property -->
