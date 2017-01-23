@@ -10,42 +10,28 @@
    <!-- replace the definition for general PhysicalComponent with this one -->
    <include href="../basic_sml/Basic_PhysicalProcess.rng">
       <start>
-         <!-- <define name="sml.SimpleDeployedSensor"> -->
-           <element name="sml.PhysicalComponent">
-              <ref name="sml.deployed_DescribedObject"/>
-              <ref name="sml.ProcessContents"/> 
-              <ref name="sml.deployed_PhysicalContents"/>
-              <ref name="sml.method"/>   
-           </element>
-    <!--     </define> -->
-      </start>       
-   </include>
-
-<!--
-   <start>
-      <ref name="sml.ProcessGroup"/>
-    </start> -->
-   
+         <ref name="sml.ProcessGroup"/>
+       </start>
+   </include>  
 
    <!-- All Processes -->
-<!--   <define name="sml.ProcessGroup" combine="choice">
+   <define name="sml.ProcessGroup" combine="choice">
       <choice>
-         <ref name="sml.PhysicalComponent"/>
- 
+         <ref name="sml.SimpleDeployedSensor"/>
       </choice>
-   </define> -->
+   </define>
    
 
    <!-- Simple deployed stationary sensor -->
-<!--   <a:documentation>Simple Deployed Sensor</a:documentation>
    <define name="sml.SimpleDeployedSensor">
+      <a:documentation>Simple Deployment</a:documentation>
       <element name="sml.PhysicalComponent">
          <ref name="sml.deployed_DescribedObject"/>
-         <ref name="sml.ProcessContents"/>
+         <ref name="sml.ProcessContents"/> 
          <ref name="sml.deployed_PhysicalContents"/>
          <ref name="sml.method"/>   
       </element>
-   </define> -->
+   </define>
    
 
    <!-- Described Deployed Object -->

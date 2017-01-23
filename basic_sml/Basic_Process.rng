@@ -35,7 +35,7 @@
    
    <!-- Definition of Aggregate Process -->
    <define name="sml.AggregateProcess">
-      <a:documentation>Agregate Process Chain</a:documentation>
+      <a:documentation>Aggregate Process Chain</a:documentation>
       <element name="sml:AggregateProcess">
          <ref name="sml.DescribedObject"/>
          <ref name="sml.ProcessContents"/>
