@@ -59,6 +59,7 @@
    <!-- Boolean -->
    <define name="swe.Boolean">
       <a:documentation>Boolean Field</a:documentation>
+<!--      <a:documentation>Boolean</a:documentation>-->
       <element name="swe:Boolean">
          <ref name="swe.AbstractSimpleComponent"/>
          <optional>
@@ -70,7 +71,8 @@
    <!-- Text -->
    <define name="swe.Text">
       <a:documentation>Text Field</a:documentation>
-      <element name="swe:Text">
+<!--      <a:documentation>Text</a:documentation>
+-->      <element name="swe:Text">
          <ref name="swe.AbstractSimpleComponent"/>
          <optional>
             <ref name="swe.textConstraints"/>
@@ -83,7 +85,8 @@
    
    <!-- Category -->
    <define name="swe.Category">
-      <a:documentation>Category Field (Discrete categorical value)</a:documentation>
+<!--      <a:documentation>Category Field (Discrete categorical value)</a:documentation> -->
+      <a:documentation>Category Field</a:documentation>
       <element name="swe:Category">
          <ref name="swe.AbstractSimpleComponent"/>
          <optional>
@@ -100,7 +103,8 @@
    
    <!-- Count -->
    <define name="swe.Count">
-      <a:documentation>Count Field (Discrete countable value)</a:documentation>
+<!--      <a:documentation>Count Field (Discrete countable value)</a:documentation>-->
+      <a:documentation>Count Field</a:documentation>
       <element name="swe:Count">
          <ref name="swe.AbstractSimpleComponent"/>
          <optional>
@@ -114,7 +118,8 @@
    
    <!-- Quantity -->
    <define name="swe.Quantity">
-      <a:documentation>Quantity Field (Continuous numeric value)</a:documentation>
+<!--      <a:documentation>Quantity Field (Continuous numeric value)</a:documentation>-->
+      <a:documentation>Quantity Field</a:documentation>
       <element name="swe:Quantity">
          <ref name="swe.AbstractSimpleComponent"/>
          <ref name="swe.uom"/>
@@ -129,7 +134,8 @@
    
    <!-- Time -->
    <define name="swe.Time">
-      <a:documentation>Time Field (Temporal value)</a:documentation>
+<!--      <a:documentation>Time Field (Temporal value)</a:documentation>-->
+      <a:documentation>Time Field</a:documentation>
       <element name="swe:Time">
          <ref name="swe.AbstractSimpleComponent"/>
          <optional>
@@ -150,7 +156,8 @@
    
    <!-- CategoryRange -->
    <define name="swe.CategoryRange">
-      <a:documentation>Category Range (Categorical Range)</a:documentation>
+<!--      <a:documentation>Category Range (Categorical Range)</a:documentation>-->
+      <a:documentation>Category Range</a:documentation>
       <element name="swe:CategoryRange">
          <ref name="swe.AbstractSimpleComponent"/>
          <optional>
@@ -167,7 +174,8 @@
    
    <!-- Count Range -->
    <define name="swe.CountRange">
-      <a:documentation>Count Range (Range of discrete values)</a:documentation>
+<!--      <a:documentation>Count Range (Range of discrete values)</a:documentation>-->
+      <a:documentation>Count Range</a:documentation>
       <element name="swe:CountRange">
          <ref name="swe.AbstractSimpleComponent"/>
          <optional>
@@ -181,7 +189,8 @@
    
    <!-- Quantity Range -->
    <define name="swe.QuantityRange">
-      <a:documentation>Quantity Range (Range of numeric values)</a:documentation>
+<!--      <a:documentation>Quantity Range (Range of numeric values)</a:documentation>-->
+      <a:documentation>Quantity Range</a:documentation>      
       <element name="swe:QuantityRange">
          <ref name="swe.AbstractSimpleComponent"/>
          <ref name="swe.uom"/>
@@ -196,7 +205,8 @@
    
    <!-- TimeRange -->
    <define name="swe.TimeRange">
-      <a:documentation>Time Range (Range of temporal values)</a:documentation>
+<!--      <a:documentation>Time Range (Range of temporal values)</a:documentation>-->
+      <a:documentation>Time Range</a:documentation>
       <element name="swe:TimeRange">
          <ref name="swe.AbstractSimpleComponent"/>
          <optional>

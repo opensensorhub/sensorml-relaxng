@@ -16,7 +16,8 @@
    
    <!-- DataRecord -->
    <define name="swe.DataRecord">
-      <a:documentation>Data Record (Group of fields of any type)</a:documentation>
+<!--      <a:documentation>Data Record (Group of fields of any type)</a:documentation>-->
+      <a:documentation>Data Record</a:documentation>
       <element name="swe:DataRecord">
          <ref name="swe.AbstractDataComponent"/>
          <oneOrMore>
@@ -28,7 +29,8 @@
    
    <!-- Vector -->
    <define name="swe.Vector">
-      <a:documentation>Vector (N-Dimensional vector of numeric quantities)</a:documentation>
+<!--      <a:documentation>Vector (N-Dimensional vector of numeric quantities)</a:documentation>-->
+      <a:documentation>Vector</a:documentation>
       <element name="swe:Vector">
          <ref name="swe.AbstractDataComponent"/>
          <ref name="swe.refFrameAttributes"/>
@@ -41,7 +43,8 @@
    
    <!-- DataChoice -->
    <define name="swe.DataChoice">
-      <a:documentation>Data Choice (Group of possible options)</a:documentation>
+<!--      <a:documentation>Data Choice (Group of possible options)</a:documentation>-->
+      <a:documentation>Data Choice</a:documentation>
       <element name="swe:DataChoice">
          <ref name="swe.AbstractDataComponent"/>
          <optional>
@@ -58,7 +61,8 @@
    
    <!-- DataArray -->
    <define name="swe.DataArray">
-      <a:documentation>Data Array (Array of N identical components)</a:documentation>
+<!--      <a:documentation>Data Array (Array of N identical components)</a:documentation>-->
+      <a:documentation>Data Array</a:documentation>
       <element name="swe:DataArray">
          <ref name="swe.AbstractDataComponent"/>
          <ref name="swe.elementCount"/>
@@ -73,7 +77,8 @@
    
    <!-- Square Matrix -->
    <define name="swe.Matrix">
-      <a:documentation>Square Matrix (Array of N numerical values)</a:documentation>
+<!--      <a:documentation>Square Matrix (Array of N numerical values)</a:documentation>-->
+      <a:documentation>Square Matrix</a:documentation>
       <element name="swe:Matrix">
          <ref name="swe.AbstractDataComponent"/>
          <ref name="swe.refFrameAttributes"/>
