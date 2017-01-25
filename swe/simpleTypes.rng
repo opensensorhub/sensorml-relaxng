@@ -679,7 +679,8 @@
    
    <!-- identifier -->
    <define name="swe.identifier">
-      <a:documentation>Unique Identifier</a:documentation>
+<!--      <a:documentation>Unique Identifier</a:documentation>-->
+      <a:documentation>Unique ID</a:documentation>
       <element name="swe:identifier">
          <data type="anyURI"/>
       </element>
@@ -687,7 +688,8 @@
    
    <!-- label -->
    <define name="swe.label">
-      <a:documentation>Human Readable Label</a:documentation>
+<!--      <a:documentation>Human Readable Label</a:documentation>-->
+      <a:documentation>Label</a:documentation>
       <element name="swe:label">
          <data type="token">
             <param name="minLength">1</param>
