@@ -25,7 +25,7 @@
    <!-- Simple deployed stationary sensor -->
    <define name="sml.SimpleDeployedSensor">
       <a:documentation>Simple Deployment</a:documentation>
-      <element name="sml.PhysicalComponent">
+      <element name="sml:PhysicalComponent">
          <ref name="sml.deployed_DescribedObject"/>
          <ref name="sml.ProcessContents"/> 
          <ref name="sml.deployed_PhysicalContents"/>
