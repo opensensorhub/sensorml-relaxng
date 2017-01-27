@@ -54,6 +54,7 @@
       
       <!-- manufacturer -->
       <optional>
+         <a:documentation>Manufacturer Name</a:documentation>
          <element name="sml:identifier">
             <element name="sml:Term">
                <attribute name="definition">
@@ -73,6 +74,7 @@
       
       <!-- model number -->
       <optional>
+         <a:documentation>Model Number</a:documentation>
          <element name="sml:identifier">
             <element name="sml:Term">
                <attribute name="definition">
@@ -92,6 +94,7 @@
       
       <!-- serial number -->
       <optional>
+         <a:documentation>Serial Number</a:documentation>
          <element name="sml:identifier">
             <element name="sml:Term">
                <attribute name="definition">
