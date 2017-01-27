@@ -7,22 +7,21 @@
 
    <include href="../extensions/Position.rng"/>
    <include href="../extensions/Identify_Classify.rng"/>
-   <!-- replace the definition for general PhysicalComponent with this one -->
    <include href="../basic_sml/Basic_PhysicalProcess.rng">
-      <start>
-         <ref name="sml.SimpleDeployedSensor"/>
-         
-     <!--    <ref name="smlx.ProcessGroup"/>  -->
-       </start>
    </include>  
+   
+   <start>
+      <ref name="sml.SimpleDeployedSensor"/>
+   </start>
+   
 
    <!-- All Processes -->
-   <define name="smlx.SimpleDeployment" combine="choice">
+   <!--   <define name="smlx.SimpleDeployment" combine="choice">
       <choice>
          <ref name="sml.SimpleDeployedSensor"/>
       </choice>
    </define>
-   
+   -->
 
    <!-- Simple deployed stationary sensor -->
    <define name="sml.SimpleDeployedSensor">
