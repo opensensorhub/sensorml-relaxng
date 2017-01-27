@@ -49,42 +49,6 @@
          </element>
       </element>
    </define>
-
-   <!-- Reference Frame Lat-Lon-Alt (GPS) -->
-   <!--  NOT NEEDED ?? 
-   <define name="sml.ReferenceFrame_GPS">
-      <element name="sml:ReferenceFrame">
-         <ref name="swe.objectID"/>
-         <element name="swe:identifier">
-            <value>http://sensorml.com/ont/swe/position/GPS_Frame</value>
-         </element>
-         <ref name="swe.label"/>
-         <optional>
-            <ref name="swe.description"/>  
-         </optional>  
-         <element name="sml:origin">
-            <data type="string"/>
-         </element>
-         <element name="sml:axis">
-            <attribute name="sml:name">
-               <value>longitude</value>
-            </attribute>
-            <data type="string"/>
-         </element>
-         <element name="sml:axis">
-            <attribute name="sml:name">
-               <value>latitude</value>
-            </attribute>
-            <data type="string"/>
-         </element>
-         <element name="sml:axis">
-            <attribute name="sml:name">
-               <value>altitude</value>
-            </attribute>
-            <data type="string"/>
-         </element>
-      </element>
-   </define>  -->
    
 
    <!-- LOCATIONS/POSITIONS -->
@@ -97,6 +61,7 @@
       <choice>
          <ref name="sml-x.xyzLocationVector"/>
          <ref name="sml-x.gpsLocationVector"/>
+         <ref name="sml-x.gmlPoint"/>
       </choice>
    </define>
    
