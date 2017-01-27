@@ -119,10 +119,15 @@
          </zeroOrMore> -->
       
       <!-- choose between stationary location or position (with orientation) -->
-      <choice>
-         <ref name="sml-x.stationary_location"/>
-         <ref name="sml-x.stationary_position"/>
-      </choice>
+      <optional>
+         <element name="sml:position">
+            <choice>
+               <ref name="sml-x.stationary_location"/>
+               <ref name="sml-x.stationary_position"/>
+            </choice>
+         </element>
+      </optional>
+      
    </define>
 
 </grammar>

@@ -349,7 +349,7 @@
   
     <!-- typeOf -->
     <define name="sml.typeOf">
-       <a:documentation>Link to Process Type Description</a:documentation>
+       <a:documentation>TypeOf (Parent Process)</a:documentation>
        <element name="sml:typeOf">
           <ref name="xlink.hrefWithTitle"/>
        </element>
