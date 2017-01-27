@@ -10,12 +10,14 @@
    <!-- replace the definition for general PhysicalComponent with this one -->
    <include href="../basic_sml/Basic_PhysicalProcess.rng">
       <start>
-         <ref name="sml.ProcessGroup"/>
+         <ref name="sml.SimpleDeployedSensor"/>
+         
+     <!--    <ref name="smlx.ProcessGroup"/>  -->
        </start>
    </include>  
 
    <!-- All Processes -->
-   <define name="sml.ProcessGroup" combine="choice">
+   <define name="smlx.SimpleDeployment" combine="choice">
       <choice>
          <ref name="sml.SimpleDeployedSensor"/>
       </choice>
