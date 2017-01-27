@@ -8,15 +8,12 @@
    <include href="../extensions/Position.rng"/>
    <include href="../extensions/Identify_Classify.rng"/>
    <include href="../basic_sml/Basic_PhysicalProcess.rng">
-      <start combine="choice">
-         <ref name="sml-x.SimpleDeployedSensor"/>
-      </start>  
    </include>  
    
- <!--  <start>
+   <start>
       <ref name="sml-x.SimpleDeployedSensor"/>
    </start>
--->   
+  
 
    <!-- All Processes -->
    <!--   <define name="smlx.SimpleDeployment" combine="choice">
