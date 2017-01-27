@@ -10,10 +10,32 @@
    <include href="../basic_sml/Basic_Core.rng"/>
       
    
-   <!-- Discovery Identifiers -->
-   <define name="sml.discovery_identifiers">
-      
+   <!-- Discovery Identifier List -->
+   <define name="sml-x.discovery_identifiers">
+      <a:documentation>Discovery Identifier List</a:documentation> 
+      <ref name="sml-x.shortName"/>
+      <ref name="sml-x.longName"/>
+   </define> 
+
+   <!-- Hardware Identifier List -->
+   <define name="sml-x.hardware_identifiers">
+      <a:documentation>Hardware Identifier List</a:documentation> 
+      <optional>
+         <ref name="sml-x.manufacturer"/>
+      </optional>
+      <optional>
+         <ref name="sml-x.modelNumber"/>
+      </optional>
+      <optional>
+         <ref name="sml-x.serialNumber"/>
+      </optional>
+   </define>   
+   
+   <!-- Identifiers -->
+   
       <!-- shortname -->
+   <define name="sml-x.shortName">
+      <a:documentation>Short Name</a:documentation> 
       <element name="sml:identifier">
          <element name="sml:Term">
             <attribute name="definition">
@@ -29,8 +51,11 @@
             </element>
          </element>
       </element>
+   </define>
       
       <!-- longname -->
+   <define name="sml-x.longName">
+      <a:documentation>Long Name</a:documentation> 
       <element name="sml:identifier">
          <element name="sml:Term">
             <attribute name="definition">
@@ -45,15 +70,12 @@
                </data>
             </element>
          </element>
-      </element>
-      
+      </element>   
    </define>
 
    
-   <define name="sml.hardware_identifiers">
-      
       <!-- manufacturer -->
-      <optional>
+      <define name="sml-x.manufacturer">
          <a:documentation>Manufacturer Name</a:documentation>
          <element name="sml:identifier">
             <element name="sml:Term">
@@ -70,10 +92,10 @@
                </element>
             </element>
          </element>
-      </optional>
+      </define>
       
       <!-- model number -->
-      <optional>
+      <define name="sml-x.modelNumber">
          <a:documentation>Model Number</a:documentation>
          <element name="sml:identifier">
             <element name="sml:Term">
@@ -90,10 +112,10 @@
                </element>
             </element>
          </element>
-      </optional>
+      </define>
       
       <!-- serial number -->
-      <optional>
+      <define name="sml-x.serialNumber">
          <a:documentation>Serial Number</a:documentation>
          <element name="sml:identifier">
             <element name="sml:Term">
@@ -110,9 +132,8 @@
                </element>
             </element>
          </element>
-      </optional>
+      </define>
       
-    </define>
 </grammar>
    
     

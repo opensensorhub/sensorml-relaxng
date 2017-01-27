@@ -17,7 +17,8 @@
    <!-- REFERENCE FRAMES -->
 
    <!-- Reference Frame XYZ -->
-   <define name="sml.ReferenceFrame_XYZ">
+   <define name="sml-x.ReferenceFrame_XYZ">
+      <a:documentation>XYZ Reference Frame</a:documentation> 
       <element name="sml:ReferenceFrame">
          <ref name="swe.objectID"/>
          <element name="swe:identifier">
@@ -91,15 +92,17 @@
    <!-- POSITIONS -->
   
    <!-- stationary location -->
-   <define name="sml.stationary_location">
+   <define name="sml-x.stationary_location">
+      <a:documentation>Stationary Location</a:documentation> 
       <element name="sml:position">
-         <ref name="sml.xyzLocationVector"/>
+         <ref name="sml-x.xyzLocationVector"/>
       </element>
    </define>
    
 
    <!-- stationary position -->
-   <define name="sml.stationary_position">
+   <define name="sml-x.stationary_position">
+      <a:documentation>Stationary Position</a:documentation> 
       <element name="sml:position">
          <element name="swe:DataRecord">
             <optional>
@@ -116,10 +119,10 @@
             </element>
 
             <element name="swe:field">
-               <ref name="sml.xyzLocationVector"/>
+               <ref name="sml-x.xyzLocationVector"/>
             </element>
             <element name="swe:field">
-               <ref name="sml.xyzOrientationVector"/>
+               <ref name="sml-x.xyzOrientationVector"/>
             </element>
          </element>
       </element>
@@ -130,8 +133,9 @@
 <!-- COORDINATES / VECTORS  -->
     
  <!-- xyz Location Vector -->  
- <define name="sml.xyzLocationVector">  
-   <element name="swe:Vector">
+ <define name="sml-x.xyzLocationVector">  
+    <a:documentation>XYZ Vector</a:documentation> 
+    <element name="swe:Vector">
       <optional>
          <attribute name="id">
             <data type="ID"/>
@@ -224,7 +228,8 @@
   </define> 
 
    <!-- xyz Orientation Vector -->  
-   <define name="sml.xyzOrientationVector">  
+   <define name="sml-x.xyzOrientationVector">  
+      <a:documentation>XYZ Orientation Vector</a:documentation> 
       <element name="swe:Vector">
          <optional>
             <attribute name="id">
@@ -318,7 +323,7 @@
    </define> 
  
    <!-- GPS Location Vector -->  
-   <define name="sml.gpsLocationVector">  
+   <define name="sml-x.gpsLocationVector">  
       <element name="swe:Vector">
          <optional>
             <attribute name="id">
@@ -442,7 +447,7 @@
    <!--=============-->
    <!-- Physical DataComponent attributes -->
    <!--=============-->
-   <define name="sml.PhysicalDataInfo">
+   <define name="sml-x.PhysicalDataInfo">
       <!-- attributes -->
       <optional>
          <attribute name="definition">

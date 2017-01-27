@@ -8,12 +8,15 @@
    <include href="../extensions/Position.rng"/>
    <include href="../extensions/Identify_Classify.rng"/>
    <include href="../basic_sml/Basic_PhysicalProcess.rng">
+      <start combine="choice">
+         <ref name="sml-x.SimpleDeployedSensor"/>
+      </start>  
    </include>  
    
-   <start>
-      <ref name="sml.SimpleDeployedSensor"/>
+ <!--  <start>
+      <ref name="sml-x.SimpleDeployedSensor"/>
    </start>
-   
+-->   
 
    <!-- All Processes -->
    <!--   <define name="smlx.SimpleDeployment" combine="choice">
@@ -24,26 +27,26 @@
    -->
 
    <!-- Simple deployed stationary sensor -->
-   <define name="sml.SimpleDeployedSensor">
+   <define name="sml-x.SimpleDeployedSensor">
       <a:documentation>Simple Deployment</a:documentation>
       <element name="sml:PhysicalComponent">
-         <ref name="sml.deployed_DescribedObject"/>
+         <ref name="sml-x.deployed_DescribedObject"/>
          <ref name="sml.ProcessContents"/> 
-         <ref name="sml.deployed_PhysicalContents"/>
+         <ref name="sml-x.deployed_PhysicalContents"/>
          <ref name="sml.method"/>   
       </element>
    </define>
    
 
    <!-- Described Deployed Object -->
-   <define name="sml.deployed_DescribedObject">
+   <define name="sml-x.deployed_DescribedObject">
       <group>
          <ref name="sml.GmlObjectGroup"/>
          <zeroOrMore>
             <ref name="sml.keywords"/>
          </zeroOrMore>
          <zeroOrMore>
-            <ref name="sml.deployment_identifiers"/>
+            <ref name="sml-x.deployment_identifiers"/>
          </zeroOrMore>
          <zeroOrMore>
             <ref name="sml.classification"/>
@@ -78,13 +81,13 @@
 
    <!-- Deployment Identifiers -->
    <!-- supports both discovery and deployment identifiers -->
-   <define name="sml.deployment_identifiers">
+   <define name="sml-x.deployment_identifiers">
       <a:documentation>Deployment Identifiers</a:documentation>
       <element name="sml:identification">
          <element name="sml:IdentifierList">
             <ref name="sml.metadataList"/> 
-            <ref name="sml.discovery_identifiers"/>
-            <ref name="sml.hardware_identifiers"/>
+            <ref name="sml-x.discovery_identifiers"/>
+            <ref name="sml-x.hardware_identifiers"/>
             <zeroOrMore>
                <element name="sml:identifier">
                   <ref name="sml.Term"/>
@@ -96,7 +99,7 @@
 
 
    <!-- Deployed Physical Contents -->
-   <define name="sml.deployed_PhysicalContents">
+   <define name="sml-x.deployed_PhysicalContents">
       <optional>
          <a:documentation>Link to Platform</a:documentation>
          <element name="sml:attachedTo">
@@ -107,7 +110,7 @@
       <!-- use XYZ Reference Frame -->
       <optional>
          <element name="localReferenceFrame">
-            <ref name="sml.ReferenceFrame_XYZ"/>
+            <ref name="sml-x.ReferenceFrame_XYZ"/>
          </element>
       </optional>
       
@@ -120,8 +123,8 @@
       
       <!-- choose between stationary location or position (with orientation) -->
       <choice>
-         <ref name="sml.stationary_location"/>
-         <ref name="sml.stationary_position"/>
+         <ref name="sml-x.stationary_location"/>
+         <ref name="sml-x.stationary_position"/>
       </choice>
    </define>
 
