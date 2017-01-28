@@ -13,9 +13,9 @@
       <optional>
          <ref name="swe.objectID"/>
       </optional>
-      <optional>
+      <!--<optional>
          <ref name="swe.identifier"/>
-      </optional>
+      </optional>-->
       <optional>
          <ref name="swe.label"/>
       </optional>
@@ -31,9 +31,9 @@
       <optional>
          <ref name="swe.definition"/>
       </optional>
-      <optional>
+      <!--<optional>
          <ref name="swe.optional"/>
-      </optional>
+      </optional>-->
       <optional>
          <ref name="swe.updatable"/>
       </optional>    
