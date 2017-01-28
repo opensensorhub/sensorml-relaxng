@@ -7,6 +7,27 @@
 
    <!-- -->
    <include href="../swe/data.rng"/>
+   
+   <!-- GML Object Group with SML modification-->
+   <define name="sml.GmlObjectGroup">
+      <group>
+         <optional>
+            <ref name="gml.id"/>
+         </optional>
+         <optional>
+            <ref name="gml.description"/>
+         </optional>
+         <element name="gml:identifier">
+            <attribute name="codeSpace">
+               <value>uniqueID</value>
+            </attribute>
+            <data type="token"/>
+         </element> 
+         <optional>
+            <ref name="gml.name"/>
+         </optional>
+      </group>
+   </define>
 
    <!-- Described Object -->
    <define name="sml.DescribedObject">
