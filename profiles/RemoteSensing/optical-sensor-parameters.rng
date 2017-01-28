@@ -180,6 +180,9 @@
          <attribute name="referenceFrame">
             <value>urn:ogc:def:crs:CSM:imagePlaneCRS</value>
          </attribute>
+         <element name="swe:label">
+            <value>Principal Point Coordinates</value>
+         </element>  
          <element name="swe:coordinate">
             <attribute name="name">
                <value>x0</value>
@@ -188,6 +191,9 @@
                <attribute name="definition">
                   <value>urn:ogc:def:property:CSM:PRIN_OFFSETX</value>
                </attribute>
+               <element name="swe:label">
+                  <value>Principal Offset X0</value>
+               </element>  
                <optional>
                   <ref name="swe.quality"/>
                </optional> 
@@ -203,6 +209,9 @@
                <attribute name="definition">
                   <value>urn:ogc:def:property:CSM:PRIN_OFFSETY</value>
                </attribute>
+               <element name="swe:label">
+                  <value>Principal Offset Y0</value>
+               </element>  
                <optional>
                   <ref name="swe.quality"/>
                </optional> 
@@ -218,6 +227,9 @@
    <define name="csm.AffineDistortionCoefficients">
       <a:documentation>Affine Distortion Coefficients</a:documentation>
       <element name="swe:DataRecord">
+         <element name="swe:label">
+            <value>Affine Distortion Coefficients</value>
+         </element>  
          <element name="swe:field">
             <attribute name="name">
                <value>a1</value>
@@ -226,6 +238,9 @@
                <attribute name="definition">
                   <value>urn:ogc:def:property:CSM:DISTOR_A1</value>
                </attribute>
+               <element name="swe:label">
+                  <value>A1 Distortion Coefficent</value>
+               </element>  
                <optional>
                   <ref name="swe.quality"/>
                </optional> 
@@ -240,6 +255,9 @@
                <attribute name="definition">
                   <value>urn:ogc:def:property:CSM:DISTOR_B1</value>
                </attribute>
+               <element name="swe:label">
+                  <value>B2 Distortion Coefficent</value>
+               </element>  
                <optional>
                   <ref name="swe.quality"/>
                </optional> 
@@ -254,6 +272,9 @@
                <attribute name="definition">
                   <value>urn:ogc:def:property:CSM:DISTOR_C1</value>
                </attribute>
+               <element name="swe:label">
+                  <value>C1 Distortion Coefficent</value>
+               </element>  
                <optional>
                   <ref name="swe.quality"/>
                </optional> 
@@ -268,6 +289,9 @@
                <attribute name="definition">
                   <value>urn:ogc:def:property:CSM:DISTOR_A2</value>
                </attribute>
+               <element name="swe:label">
+                  <value>A2 Distortion Coefficent</value>
+               </element>  
                <optional>
                   <ref name="swe.quality"/>
                </optional> 
@@ -282,6 +306,9 @@
                <attribute name="definition">
                   <value>urn:ogc:def:property:CSM:DISTOR_B2</value>
                </attribute>
+               <element name="swe:label">
+                  <value>B2 Distortion Coefficent</value>
+               </element>  
                <optional>
                   <ref name="swe.quality"/>
                </optional> 
@@ -296,6 +323,9 @@
                <attribute name="definition">
                   <value>urn:ogc:def:property:CSM:DISTOR_C2</value>
                </attribute>
+               <element name="swe:label">
+                  <value>C2 Distortion Coefficent</value>
+               </element>  
                <optional>
                   <ref name="swe.quality"/>
                </optional> 
@@ -310,6 +340,9 @@
    <define name="csm.RadialDistortionCoefficients">
       <a:documentation>Lens Radial Distortion Coefficients</a:documentation>
       <element name="swe:DataRecord">
+         <element name="swe:label">
+            <value>Radial Distortion Coefficients</value>
+         </element>  
          <element name="swe:field">
             <attribute name="name">
                <value>k1</value>
@@ -318,6 +351,9 @@
                <attribute name="definition">
                   <value>urn:ogc:def:property:CSM:DISTOR_RAD1</value>
                </attribute>
+               <element name="swe:label">
+                  <value>K1 Coefficients</value>
+               </element>  
                <optional>
                   <ref name="swe.quality"/>
                </optional> 
@@ -337,6 +373,9 @@
                <attribute name="definition">
                   <value>urn:ogc:def:property:CSM:DISTOR_RAD2</value>
                </attribute>
+               <element name="swe:label">
+                  <value>K2 Coefficients</value>
+               </element>  
                <optional>
                   <ref name="swe.quality"/>
                </optional> 
@@ -356,6 +395,9 @@
                <attribute name="definition">
                   <value>urn:ogc:def:property:CSM:DISTOR_RAD3</value>
                </attribute>
+               <element name="swe:label">
+                  <value>Distortion Rad3 </value>
+               </element>  
                <optional>
                   <ref name="swe.quality"/>
                </optional> 
@@ -426,13 +468,13 @@
          <choice>
             <element name="swe:field">
                <attribute name="name">
-                  <value>Focal Length</value>
+                  <value>FocalLength</value>
                </attribute>
                <ref name="csm.FocalLength"/>
             </element>
             <element name="swe:field">
                <attribute name="name">
-                  <value>Calibrated Focal Length</value>
+                  <value>CalibratedFocalLength</value>
                </attribute>
                <ref name="csm.CalibratedFocalLength"/>
             </element>         
@@ -440,7 +482,7 @@
          <optional>
             <element name="swe:field">
                <attribute name="name">
-                  <value>Across-Track FOV</value>
+                  <value>Across-TrackFOV</value>
                </attribute>
                <ref name="csm.AcrossTrackFOV"/>
             </element>
@@ -448,7 +490,7 @@
          <optional>
             <element name="swe:field">
                <attribute name="name">
-                  <value>Along-Track FOV</value>
+                  <value>Along-TrackFOV</value>
                </attribute>
                <ref name="csm.AlongTrackFOV"/>
             </element>
@@ -456,7 +498,7 @@
          <optional>
             <element name="swe:field">
                <attribute name="name">
-                  <value>Across-Track IFOV</value>
+                  <value>Across-TrackIFOV</value>
                </attribute>
                <ref name="csm.AcrossTrackIFOV"/>
             </element>
@@ -464,7 +506,7 @@
          <optional>
             <element name="swe:field">
                <attribute name="name">
-                  <value>Along-Track IFOV</value>
+                  <value>Along-TrackIFOV</value>
                </attribute>
                <ref name="csm.AlongTrackIFOV"/>
             </element>
@@ -505,7 +547,7 @@
    
    <!-- -->
    <define name="csm.AcrossTrackFOV">
-      <a:documentation>Across-Track FOV</a:documentation>
+      <a:documentation>Across-TrackFOV</a:documentation>
       <element name="swe:Quantity">
          <attribute name="definition">
             <value>urn:ogc:def:property:CSM:ACROSS_TRACK_FOV</value>
@@ -517,7 +559,7 @@
    
    <!-- -->
    <define name="csm.AlongTrackFOV">
-      <a:documentation>Along-Track FOV</a:documentation>
+      <a:documentation>Along-TrackFOV</a:documentation>
       <element name="swe:Quantity">
          <attribute name="definition">
             <value>urn:ogc:def:property:CSM:ALONG_TRACK_FOV</value>
@@ -529,7 +571,7 @@
    
    <!-- -->
    <define name="csm.AcrossTrackIFOV">
-      <a:documentation>Across-Track IFOV</a:documentation>
+      <a:documentation>Across-TrackIFOV</a:documentation>
       <element name="swe:Quantity">
          <attribute name="definition">
             <value>urn:ogc:def:property:CSM:ACROSS_TRACK_IFOV</value>
@@ -541,7 +583,7 @@
    
    <!-- -->
    <define name="csm.AlongTrackIFOV">
-      <a:documentation>Along-Track IFOV</a:documentation>
+      <a:documentation>Along-TrackIFOV</a:documentation>
       <element name="swe:Quantity">
          <attribute name="definition">
             <value>urn:ogc:def:property:CSM:ALONG_TRACK_IFOV</value>
