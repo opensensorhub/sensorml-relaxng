@@ -147,9 +147,9 @@
    <define name="swe.coordinate">
       <element name="swe:coordinate">
          <ref name="swe.nameAtt"/>
-         <optional>
+         <!--<optional>
             <ref name="xlink.roles"/>
-         </optional>
+         </optional>-->
          <choice>
             <a:documentation>Type</a:documentation>
             <ref name="xlink.href"/>
