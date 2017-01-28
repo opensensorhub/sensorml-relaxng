@@ -62,6 +62,7 @@
          <ref name="sml-x.xyzLocationVector"/>
          <ref name="sml-x.gpsLocationVector"/>
          <ref name="sml-x.gmlPoint"/>
+         <ref name="sml-x.locationDescription"/>
       </choice>
    </define>
    
@@ -96,7 +97,16 @@
 
 <!-- COORDINATES / VECTORS  -->
    
-   <!-- GML Point -->
+
+   <!-- Location Description (byDescription)  -->
+   <define name="sml-x.locationDescription">
+      <a:documentation>Location Description</a:documentation>
+      <element name="swe:Text">
+         <data type="string"/>
+      </element>
+   </define>   
+   
+   <!-- GML Point (byPoint)  -->
    <define name="sml-x.gmlPoint">
       <a:documentation>GML Point Location</a:documentation>
       <element name="gml:Point">
@@ -115,7 +125,7 @@
       </element>
    </define>   
     
- <!-- xyz Location Vector -->  
+ <!-- xyz Location Vector (byLocation)  -->  
  <define name="sml-x.xyzLocationVector">  
     <a:documentation>XYZ Location Vector</a:documentation> 
     <element name="swe:Vector">
@@ -212,7 +222,7 @@
   </define> 
 
 
-   <!-- GPS Location Vector -->  
+   <!-- GPS Location Vector (byLocation) -->  
    <define name="sml-x.gpsLocationVector">  
       <a:documentation>GPS Location Vector</a:documentation> 
       <element name="swe:Vector">
@@ -508,13 +518,13 @@
       <a:documentation>Inline or By Reference</a:documentation>
       <ref name="xlink.href"/>
       <choice>
-      <ref name="swe.Text"/>
-      <ref name="gml.Point"/>
-      <ref name="swe.Vector"/>
-      <ref name="swe.DataRecord"/>
-      <ref name="swe.DataArray"/>
-      <ref name="swe.Matrix"/>
-      <ref name="sml.ProcessGroup"/>
+      <ref name="swe.Text"/>     byDescription  
+      <ref name="gml.Point"/>      byPoint
+      <ref name="swe.Vector"/>     byLocation
+      <ref name="swe.DataRecord"/>    byPosition
+      <ref name="swe.DataArray"/>     byTrajectory
+      <ref name="swe.Matrix"/>        byMatrix
+      <ref name="sml.ProcessGroup"/>     byProcess
       </choice>   
       </choice>
       </element>

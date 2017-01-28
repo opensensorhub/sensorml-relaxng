@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+   xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+   
+   <!-- -->
+   <include href="../../swe/aggregateTypes.rng"/>   
+
+
+   <!-- -->
+<!--   <define name="csm.ProcessHeaderGroup">
+      <ref name="sml.FeatureGroup"/>
+      <optional>
+         <ref name="sml.identification"/>
+      </optional>
+      <optional>
+         <ref name="sml.classification"/>
+      </optional>
+      <optional>
+         <ref name="sml.validTime"/>
+      </optional>
+      <optional>
+         <ref name="sml.securityConstraint"/>
+      </optional>
+      <zeroOrMore>
+         <ref name="sml.contact"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="sml.documentation"/>
+      </zeroOrMore>
+   </define>
+--> 
+   
+   <!-- -->
+   <define name="csm.distanceUnit">
+      <element name="swe:uom">
+         <attribute name="code">
+            <choice>
+               <value>m</value>
+               <value>mm</value>
+            </choice>
+         </attribute>
+      </element>
+   </define>
+   <!-- -->
+   <define name="csm.pixelOrDistanceUnit">
+      <choice>
+         <ref name="csm.distanceUnit"/>
+		 <ref name="csm.pixelUnit"/>
+      </choice>
+   </define>
+   <!-- -->
+   <define name="csm.pixelUnit">
+      <element name="swe:uom">
+         <attribute name="xlink:href">
+            <value>urn:ogc:def:unit:CSM:pixel</value>
+         </attribute>
+      </element>
+   </define>
+   <!-- -->
+   <define name="csm.angleUnit">
+      <element name="swe:uom">
+         <attribute name="code">
+            <choice>
+               <value>deg</value>
+               <value>rad</value>
+            </choice>
+         </attribute>
+      </element>
+   </define>
+   <!-- -->
+   <define name="csm.timeUnit">
+      <element name="swe:uom">
+         <attribute name="code">
+            <choice>
+               <value>s</value>
+               <value>ms</value>
+            </choice>
+         </attribute>
+      </element>
+   </define>
+</grammar>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+   xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+   <!-- -->
+   <include href="../swe/simpleTypes.rng"/>   
+   
+
+   <!-- ISO Time -->
+   <define name="swe-x.ReferenceFrame_XYZ">
+      <a:documentation>XYZ Reference Frame</a:documentation> 
+      <element name="sml:ReferenceFrame">
+         <ref name="swe.objectID"/>
+         <element name="swe:identifier">
+            <value>http://sensorml.com/ont/swe/position/CartesianFrame</value>
+         </element>
+         <ref name="swe.label"/>
+         <optional>
+            <ref name="swe.description"/>  
+         </optional>  
+         <element name="sml:origin">
+            <data type="string"/>
+         </element>
+         <element name="sml:axis">
+            <attribute name="sml:name">
+               <value>x</value>
+            </attribute>
+            <data type="string"/>
+         </element>
+         <element name="sml:axis">
+            <attribute name="sml:name">
+               <value>y</value>
+            </attribute>
+            <data type="string"/>
+         </element>
+         <element name="sml:axis">
+            <attribute name="sml:name">
+               <value>z</value>
+            </attribute>
+            <data type="string"/>
+         </element>
+      </element>
+   </define>
+
+
+
+   
+</grammar>
