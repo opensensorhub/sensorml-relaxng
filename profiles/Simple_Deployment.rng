@@ -86,6 +86,7 @@
             <ref name="sml-x.discovery_identifiers"/>
             <ref name="sml-x.hardware_identifiers"/>
             <zeroOrMore>
+               <a:documentation>Other Identifier</a:documentation>
                <element name="sml:identifier">
                   <ref name="sml.Term"/>
                </element>
