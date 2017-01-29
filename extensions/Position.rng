@@ -245,7 +245,7 @@
             </choice>
          </attribute>
          <attribute name="referenceFrame">
-            <value>http://www.opengis.net/def/crs/EPSG/6.7/4979</value>
+            <value>http://www.opengis.net/def/crs/EPSG/8.5/4979</value>
          </attribute>
          <optional>
             <attribute name="localFrame">
