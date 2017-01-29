@@ -146,7 +146,8 @@
 
             <!-- intendedApplication -->
             <oneOrMore>
-               <element name="sml:classifier">
+               <a:documentation>Intended Application</a:documentation>
+               <element name="sml:classifier">               
                   <element name="sml:Term">
                      <attribute name="definition">
                         <value> http://sensorml.com/ont/swe/property/IntendedApplication </value>
