@@ -362,7 +362,7 @@
          <!-- x coordinate -->
          <element name="swe:coordinate">
             <attribute name="name">
-               <value>x</value>
+               <value>roll</value>
             </attribute>
             <element name="swe:Quantity">
                 <attribute name="axisID">
@@ -384,7 +384,7 @@
          <!-- y coordinate -->
          <element name="swe:coordinate">
             <attribute name="name">
-               <value>y</value>
+               <value>pitch</value>
             </attribute>
             <element name="swe:Quantity">
                 <attribute name="axisID">
@@ -406,7 +406,7 @@
          <!-- z coordinate -->
          <element name="swe:coordinate">
             <attribute name="name">
-               <value>z</value>
+               <value>yaw</value>
             </attribute>
             <element name="swe:Quantity">
                 <attribute name="axisID">
