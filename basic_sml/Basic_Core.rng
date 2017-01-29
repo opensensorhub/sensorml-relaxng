@@ -165,6 +165,7 @@
             </oneOrMore>
 
             <zeroOrMore>
+               <a:documentation>Other Classifier</a:documentation>
                <element name="sml:classifier">
                   <ref name="sml.Term"/>
                </element>
