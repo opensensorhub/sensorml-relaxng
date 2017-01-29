@@ -169,7 +169,7 @@
             <attribute name="definition">
                <value>http://sensorml/ont/swe/position/X-Location</value>
             </attribute>
-            <element name="uom">
+            <element name="swe:uom">
                <attribute name="code">
                   <value>m</value>
                </attribute>
@@ -191,7 +191,7 @@
             <attribute name="definition">
                <value>http://sensorml/ont/swe/position/Y-Location</value>
             </attribute>
-            <element name="uom">
+            <element name="swe:uom">
                <attribute name="code">
                   <value>m</value>
                </attribute>
@@ -213,7 +213,7 @@
            <attribute name="definition">
               <value>http://sensorml/ont/swe/position/Z-Location</value>
            </attribute>
-           <element name="uom">
+           <element name="swe:uom">
               <attribute name="code">
                  <value>m</value>
               </attribute>
@@ -272,7 +272,7 @@
               <attribute name="definition">
                  <value>http://sensorml/ont/swe/position/Longitude</value>
               </attribute>
-              <element name="uom">
+              <element name="swe:uom">
                  <attribute name="code">
                     <value>deg</value>
                  </attribute>
@@ -294,7 +294,7 @@
               <attribute name="definition">
                  <value>http://sensorml/ont/swe/position/Latitude</value>
               </attribute>
-              <element name="uom">
+              <element name="swe:uom">
                  <attribute name="code">
                     <value>deg</value>
                  </attribute>
@@ -316,7 +316,7 @@
               <attribute name="definition">
                  <value>http://sensorml/ont/swe/position/Altitude</value>
               </attribute>
-              <element name="uom">
+              <element name="swe:uom">
                  <attribute name="code">
                     <value>m</value>
                  </attribute>
@@ -371,7 +371,7 @@
                 <attribute name="definition">
                    <value>http://sensorml/ont/swe/position/TrueHeading</value>
                 </attribute>
-                <element name="uom">
+                <element name="swe:uom">
                    <attribute name="code">
                       <value>deg</value>
                    </attribute>
@@ -393,7 +393,7 @@
                 <attribute name="definition">
                    <value>http://sensorml/ont/swe/position/OrientationAboutY</value>
                 </attribute>
-                <element name="uom">
+                <element name="swe:uom">
                    <attribute name="code">
                       <value>deg</value>
                    </attribute>
@@ -415,7 +415,7 @@
                 <attribute name="definition">
                    <value>http://sensorml/ont/swe/position/OrientationAboutZ</value>
                 </attribute>
-                <element name="uom">
+                <element name="swe:uom">
                    <attribute name="code">
                       <value>deg</value>
                    </attribute>
@@ -472,7 +472,7 @@
                 <attribute name="definition">
                    <value>http://sensorml/ont/swe/position/OrientationAboutX</value>
                 </attribute>
-                <element name="uom">
+                <element name="swe:uom">
                    <attribute name="code">
                       <value>deg</value>
                    </attribute>
@@ -494,7 +494,7 @@
                 <attribute name="definition">
                    <value>http://sensorml/ont/swe/position/OrientationAboutY</value>
                 </attribute>
-                <element name="uom">
+                <element name="swe:uom">
                    <attribute name="code">
                       <value>deg</value>
                    </attribute>
@@ -516,7 +516,7 @@
                 <attribute name="definition">
                    <value>http://sensorml/ont/swe/position/OrientationAboutZ</value>
                 </attribute>
-                <element name="uom">
+                <element name="swe:uom">
                    <attribute name="code">
                       <value>deg</value>
                    </attribute>
