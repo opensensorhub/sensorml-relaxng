@@ -38,21 +38,21 @@
    <define name="csm.distanceUnit">
       <element name="swe:uom">
          <attribute name="code">
-            <choice>
+<!--            <choice>
                <a:documentation>meters</a:documentation>
                <value>m</value>
-               <a:documentation>millimeters</a:documentation>
+               <a:documentation>millimeters</a:documentation> -->
                <value>mm</value>
-            </choice>
+<!--            </choice>   -->
          </attribute>
       </element>
    </define>
    <!-- -->
    <define name="csm.pixelOrDistanceUnit">
-      <choice>
+<!--      <choice> -->
        <ref name="csm.distanceUnit"/>
-		 <ref name="csm.pixelUnit"/>
-      </choice>
+<!--		 <ref name="csm.pixelUnit"/>
+      </choice> -->
    </define>
    <!-- -->
    <define name="csm.pixelUnit">
@@ -67,12 +67,12 @@
    <define name="csm.angleUnit">
       <element name="swe:uom">
          <attribute name="code">
-            <choice>
+<!--            <choice>
                <a:documentation>degrees</a:documentation>
                <value>deg</value>
-               <a:documentation>radians</a:documentation>
+               <a:documentation>radians</a:documentation> -->
                <value>rad</value>
-            </choice>
+<!--            </choice>  -->
          </attribute>
       </element>
    </define>
@@ -80,12 +80,12 @@
    <define name="csm.timeUnit">
       <element name="swe:uom">
          <attribute name="code">
-            <choice>
+<!--            <choice>
                <a:documentation>seconds</a:documentation>
                <value>s</value>
-               <a:documentation>milliseconds</a:documentation>
+               <a:documentation>milliseconds</a:documentation>  -->
                <value>ms</value>
-            </choice>
+<!--            </choice>   -->
          </attribute>
       </element>
    </define>
