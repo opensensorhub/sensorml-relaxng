@@ -38,9 +38,7 @@
    <!-- Described Deployed Object -->
    <define name="sml-x.deployed_DescribedObject">
       <group>
-<!--         <ref name="gml.GmlObjectGroup">   -->
-         <ref name="gml.description"/>
-         <ref name="gml.name"/>
+         <ref name="gml.GmlObjectGroup"> 
          <zeroOrMore>
             <ref name="sml.keywords"/>
          </zeroOrMore>
@@ -50,9 +48,10 @@
          <zeroOrMore>
             <ref name="sml.classification"/>
          </zeroOrMore>
-         <optional>
+<!--     <optional>
             <ref name="sml.validTime"/>
-         </optional>
+         </optional> 
+-->
 <!--         <optional>
             <ref name="sml.securityConstraint"/>
          </optional>
@@ -68,9 +67,9 @@
          <zeroOrMore>
             <ref name="sml.contacts"/>
          </zeroOrMore>
-         <zeroOrMore>
+<!--         <zeroOrMore>
             <ref name="sml.documentation"/>
-         </zeroOrMore>
+         </zeroOrMore> -->
          <!-- REMOVE HISTORY FOR NOW - REQUIRE IT TO BE LINKED -->
 <!--         <zeroOrMore>
             <ref name="sml.history"/>
