@@ -54,28 +54,29 @@
    </define>   
    
    <!-- Characteristics -->
-   
-      <!-- length -->
+
+   <!-- length -->
    <define name="sml-x.length">
       <a:documentation>Length</a:documentation> 
-         <element name="sml:Quantity">
-            <attribute name="definition">
-               <value>http://sensorml.com/ont/swe/property/Length</value>
+      <element name="swe:Quantity">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/length</value>
+         </attribute>
+         <element name="swe:label">
+            <value>Length</value>
+         </element>  
+         <element name="swe:uom">
+            <attribute name="code">
+               <value>mm</value>
             </attribute>
-            <element name="sml:label">
-               <value>Length</value>
-            </element>
-            <element name="swe:uom">
-               <attribute name="code">
-                  <value>mm</value>
-               </attribute>
-            </element>
-            <element name="sml:value">
-               <data type="decimal"/>
-            </element>
          </element>
+         <element name="sml:value">
+            <data type="decimal"/>
+         </element>
+      </element>
    </define>
    
+
    <!-- width -->
    <define name="sml-x.width">
       <a:documentation>Width</a:documentation> 
