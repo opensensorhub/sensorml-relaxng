@@ -38,7 +38,7 @@
    <!-- Described Deployed Object -->
    <define name="sml-x.deployed_DescribedObject">
       <group>
-         <ref name="gml.GmlObjectGroup"> 
+         <ref name="sml.GmlObjectGroup"> 
          <zeroOrMore>
             <ref name="sml.keywords"/>
          </zeroOrMore>
