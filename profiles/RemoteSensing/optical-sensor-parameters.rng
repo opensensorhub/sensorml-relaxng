@@ -24,7 +24,7 @@
             </attribute>
             <element name="swe:Count">
                <attribute name="definition">
-                  <value>urn:ogc:def:property:CSM:NROWS</value>
+                  <value>http://sensorml.com/ont/csm/property/NROWS</value>
                </attribute>
                <element name="swe:label">
                   <value>Number of Rows in Frame</value>
@@ -42,7 +42,7 @@
             </attribute>
             <element name="swe:Count">
                <attribute name="definition">
-                  <value>urn:ogc:def:property:CSM:NCOLS</value>
+                  <value>http://sensorml.com/ont/csm/property/NCOLS</value>
                </attribute>
                <element name="swe:label">
                   <value>Number of Columns in Frame</value>
@@ -60,7 +60,7 @@
             </attribute>
             <element name="swe:Quantity">
                <attribute name="definition">
-                  <value>urn:ogc:def:property:CSM:ROW_SPACING</value>
+                  <value>http://sensorml.com/ont/csm/property/ROW_SPACING</value>
                </attribute>
                <element name="swe:label">
                   <value>Row Spacing</value>
@@ -79,7 +79,7 @@
             </attribute>
             <element name="swe:Quantity">
                <attribute name="definition">
-                  <value>urn:ogc:def:property:CSM:COL_SPACING</value>
+                  <value>http://sensorml.com/ont/csm/property/COL_SPACING</value>
                </attribute>
                <element name="swe:label">
                   <value>Column Spacing</value>
@@ -100,7 +100,7 @@
                </attribute>
                <element name="swe:Quantity">
                   <attribute name="definition">
-                     <value>urn:ogc:def:property:CSM:ROW_AXIS_OFFSET</value>
+                     <value>http://sensorml.com/ont/csm/property/ROW_AXIS_OFFSET</value>
                   </attribute>
                   <element name="swe:label">
                      <value>Row Axis Offset</value>
@@ -118,7 +118,7 @@
                </attribute>
                <element name="swe:Quantity">
                   <attribute name="definition">
-                     <value>urn:ogc:def:property:CSM:COL_AXIS_OFFSET</value>
+                     <value>http://sensorml.com/ont/csm/property/COL_AXIS_OFFSET</value>
                   </attribute>
                   <element name="swe:label">
                      <value>Column Axis Offset</value>
@@ -178,7 +178,7 @@
       <a:documentation>Principal Point Coordinates</a:documentation>
       <element name="swe:Vector">
          <attribute name="referenceFrame">
-            <value>urn:ogc:def:crs:CSM:imagePlaneCRS</value>
+            <value>http://sensorml.com/ont/csm/property/ImagePlaneCRS</value>
          </attribute>
          <element name="swe:label">
             <value>Principal Point Coordinates</value>
@@ -189,7 +189,7 @@
             </attribute>
             <element name="swe:Quantity">
                <attribute name="definition">
-                  <value>urn:ogc:def:property:CSM:PRIN_OFFSETX</value>
+                  <value>http://sensorml.com/ont/csm/property/PRIN_OFFSETX</value>
                </attribute>
                <element name="swe:label">
                   <value>Principal Offset X0</value>
@@ -207,7 +207,7 @@
             </attribute>
             <element name="swe:Quantity">
                <attribute name="definition">
-                  <value>urn:ogc:def:property:CSM:PRIN_OFFSETY</value>
+                  <value>http://sensorml.com/ont/csm/property/PRIN_OFFSETY</value>
                </attribute>
                <element name="swe:label">
                   <value>Principal Offset Y0</value>
@@ -221,9 +221,9 @@
          </element>
       </element>
    </define>
+   
    <!-- -->
-   
-   
+ 
    <define name="csm.AffineDistortionCoefficients">
       <a:documentation>Affine Distortion Coefficients</a:documentation>
       <element name="swe:DataRecord">
@@ -236,7 +236,7 @@
             </attribute>
             <element name="swe:Quantity">
                <attribute name="definition">
-                  <value>urn:ogc:def:property:CSM:DISTOR_A1</value>
+                  <value>http://sensorml.com/ont/csm/property/DISTOR_A1</value>
                </attribute>
                <element name="swe:label">
                   <value>A1 Distortion Coefficent</value>
@@ -253,7 +253,7 @@
             </attribute>
             <element name="swe:Quantity">
                <attribute name="definition">
-                  <value>urn:ogc:def:property:CSM:DISTOR_B1</value>
+                  <value>http://sensorml.com/ont/csm/property/DISTOR_B1</value>
                </attribute>
                <element name="swe:label">
                   <value>B2 Distortion Coefficent</value>
@@ -270,7 +270,7 @@
             </attribute>
             <element name="swe:Quantity">
                <attribute name="definition">
-                  <value>urn:ogc:def:property:CSM:DISTOR_C1</value>
+                  <value>http://sensorml.com/ont/csm/property/DISTOR_C1</value>
                </attribute>
                <element name="swe:label">
                   <value>C1 Distortion Coefficent</value>
@@ -287,7 +287,7 @@
             </attribute>
             <element name="swe:Quantity">
                <attribute name="definition">
-                  <value>urn:ogc:def:property:CSM:DISTOR_A2</value>
+                  <value>http://sensorml.com/ont/csm/property/DISTOR_A2</value>
                </attribute>
                <element name="swe:label">
                   <value>A2 Distortion Coefficent</value>
@@ -304,7 +304,7 @@
             </attribute>
             <element name="swe:Quantity">
                <attribute name="definition">
-                  <value>urn:ogc:def:property:CSM:DISTOR_B2</value>
+                  <value>http://sensorml.com/ont/csm/property/DISTOR_B2</value>
                </attribute>
                <element name="swe:label">
                   <value>B2 Distortion Coefficent</value>
@@ -321,7 +321,7 @@
             </attribute>
             <element name="swe:Quantity">
                <attribute name="definition">
-                  <value>urn:ogc:def:property:CSM:DISTOR_C2</value>
+                  <value>http://sensorml.com/ont/csm/property/DISTOR_C2</value>
                </attribute>
                <element name="swe:label">
                   <value>C2 Distortion Coefficent</value>
@@ -349,10 +349,10 @@
             </attribute>
             <element name="swe:Quantity">
                <attribute name="definition">
-                  <value>urn:ogc:def:property:CSM:DISTOR_RAD1</value>
+                  <value>http://sensorml.com/ont/csm/property/DISTOR_RAD1</value>
                </attribute>
                <element name="swe:label">
-                  <value>K1 Coefficients</value>
+                  <value>K1 Coefficient</value>
                </element>  
                <optional>
                   <ref name="swe.quality"/>
@@ -371,10 +371,10 @@
             </attribute>
             <element name="swe:Quantity">
                <attribute name="definition">
-                  <value>urn:ogc:def:property:CSM:DISTOR_RAD2</value>
+                  <value>http://sensorml.com/ont/csm/property/DISTOR_RAD2</value>
                </attribute>
                <element name="swe:label">
-                  <value>K2 Coefficients</value>
+                  <value>K2 Coefficient</value>
                </element>  
                <optional>
                   <ref name="swe.quality"/>
@@ -393,10 +393,10 @@
             </attribute>
             <element name="swe:Quantity">
                <attribute name="definition">
-                  <value>urn:ogc:def:property:CSM:DISTOR_RAD3</value>
+                  <value>http://sensorml.com/ont/csm/property/DISTOR_RAD3</value>
                </attribute>
                <element name="swe:label">
-                  <value>Distortion Rad3 </value>
+                  <value>k3 Coefficient</value>
                </element>  
                <optional>
                   <ref name="swe.quality"/>
@@ -423,8 +423,11 @@
             </attribute>
             <element name="swe:Quantity">
                <attribute name="definition">
-                  <value>urn:ogc:def:property:CSM:DECEN_LENS1</value>
+                  <value>http://sensorml.com/ont/csm/property/DECEN_LENS1</value>
                </attribute>
+               <element name="swe:label">
+                  <value>Decentering Lens Correction (p1)</value>
+               </element>  
                <optional>
                   <ref name="swe.quality"/>
                </optional> 
@@ -445,8 +448,11 @@
             </attribute>
             <element name="swe:Quantity">
                <attribute name="definition">
-                  <value>urn:ogc:def:property:CSM:DECEN_LENS2</value>
+                  <value>http://sensorml.com/ont/csm/property/DECEN_LENS2</value>
                </attribute>
+               <element name="swe:label">
+                  <value>Decentering Lens Correction (p2)</value>
+               </element>  
                <optional>
                   <ref name="swe.quality"/>
                </optional> 
@@ -466,12 +472,14 @@
    <define name="csm.IdealOpticalCharacteristics">
       <element name="swe:DataRecord">
          <choice>
+            <a:documentation>Focal Length</a:documentation>
             <element name="swe:field">
                <attribute name="name">
                   <value>FocalLength</value>
                </attribute>
                <ref name="csm.FocalLength"/>
             </element>
+            <a:documentation>Calibrated Focal Length</a:documentation>
             <element name="swe:field">
                <attribute name="name">
                   <value>CalibratedFocalLength</value>
@@ -480,6 +488,7 @@
             </element>         
          </choice>
          <optional>
+            <a:documentation>Across-Track FOV</a:documentation>
             <element name="swe:field">
                <attribute name="name">
                   <value>Across-TrackFOV</value>
@@ -488,6 +497,7 @@
             </element>
          </optional>
          <optional>
+            <a:documentation>Along-Track FOV</a:documentation>
             <element name="swe:field">
                <attribute name="name">
                   <value>Along-TrackFOV</value>
@@ -496,6 +506,7 @@
             </element>
          </optional>
          <optional>
+            <a:documentation>Across-Track IFOV</a:documentation>
             <element name="swe:field">
                <attribute name="name">
                   <value>Across-TrackIFOV</value>
@@ -504,6 +515,7 @@
             </element>
          </optional> 
          <optional>
+            <a:documentation>Along-Track IFOV</a:documentation>
             <element name="swe:field">
                <attribute name="name">
                   <value>Along-TrackIFOV</value>
@@ -520,8 +532,11 @@
       <a:documentation>Focal Length</a:documentation>
       <element name="swe:Quantity">
          <attribute name="definition">
-            <value>urn:ogc:def:property:CSM:FOCAL_LENGTH</value>
+            <value>http://sensorml.com/ont/csm/property/FOCAL_LENGTH</value>
          </attribute>
+         <element name="swe:label">
+            <value>Focal Length</value>
+         </element>  
          <optional>
             <ref name="swe.quality"/>
          </optional> 
@@ -535,8 +550,11 @@
       <a:documentation>Calibrated Focal Length</a:documentation>
       <element name="swe:Quantity">
          <attribute name="definition">
-            <value>urn:ogc:def:property:CSM:FOCAL_LENGTH_CAL</value>
+            <value>http://sensorml.com/ont/csm/property/FOCAL_LENGTH_CAL</value>
          </attribute>
+         <element name="swe:label">
+            <value>Calibrated Focal Length</value>
+         </element>  
          <optional>
             <ref name="swe.quality"/>
          </optional> 
@@ -550,8 +568,11 @@
       <a:documentation>Across-TrackFOV</a:documentation>
       <element name="swe:Quantity">
          <attribute name="definition">
-            <value>urn:ogc:def:property:CSM:ACROSS_TRACK_FOV</value>
+            <value>http://sensorml.com/ont/csm/property/ACROSS_TRACK_FOV</value>
          </attribute>
+         <element name="swe:label">
+            <value>Acroiss-Track FOVqq</value>
+         </element>  
          <ref name="csm.angleUnit"/>
          <ref name="swe.quantityValue"/>
       </element>
@@ -562,8 +583,11 @@
       <a:documentation>Along-TrackFOV</a:documentation>
       <element name="swe:Quantity">
          <attribute name="definition">
-            <value>urn:ogc:def:property:CSM:ALONG_TRACK_FOV</value>
+            <value>http://sensorml.com/ont/csm/property/ALONG_TRACK_FOV</value>
          </attribute>
+         <element name="swe:label">
+            <value>Along-Track FOV</value>
+         </element>  
          <ref name="csm.angleUnit"/>
          <ref name="swe.quantityValue"/>
       </element>
@@ -574,8 +598,11 @@
       <a:documentation>Across-TrackIFOV</a:documentation>
       <element name="swe:Quantity">
          <attribute name="definition">
-            <value>urn:ogc:def:property:CSM:ACROSS_TRACK_IFOV</value>
+            <value>http://sensorml.com/ont/csm/property/ACROSS_TRACK_IFOV</value>
          </attribute>
+         <element name="swe:label">
+            <value>Across-Track IFOV</value>
+         </element>  
          <ref name="csm.angleUnit"/>
          <ref name="swe.quantityValue"/>
       </element>
@@ -586,8 +613,11 @@
       <a:documentation>Along-TrackIFOV</a:documentation>
       <element name="swe:Quantity">
          <attribute name="definition">
-            <value>urn:ogc:def:property:CSM:ALONG_TRACK_IFOV</value>
+            <value>http://sensorml.com/ont/csm/property/ALONG_TRACK_IFOV</value>
          </attribute>
+         <element name="swe:label">
+            <value>Along-Track IFOV</value>
+         </element>  
          <ref name="csm.angleUnit"/>
          <ref name="swe.quantityValue"/>
       </element>
