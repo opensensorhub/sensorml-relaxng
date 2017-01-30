@@ -175,7 +175,7 @@
 <!--      <a:documentation>Principal Point Coordinates</a:documentation>   -->
       <element name="swe:Vector">
          <attribute name="referenceFrame">
-            <value>http://sensorml.com/ont/csm/property/ImagePlaneCRS</value>
+            <value>http://sensorml.com/ont/swe/property/ImagePlaneCRS</value>
          </attribute>
          <element name="swe:label">
             <value>Principal Point Coordinates</value>

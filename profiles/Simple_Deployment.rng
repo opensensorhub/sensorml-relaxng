@@ -7,8 +7,9 @@
 
    <include href="../extensions/Position.rng"/>
    <include href="../extensions/Identify_Classify.rng"/>
-   <include href="../basic_sml/Basic_PhysicalProcess.rng">
-   </include>  
+   <include href="../extensions/Characteristics.rng"/>
+   <include href="../basic_sml/Basic_PhysicalProcess.rng"/>
+     
    
    <start>
       <ref name="sml-x.SimpleDeployedSensor"/>
@@ -58,7 +59,7 @@
             <ref name="sml.legalConstraint"/>
          </zeroOrMore>  -->
          <zeroOrMore>
-            <ref name="sml.characteristics"/>
+            <ref name="sml-x.deployment_characteristics"/>
          </zeroOrMore>
          <zeroOrMore>
             <ref name="sml.capabilities"/>
@@ -95,6 +96,31 @@
       </element>
    </define>
 
+   <!-- Characteristics -->
+   <define name="sml-x.deployment_characteristics">
+      <a:documentation>Characteristics</a:documentation>
+      <element name="sml:characteristics">
+         <!--         <optional>
+            <ref name="xlink.roles"/>
+            </optional> -->
+         <!--         <choice>
+            <a:documentation>Inline or By Reference</a:documentation>
+            <ref name="xlink.href"/> -->
+         <element name="sml:CharacteristicList">
+            <ref name="sml.metadataList"/>
+            <oneOrMore>
+               <choice>
+                  <ref name="sml-x.physicalProperties"/>
+                  <element name="sml:characteristic">
+                     <ref name="swe.dataComponentPropertyWithName"/>
+                  </element>
+               </choice>
+            </oneOrMore>
+         </element>
+         <!--        </choice>    -->
+      </element>
+   </define>
+   
 
    <!-- Deployed Physical Contents -->
    <define name="sml-x.deployed_PhysicalContents">

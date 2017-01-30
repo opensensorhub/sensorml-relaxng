@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+   xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0" 
+   xmlns:gml="http://www.opengis.net/gml/3.2" 
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+   
+   <!-- includes -->
+   <include href="../basic_sml/Basic_Core.rng"/>      
+   
+   <!-- Physical Properties -->
+   <define name="sml-x.physicalProperties">
+      <a:documentation>Physical Properties</a:documentation> 
+         <element name="swe:DataRecord">
+            <element name="swe:label">
+               <value>Physical Properties</value>
+            </element>  
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>length</value>
+               </attribute>
+               <ref name="sml-x.length"/>
+            </element>         
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>width</value>
+               </attribute>
+               <ref name="sml-x.width"/>
+            </element>         
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>height</value>
+               </attribute>
+               <ref name="sml-x.height"/>
+            </element>   
+            <optional>
+              <element name="swe:field">
+                 <attribute name="name">
+                    <value>weight</value>
+                 </attribute>
+                 <ref name="sml-x.weight"/>
+              </element>         
+            </optional>
+            <optional>
+               <element name="swe:field">
+                  <attribute name="name">
+                     <value>material</value>
+                  </attribute>
+                  <ref name="sml-x.material"/>
+               </element>         
+            </optional>
+         </element>
+   </define>   
+   
+   <!-- Characteristics -->
+   
+      <!-- length -->
+   <define name="sml-x.length">
+      <a:documentation>Length</a:documentation> 
+         <element name="sml:Quantity">
+            <attribute name="definition">
+               <value>http://sensorml.com/ont/swe/property/Length</value>
+            </attribute>
+            <element name="sml:label">
+               <value>Length</value>
+            </element>
+            <element name="swe:uom">
+               <attribute name="code">
+                  <value>mm</value>
+               </attribute>
+            </element>
+            <element name="sml:value">
+               <data type="decimal"/>
+            </element>
+         </element>
+   </define>
+   
+   <!-- width -->
+   <define name="sml-x.width">
+      <a:documentation>Width</a:documentation> 
+      <element name="swe:Quantity">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/width</value>
+         </attribute>
+         <element name="swe:label">
+            <value>Width</value>
+         </element>  
+         <element name="swe:uom">
+            <attribute name="code">
+               <value>mm</value>
+            </attribute>
+         </element>
+            <element name="sml:value">
+               <data type="decimal"/>
+            </element>
+      </element>
+   </define>
+   
+   <!-- height -->
+   <define name="sml-x.height">
+      <a:documentation>Height</a:documentation> 
+      <element name="swe:Quantity">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/height</value>
+         </attribute>
+         <element name="swe:label">
+            <value>Height</value>
+         </element>  
+         <element name="swe:uom">
+            <attribute name="code">
+               <value>mm</value>
+            </attribute>
+         </element>
+         <element name="sml:value">
+            <data type="decimal"/>
+         </element>
+      </element>
+   </define>
+   
+   <!-- weight -->
+   <define name="sml-x.weight">
+      <a:documentation>Weight</a:documentation> 
+      <element name="swe:Quantity">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/weight</value>
+         </attribute>
+         <element name="swe:label">
+            <value>Weight</value>
+         </element>  
+         <element name="swe:uom">
+            <attribute name="code">
+               <value>kg</value>
+            </attribute>
+         </element>
+         <element name="sml:value">
+            <data type="decimal"/>
+         </element>
+      </element>
+   </define>
+
+   <!-- material -->
+   <define name="sml-x.material">
+      <a:documentation>Material</a:documentation> 
+      <element name="swe:Category">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/material</value>
+         </attribute>
+         <element name="swe:label">
+            <value>Material</value>
+         </element>  
+         <element name="sml:value">
+            <data type="decimal"/>
+         </element>
+      </element>
+   </define>  
+ 
+</grammar>
+   
+    
