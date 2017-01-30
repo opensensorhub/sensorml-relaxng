@@ -13,7 +13,6 @@
    
    <start>
       <ref name="sml-x.SimpleDeployedSensor"/>
-<!--      <ref name="sml-x.ReallySimpleDeployedSensor"> -->
    </start>
   
 
@@ -35,22 +34,11 @@
          <ref name="sml.method"/>   
       </element>
    </define>
-   
-   <!-- Simple deployed stationary sensor -->
-   <define name="sml-x.ReallySimpleDeployedSensor">
-      <a:documentation>Really Simple Deployment</a:documentation>
-      <element name="sml:PhysicalComponent">
-         <ref name="sml-x.limited_DescribedObject"/>
-         <ref name="sml-x.deployed_PhysicalContents"/>
-         <ref name="sml.method"/>   
-      </element>
-   </define>
-   
-   
+      
    <!-- Described Deployed Object -->
    <define name="sml-x.deployed_DescribedObject">
       <group>
-         <ref name="sml.GmlObjectGroup"/>
+         <ref name="sml.deployed_GmlObjectGroup"/>
          <zeroOrMore>
             <ref name="sml.keywords"/>
          </zeroOrMore>
@@ -88,18 +76,15 @@
       </group>
    </define>
    
-   <!-- Described Deployed Object -->
-   <define name="sml-x.limited_DescribedObject">
+   <!-- Object Group -->
+   <define name="gml.deployed_GmlObjectGroup">
       <group>
-         <ref name="sml.GmlObjectGroup"/>
-           <ref name="sml-x.deployment_identifiers"/>
-         <zeroOrMore>
-            <ref name="sml-x.deployment_characteristics"/>
-         </zeroOrMore>
+            <ref name="gml.description"/>
+            <ref name="gml.name"/>         
       </group>
    </define>
    
-
+   
    <!-- Deployment Identifiers -->
    <!-- supports both discovery and deployment identifiers -->
    <define name="sml-x.deployment_identifiers">
