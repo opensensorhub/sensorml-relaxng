@@ -11,9 +11,9 @@
    <include href="../basic_sml/Basic_PhysicalProcess.rng"/>
      
    
-   <start combine="choice">
+   <start>
       <ref name="sml-x.SimpleDeployedSensor"/>
-      <ref name="sml-x.ReallySimpleDeployedSensor">
+<!--      <ref name="sml-x.ReallySimpleDeployedSensor"> -->
    </start>
   
 
