@@ -38,7 +38,9 @@
    <!-- Described Deployed Object -->
    <define name="sml-x.deployed_DescribedObject">
       <group>
-         <ref name="sml.deployed_GmlObjectGroup"/>
+<!--         <ref name="gml.GmlObjectGroup">   -->
+         <ref name="gml.description"/>
+         <ref name="gml.name"/>
          <zeroOrMore>
             <ref name="sml.keywords"/>
          </zeroOrMore>
@@ -75,16 +77,7 @@
          </zeroOrMore> -->
       </group>
    </define>
-   
-   <!-- Object Group -->
-   <define name="gml.deployed_GmlObjectGroup">
-      <group>
-            <ref name="gml.description"/>
-            <ref name="gml.name"/>         
-      </group>
-   </define>
-   
-   
+      
    <!-- Deployment Identifiers -->
    <!-- supports both discovery and deployment identifiers -->
    <define name="sml-x.deployment_identifiers">
