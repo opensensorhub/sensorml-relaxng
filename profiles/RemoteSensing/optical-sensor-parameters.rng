@@ -4,16 +4,13 @@
    xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:gml="http://www.opengis.net/gml/3.2"
    xmlns:swe="http://www.opengis.net/swe/2.0"
    xmlns:xlink="http://www.w3.org/1999/xlink"
-   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
-    
-   
+   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"> 
    <!-- -->
    <include href="csm-common.rng"/>
-   <!-- -->
-   
+   <!-- --> 
    
    <define name="csm.PixelGridCharacteristics">
-      <a:documentation>Pixel Grid Characteristics</a:documentation>
+<!--      <a:documentation>Pixel Grid Characteristics</a:documentation>  -->
       <element name="swe:DataRecord">
          <element name="swe:label">
             <value>Pixel Grid Characteristics</value>
@@ -134,7 +131,7 @@
    
    <!-- -->
    <define name="csm.OpticalDistortionCharacteristics">
-      <a:documentation>Optical Distortions</a:documentation>
+<!--      <a:documentation>Optical Distortions</a:documentation>  -->
       <element name="swe:DataRecord">
          <element name="swe:label">
             <value>Optical Distortions</value>
@@ -175,7 +172,7 @@
    
    <!-- -->
    <define name="csm.PrincipalPointCoordinates">
-      <a:documentation>Principal Point Coordinates</a:documentation>
+<!--      <a:documentation>Principal Point Coordinates</a:documentation>   -->
       <element name="swe:Vector">
          <attribute name="referenceFrame">
             <value>http://sensorml.com/ont/csm/property/ImagePlaneCRS</value>
@@ -225,7 +222,7 @@
    <!-- -->
  
    <define name="csm.AffineDistortionCoefficients">
-      <a:documentation>Affine Distortion Coefficients</a:documentation>
+ <!--     <a:documentation>Affine Distortion Coefficients</a:documentation>   -->
       <element name="swe:DataRecord">
          <element name="swe:label">
             <value>Affine Distortion Coefficients</value>
