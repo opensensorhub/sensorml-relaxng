@@ -39,7 +39,9 @@
       <element name="swe:uom">
          <attribute name="code">
             <choice>
+               <a:documentation>meters</a:documentation>
                <value>m</value>
+               <a:documentation>millimeters</a:documentation>
                <value>mm</value>
             </choice>
          </attribute>
@@ -48,15 +50,16 @@
    <!-- -->
    <define name="csm.pixelOrDistanceUnit">
       <choice>
-         <ref name="csm.distanceUnit"/>
+       <ref name="csm.distanceUnit"/>
 		 <ref name="csm.pixelUnit"/>
       </choice>
    </define>
    <!-- -->
    <define name="csm.pixelUnit">
+      <a:documentation>Pixels</a:documentation>
       <element name="swe:uom">
          <attribute name="xlink:href">
-            <value>urn:ogc:def:unit:CSM:pixel</value>
+            <value>http://sensorml.com/ont/swe/property/pixel</value>
          </attribute>
       </element>
    </define>
@@ -65,7 +68,9 @@
       <element name="swe:uom">
          <attribute name="code">
             <choice>
+               <a:documentation>degrees</a:documentation>
                <value>deg</value>
+               <a:documentation>radians</a:documentation>
                <value>rad</value>
             </choice>
          </attribute>
@@ -76,7 +81,9 @@
       <element name="swe:uom">
          <attribute name="code">
             <choice>
+               <a:documentation>seconds</a:documentation>
                <value>s</value>
+               <a:documentation>milliseconds</a:documentation>
                <value>ms</value>
             </choice>
          </attribute>

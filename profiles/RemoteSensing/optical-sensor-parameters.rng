@@ -571,7 +571,7 @@
             <value>http://sensorml.com/ont/csm/property/ACROSS_TRACK_FOV</value>
          </attribute>
          <element name="swe:label">
-            <value>Acroiss-Track FOVqq</value>
+            <value>Across-Track FOV</value>
          </element>  
          <ref name="csm.angleUnit"/>
          <ref name="swe.quantityValue"/>
