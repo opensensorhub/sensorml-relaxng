@@ -111,6 +111,7 @@
             <oneOrMore>
                <choice>
                   <ref name="sml-x.physicalProperties"/>
+                  <a:documentation>Other Characteristics</a:documentation>
                   <element name="sml:characteristic">
                      <ref name="swe.dataComponentPropertyWithName"/>
                   </element>

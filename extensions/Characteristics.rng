@@ -150,7 +150,7 @@
             <value>Material</value>
          </element>  
          <element name="sml:value">
-            <data type="decimal"/>
+            <data type="token"/>
          </element>
       </element>
    </define>  
