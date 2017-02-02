@@ -84,9 +84,15 @@
             <data type="string"/>
          </element>
          <element name="swe:field">
+            <attribute name="name">
+               <value>location</value>
+            </attribute>
             <ref name="sml-x.stationary_location"/>
          </element>
          <element name="swe:field">
+            <attribute name="name">
+               <value>orientation</value>
+            </attribute>
             <ref name="sml-x.NED_orientation"/>
          </element>
       </element>
@@ -113,9 +119,7 @@
             <data type="token"/>
          </attribute>
          <attribute name="srsName">
-            <value>
-               http://www.opengis.net/def/crs/EPSG/0/4326
-            </value>
+            <value>http://www.opengis.net/def/crs/EPSG/0/4326</value>
          </attribute>
          <element name="gml:coordinates">
             <!-- NOTE: configure this for 2-3 decimals -->
