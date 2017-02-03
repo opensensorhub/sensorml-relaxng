@@ -34,8 +34,11 @@
          <zeroOrMore>
             <ref name="sml.keywords"/>
          </zeroOrMore>
-         <zeroOrMore>
+         <optional>
             <ref name="sml-x.deployment_identifiers"/>
+         </optional>
+         <zeroOrMore>
+            <ref name="sml.identification"/>
          </zeroOrMore>
          <zeroOrMore>
             <ref name="sml.classification"/>
