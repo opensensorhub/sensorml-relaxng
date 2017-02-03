@@ -35,6 +35,7 @@
                <ref name="sml-x.height"/>
             </element>   
             <optional>
+              <a:documentation>Weigth</a:documentation> 
               <element name="swe:field">
                  <attribute name="name">
                     <value>weight</value>
@@ -43,6 +44,7 @@
               </element>         
             </optional>
             <optional>
+               <a:documentation>Material</a:documentation> 
                <element name="swe:field">
                   <attribute name="name">
                      <value>material</value>
