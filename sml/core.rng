@@ -14,9 +14,7 @@
    <!-- GML Object Group with SML modification-->
    <define name="sml.GmlObjectGroup">
       <group>
-         <optional>
-            <ref name="gml.id"/>
-         </optional>
+         <ref name="gml.id"/>
          <optional>
             <ref name="gml.description"/>
          </optional>

@@ -73,7 +73,7 @@
    
    <!-- ID -->
    <define name="gml.id">
-      <a:documentation>Local ID (for further reference)</a:documentation>
+      <a:documentation>Local XML ID</a:documentation>
       <attribute name="gml:id">
          <data type="ID"/>
       </attribute>
