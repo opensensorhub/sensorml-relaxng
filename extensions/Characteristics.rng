@@ -52,6 +52,10 @@
                   <ref name="sml-x.material"/>
                </element>         
             </optional>
+            <zeroOrMore>
+               <a:documentation>Other Property</a:documentation> 
+               <ref name="swe.field"/>
+            </zeroOrMore>
          </element>
    </define>   
    
