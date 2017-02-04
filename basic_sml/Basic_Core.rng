@@ -19,7 +19,7 @@
             <attribute name="codeSpace">
                <value>uniqueID</value>
             </attribute>
-            <data type="token"/>
+            <data type="anyURI"/>
          </element> 
          <optional>
             <ref name="gml.name"/>

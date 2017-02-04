@@ -17,9 +17,7 @@
    <!-- Object Group -->
    <define name="gml.GmlObjectGroup">
       <group>
-		  <optional>
-			 <ref name="gml.id"/>
-		  </optional>
+		  <ref name="gml.id"/>
 		  <optional>
 			 <ref name="gml.description"/>
 		  </optional>
