@@ -95,7 +95,7 @@
 	      <attribute name="codeSpace">
 	         <data type="anyURI"/>
 	      </attribute>
-		  <data type="string">
+		  <data type="anyURI">
 			<param name="minLength">1</param>
 		  </data>
 	   </element>	

@@ -545,7 +545,7 @@
    <define name="swe.referenceTime">
       <a:documentation>Reference Time</a:documentation>
       <attribute name="referenceTime">
-         <data type="date"/>
+         <data type="dateTime"/>
       </attribute>
    </define>
    
