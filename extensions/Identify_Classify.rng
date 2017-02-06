@@ -7,7 +7,7 @@
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
    
    <!-- includes -->
-   <include href="../basic_sml/Basic_Core.rng"/>
+   <include href="../sml/core.rng"/>
       
    
    <!-- Discovery Identifier List -->

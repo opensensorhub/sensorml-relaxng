@@ -9,7 +9,7 @@
    are SWE Common specific (if you remove the "position" element and just start with swe:DataRecord) -->
 
    <!-- -->
-   <include href="../basic_sml/Basic_PhysicalProcess.rng"/>   
+   <include href="../sml/PhysicalProcess.rng"/>   
    
    
    <!-- REFERENCE FRAMES -->

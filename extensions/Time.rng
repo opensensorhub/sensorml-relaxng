@@ -6,45 +6,8 @@
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
 
    <!-- -->
-   <include href="../swe/simpleTypes.rng"/>   
+   <include href="../sml/core.rng"/>   
    
-
-   <!-- ISO Time -->
-   <define name="swe-x.ReferenceFrame_XYZ">
-      <a:documentation>XYZ Reference Frame</a:documentation> 
-      <element name="sml:ReferenceFrame">
-         <ref name="swe.objectID"/>
-         <element name="swe:identifier">
-            <value>http://sensorml.com/ont/swe/position/CartesianFrame</value>
-         </element>
-         <ref name="swe.label"/>
-         <optional>
-            <ref name="swe.description"/>  
-         </optional>  
-         <element name="sml:origin">
-            <data type="string"/>
-         </element>
-         <element name="sml:axis">
-            <attribute name="sml:name">
-               <value>x</value>
-            </attribute>
-            <data type="string"/>
-         </element>
-         <element name="sml:axis">
-            <attribute name="sml:name">
-               <value>y</value>
-            </attribute>
-            <data type="string"/>
-         </element>
-         <element name="sml:axis">
-            <attribute name="sml:name">
-               <value>z</value>
-            </attribute>
-            <data type="string"/>
-         </element>
-      </element>
-   </define>
-
 
 
    
