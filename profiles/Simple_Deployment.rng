@@ -8,7 +8,7 @@
    <include href="../extensions/Position.rng"/>
    <include href="../extensions/Identify_Classify.rng"/>
    <include href="../extensions/Characteristics.rng"/>
-   <include href="../basic_sml/Basic_PhysicalProcess.rng"/>
+   <include href="../basic_sml/Basic_SensorML.rng"/>
      
    
    <start>

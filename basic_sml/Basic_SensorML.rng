@@ -6,8 +6,11 @@
    xmlns:swe="http://www.opengis.net/swe/2.0"
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
    
-   <!-- -->
-   <!-- <include href="./Basic_Process.rng"/> -->
-   <include href="./Basic_PhysicalProcess.rng"/>    
+   <include href="././sml/PhysicalProcess.rng"/>    
+
+
+   <!-- define simplification of the main SensorML grammar -->
    
+   
+      
 </grammar>
