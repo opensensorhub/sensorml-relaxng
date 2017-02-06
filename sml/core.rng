@@ -258,7 +258,7 @@
             <element name="sml:ContactList">
                <ref name="sml.metadataList"/>
                <oneOrMore>
-                  <element name="sml.member">
+                  <element name="sml:member">
                      <ref name="gmd.CI_ResponsibleParty"/>             
                   </element>
                </oneOrMore>
