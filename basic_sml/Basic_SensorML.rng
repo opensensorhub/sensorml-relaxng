@@ -11,6 +11,70 @@
 
    <!-- define simplification of the main SensorML grammar -->
    
-   
+   <!-- Characteristics -->
+   <define name="sml.characteristics">
+      <a:documentation>Characteristics</a:documentation>
+      <element name="sml:characteristics">
+         <!--         <optional>
+            <ref name="xlink.roles"/>
+         </optional> -->
+         <!--         <choice>
+            <a:documentation>Inline or By Reference</a:documentation>
+            <ref name="xlink.href"/> -->
+         <element name="sml:CharacteristicList">
+            <ref name="sml.metadataList"/>
+            <oneOrMore>
+               <element name="sml:characteristic">
+                  <ref name="swe.dataComponentPropertyWithName"/>
+               </element>
+            </oneOrMore>
+         </element>
+         <!--        </choice>    -->
+      </element>
+   </define>
+
+   <!-- Capabilities -->
+   <define name="sml.capabilities">
+      <a:documentation>Capabilities</a:documentation>
+      <element name="sml:capabilities">
+         <!--        <optional>
+            <ref name="xlink.roles"/>
+         </optional>   -->
+         <!--         <choice>
+            <a:documentation>Inline or By Reference</a:documentation>
+            <ref name="xlink.href"/>  -->
+         <element name="sml:CapabilityList">
+            <ref name="sml.metadataList"/>
+            <oneOrMore>
+               <element name="sml:capability">
+                  <ref name="swe.dataComponentPropertyWithName"/>
+               </element>
+            </oneOrMore>
+         </element>
+         <!--         </choice>       -->
+      </element>
+   </define>
+
+   <!-- Contacts -->
+   <define name="sml.contacts">
+      <a:documentation>Contacts</a:documentation>
+      <element name="sml:contacts">
+         <optional>
+            <ref name="xlink.roles"/>
+         </optional>
+         <!--         <choice>
+            <a:documentation>Inline or By Reference</a:documentation>
+            <ref name="xlink.href"/> -->
+         <element name="sml:ContactList">
+            <ref name="sml.metadataList"/>
+            <oneOrMore>
+               <element name="sml.member">
+                  <ref name="gmd.CI_ResponsibleParty"/>
+               </element>
+            </oneOrMore>
+         </element>
+         <!--         </choice>          -->
+      </element>
+   </define>
       
 </grammar>
