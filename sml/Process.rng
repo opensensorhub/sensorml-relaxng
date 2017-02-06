@@ -61,7 +61,7 @@
 			 <ref name="sml.configuration"/>
 		  </optional>
 		  <optional>
-			 <ref name="sml.featureOfInterest"/>
+			 <ref name="sml.featuresOfInterest"/>
 		  </optional>   
 		  <optional>
 			 <ref name="sml.inputs"/>
@@ -76,8 +76,27 @@
 			 <ref name="sml.modes"/>
 		  </zeroOrMore>
       </group>
-   </define>
-  
+   </define>  
+   
+   <!-- typeOf -->
+   <define name="sml.typeOf">
+      <a:documentation>TypeOf (Parent Process)</a:documentation>
+      <element name="sml:typeOf">
+         <ref name="xlink.hrefWithTitle"/>
+      </element>
+   </define>   
+   
+   <!-- Features of Interest -->
+   <define name="sml.featuresOfInterest">
+      <a:documentation>Features of Interest</a:documentation>
+      <element name="sml:featuresOfInterest">
+         <element name="sml:FeatureList">
+            <oneOrMore>
+               <ref name="sml.featureOfInterest"/>
+            </oneOrMore>
+         </element>
+      </element>
+   </define>   
    
    <!-- Input list -->
    <!-- Simplified version without support for href -->
@@ -187,6 +206,27 @@
       </element>
    </define>-->
    
+   <!-- modes -->
+   <define name="sml.modes">
+      <element name="sml:modes">
+         <element name="sml:ModeChoice">
+            <optional>
+               <ref name="gml.id"/>
+            </optional>
+            <!-- sml.extension -->
+            <oneOrMore>
+               <element name="sml:mode">
+                  <ref name="gml.xlink"/>
+                  <element name="sml.Mode">
+                     <ref name="sml.DescribedObject"/>
+                     <ref name="sml.configuration"/>
+                  </element>
+               </element>
+            </oneOrMore>
+         </element>
+      </element>
+   </define>       
+   
    <!--components -->
    <!-- Simplified version without support for href -->
  <!--  <define name="sml.components">
@@ -253,6 +293,14 @@
           </choice>
       </element>
    </define>-->
+  
+   <!-- Feature of Interest -->
+   <define name="sml.featureOfInterest">
+      <a:documentation>Feature of Interest</a:documentation>
+      <element name="sml:featureOfInterest">
+          <ref name="xlink.hrefWithTitle"/>
+       </element>
+   </define>
    
    <!-- Process Method defintion -->
    <define name="sml.method">
@@ -345,44 +393,6 @@
       <element name="sml:ObservableProperty">
          <ref name="swe.AbstractSWEIdentifiable"/>
       </element>
-   </define>
-  
-    <!-- typeOf -->
-    <define name="sml.typeOf">
-       <a:documentation>TypeOf (Parent Process)</a:documentation>
-       <element name="sml:typeOf">
-          <ref name="xlink.hrefWithTitle"/>
-       </element>
-    </define>
-   
-   
-   <!-- modes -->
-   <define name="sml.modes">
-      <element name="sml:modes">
-         <element name="sml:ModeChoice">
-            <optional>
-               <ref name="gml.id"/>
-            </optional>
-            <!-- sml.extension -->
-            <oneOrMore>
-               <element name="sml:mode">
-                  <ref name="gml.xlink"/>
-                  <element name="sml.Mode">
-                     <ref name="sml.DescribedObject"/>
-                     <ref name="sml.configuration"/>
-                  </element>
-               </element>
-            </oneOrMore>
-         </element>
-      </element>
-   </define>       
-   
-   <!-- Feature of Interest -->
-   <define name="sml.featureOfInterest">
-      <a:documentation>Feature of Interest</a:documentation>
-      <element name="sml:featureOfInterest">
-          <ref name="xlink.hrefWithTitle"/>
-       </element>
    </define>   
    
 </grammar>
