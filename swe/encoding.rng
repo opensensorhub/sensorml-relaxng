@@ -3,69 +3,49 @@
    xmlns="http://relaxng.org/ns/structure/1.0"
    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
    xmlns:gml="http://www.opengis.net/gml"
-   xmlns:swe="http://www.opengis.net/swe/1.0.1"
+   xmlns:swe="http://www.opengis.net/swe/2.0"
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
    <!-- -->
-   <include href="../gml/gml4swe.rng"/>
+   <include href="./simpleTypes.rng"/>
    <!-- -->
    <define name="swe.encoding">
       <element name="swe:encoding">
-         <optional>
-            <ref name="xlink.roles"/>
-         </optional>
-         <choice>
-            <ref name="xlink.href"/>
-            <ref name="swe.EncodingGroup"/>
-         </choice>
+         <ref name="swe.EncodingGroup"/>
       </element>
    </define>
    <!-- -->
    <define name="swe.EncodingGroup">
       <choice>
-         <ref name="swe.StandardFormat"/>
-         <ref name="swe.TextBlock"/>
-         <ref name="swe.BinaryBlock"/>   
-         <!-- Note: missing XMLBlock -->      
+         <ref name="swe.TextEncoding"/>
+         <ref name="swe.BinaryEncoding"/>
       </choice>
    </define>
    <!-- -->
-   <define name="swe.StandardFormat">
-      <a:documentation>Standard Mime Format</a:documentation>
-      <element name="swe:StandardFormat">
-         <optional>
-            <ref name="gml.id"/>
-         </optional>
-         <attribute name="mimeType">
-            <a:documentation>Mime Type</a:documentation>
-            <data type="token"/>
-         </attribute>
-      </element>
-   </define>
-   <!-- -->
-   <define name="swe.TextBlock">
-      <a:documentation>Text Based Encoding</a:documentation>
-      <element name="swe:TextBlock">
-         <optional>
-           <ref name="gml.id"/>
-        </optional>
-        <attribute name="tokenSeparator">
-            <a:documentation>Token Separator</a:documentation>
+   <define name="swe.TextEncoding">
+      <a:documentation>Text Encoding</a:documentation>
+      <element name="swe:TextEncoding">
+         <attribute name="tokenSeparator">
             <data type="token"/>
          </attribute>
          <attribute name="blockSeparator">
-            <a:documentation>Block Separator</a:documentation>
             <data type="token"/>
          </attribute>
-         <attribute name="decimalSeparator">
-            <a:documentation>Decimal Separator</a:documentation>
-            <data type="token"/>
-         </attribute>
+         <optional>
+            <attribute name="decimalSeparator">
+               <data type="token"/>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="collapseWhiteSpaces">
+               <data type="boolean"/>
+            </attribute>
+         </optional>
       </element>
    </define>
    <!-- -->
-   <define name="swe.BinaryBlock">
-      <a:documentation>Custom Binary Encoding</a:documentation>
-      <element name="swe:BinaryBlock">
+   <define name="swe.BinaryEncoding">
+      <a:documentation>Binary Encoding</a:documentation>
+      <element name="swe:BinaryEncoding">
          <optional>
             <ref name="gml.id"/>
          </optional>
@@ -74,7 +54,6 @@
             <choice>
                <value>base64</value>
                <value>raw</value>
-               <value>hex</value>
             </choice>
          </attribute>
          <attribute name="byteOrder">
@@ -95,7 +74,7 @@
                <a:documentation>Member</a:documentation>
                <choice>
                   <element name="swe:Component">
-                     <a:documentation>Scalar Component Binary Options</a:documentation>
+                     <a:documentation>Scalar Binary Options</a:documentation>
                      <attribute name="ref">
                         <a:documentation>Reference to Scalar Component</a:documentation>
                         <data type="token"/>
@@ -119,14 +98,8 @@
                         </attribute>
                      </optional>
                      <optional>
-                        <a:documentation>Number of Padding Bits Before</a:documentation>
-                        <attribute name="paddingBits-before">
-                           <data type="positiveInteger"/>
-                        </attribute>
-                     </optional>
-                     <optional>
-                        <a:documentation>Number of Padding Bits After</a:documentation>
-                        <attribute name="paddingBits-after">
+                        <a:documentation>Byte Length</a:documentation>
+                        <attribute name="byteLength">
                            <data type="positiveInteger"/>
                         </attribute>
                      </optional>
@@ -144,31 +117,31 @@
                         <data type="token"/>
                      </attribute>
                      <optional>
-                        <a:documentation>Block Byte Length</a:documentation>
+                        <a:documentation>Byte Length</a:documentation>
                         <attribute name="byteLength">
                            <data type="positiveInteger"/>
                         </attribute>
                      </optional>
                      <optional>
-                        <a:documentation>Number of Padding Bytes Before Block</a:documentation>
+                        <a:documentation>Padding Bytes Before</a:documentation>
                         <attribute name="paddingBytes-before">
                            <data type="positiveInteger"/>
                         </attribute>
                      </optional>
                      <optional>
-                        <a:documentation>Number of Padding Bytes After Block</a:documentation>
+                        <a:documentation>Padding Bytes After</a:documentation>
                         <attribute name="paddingBytes-after">
                            <data type="positiveInteger"/>
                         </attribute>
                      </optional>
                      <optional>
-                        <a:documentation>Block Encryption Type</a:documentation>
+                        <a:documentation>Encryption Type</a:documentation>
                         <attribute name="encryption">
                            <data type="anyURI"/>
                         </attribute>
                      </optional>
                      <optional>
-                        <a:documentation>Block Compression Type</a:documentation>                     
+                        <a:documentation>Compression Type</a:documentation>                     
                         <attribute name="compression">
                            <data type="anyURI"/>
                         </attribute>
@@ -179,23 +152,17 @@
          </oneOrMore>
       </element>
    </define>
-   <define name="swe.streamEncoding">
-      <element name="swe:streamEncoding">
+   <!-- -->
+   <!--<define name="swe.StandardFormat">
+      <a:documentation>Standard Mime Format</a:documentation>
+      <element name="swe:StandardFormat">
          <optional>
-            <ref name="xlink.roles"/>
+            <ref name="gml.id"/>
          </optional>
-         <choice>
-            <ref name="xlink.href"/>
-            <element name="swe:MultiplexdStreamFormat">
-               <optional>
-                  <attribute name="id"/>
-               </optional>
-               <attribute name="type">
-                  <data type="anyURI"/>
-               </attribute>
-               <attribute name="version"/>
-            </element>
-         </choice>
+         <attribute name="mimeType">
+            <a:documentation>Mime Type</a:documentation>
+            <data type="token"/>
+         </attribute>
       </element>
-   </define>
+   </define>-->   
 </grammar>
