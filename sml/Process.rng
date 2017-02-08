@@ -42,8 +42,7 @@
          <ref name="sml.components"/>
          <ref name="sml.connections"/>
       </element>
-   </define>
-   
+   </define>   
    
    <!-- Defines the basic components of a process -->
    <define name="sml.ProcessContents">
@@ -92,7 +91,7 @@
       <element name="sml:featuresOfInterest">
          <element name="sml:FeatureList">
             <oneOrMore>
-               <ref name="sml.featureOfInterest"/>
+               <ref name="sml.feature"/>
             </oneOrMore>
          </element>
       </element>
@@ -295,9 +294,9 @@
    </define>-->
   
    <!-- Feature of Interest -->
-   <define name="sml.featureOfInterest">
-      <a:documentation>Feature of Interest</a:documentation>
-      <element name="sml:featureOfInterest">
+   <define name="sml.feature">
+      <a:documentation>Feature Reference</a:documentation>
+      <element name="sml:feature">
           <ref name="xlink.hrefWithTitle"/>
        </element>
    </define>
