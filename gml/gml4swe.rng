@@ -538,7 +538,7 @@
           <ref name="gco.characterString" />
         </element>
       </optional>
-      <optional>
+      <optional selected="true">
         <element name="gmd:organisationName">
           <ref name="gco.characterString" />
         </element>
@@ -548,12 +548,12 @@
           <ref name="gco.characterString" />
         </element>
       </optional>
-      <optional>
+      <optional selected="true">
         <element name="gmd:contactInfo">
           <choice>
             <a:documentation>Inline or By Reference</a:documentation>
             <ref name="xlink.href" />
-            <ref name="gmd.CI_Contact" />
+            <ref name="gmd.CI_Contact" selected="true"/>
           </choice>
         </element>
       </optional>
@@ -569,21 +569,21 @@
   <define name="gmd.CI_Contact">
     <a:documentation>Contact</a:documentation>
     <element name="gmd:CI_Contact">
-      <optional>
+      <optional selected="true">
         <element name="gmd:phone">
           <choice>
             <a:documentation>Inline or By Reference</a:documentation>
             <ref name="xlink.href" />
-            <ref name="gmd.CI_Telephone" />
+            <ref name="gmd.CI_Telephone" selected="true"/>
           </choice>
         </element>
       </optional>
-      <optional>
+      <optional selected="true">
         <element name="gmd:address">
           <choice>
             <a:documentation>Inline or By Reference</a:documentation>
             <ref name="xlink.href" />
-            <ref name="gmd.CI_Address" />
+            <ref name="gmd.CI_Address" selected="true"/>
           </choice>
         </element>
       </optional>
@@ -613,7 +613,7 @@
   <define name="gmd.CI_Telephone">
     <a:documentation>Telephone</a:documentation>
     <element name="gmd:CI_Telephone">
-      <zeroOrMore>
+      <zeroOrMore selected="true">
         <element name="gmd:voice">
           <ref name="gco.characterString" />
         </element>
@@ -636,9 +636,9 @@
           <ref name="gco.characterString" />
         </element>
       </zeroOrMore>
-      <optional>
+      <optional selected="true">
         <element name="gmd:city">
-          <ref name="gco.characterString" />
+          <ref name="gco.characterString"/>
         </element>
       </optional>
       <optional>
@@ -646,12 +646,12 @@
           <ref name="gco.characterString" />
         </element>
       </optional>
-      <optional>
+      <optional selected="true">
         <element name="gmd:postalCode">
           <ref name="gco.characterString" />
         </element>
       </optional>
-      <optional>
+      <optional selected="true">
         <element name="gmd:country">
           <ref name="gco.characterString" />
         </element>

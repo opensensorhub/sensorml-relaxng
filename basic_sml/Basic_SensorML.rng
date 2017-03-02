@@ -11,6 +11,81 @@
 
    <!-- define simplification of the main SensorML grammar -->
    
+   <!-- Keywords -->
+   <define name="sml.keywords">
+      <a:documentation>Keywords</a:documentation>
+      <element name="sml:keywords">
+         <element name="sml:KeywordList">
+            <ref name="sml.metadataList"/>
+            <!--<optional>
+               <ref name="sml.codeSpace"/>
+            </optional>-->
+            <oneOrMore>
+               <element name="sml:keyword">
+                  <data type="token"/>
+               </element>
+            </oneOrMore>
+         </element>
+      </element>
+   </define>
+   
+   <!-- Identifiers -->
+   <define name="sml.identification">
+      <a:documentation>Identification</a:documentation>
+      <element name="sml:identification">
+         <element name="sml:IdentifierList">
+            <ref name="sml.metadataList"/>
+            <oneOrMore>
+               <element name="sml:identifier">
+                  <ref name="sml.Term"/>
+               </element>
+            </oneOrMore>
+         </element>
+      </element>
+   </define>
+   
+   <!-- classifiers -->
+   <define name="sml.classification">
+      <a:documentation>Classification</a:documentation>
+      <element name="sml:classification">
+         <element name="sml:ClassifierList">
+            <ref name="sml.metadataList"/>
+            <oneOrMore>
+               <element name="sml:classifier">
+                  <ref name="sml.Term"/>
+               </element>
+            </oneOrMore>
+         </element>
+      </element>
+   </define>
+   
+   <!-- Term -->
+   <define name="sml.Term">
+      <a:documentation>Term</a:documentation>
+      <element name="sml:Term">
+         <attribute name="definition">
+            <data type="anyURI"/>
+         </attribute> 
+         <element name="sml:label">
+            <data type="string">
+               <param name="minLength">1</param>
+            </data>
+         </element>
+         <optional>
+            <element name="sml:codeSpace">
+               <ref name="xlink.href">
+                  <a:documentation>Code Space</a:documentation>
+               </ref>
+            </element>
+         </optional>         
+         <element name="sml:value">
+            <data type="token">
+               <param name="minLength">1</param>
+            </data>
+         </element>
+      </element>
+   </define>
+   
    <!-- Characteristics -->
    <define name="sml.characteristics">
       <a:documentation>Characteristics</a:documentation>
@@ -68,7 +143,7 @@
          <element name="sml:ContactList">
             <ref name="sml.metadataList"/>
             <oneOrMore>
-               <element name="sml.member">
+               <element name="sml:member">
                   <ref name="gmd.CI_ResponsibleParty"/>
                </element>
             </oneOrMore>

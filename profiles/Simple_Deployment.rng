@@ -5,10 +5,10 @@
    xmlns:swe="http://www.opengis.net/swe/2.0"
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
 
+   <include href="../basic_sml/Basic_SensorML.rng"/>
    <include href="../extensions/Position.rng"/>
    <include href="../extensions/Identify_Classify.rng"/>
    <include href="../extensions/Characteristics.rng"/>
-   <include href="../basic_sml/Basic_SensorML.rng"/>
      
    
    <start>
@@ -19,11 +19,16 @@
    <!-- Simple deployed stationary sensor -->
    <define name="sml-x.SimpleDeployedSensor">
       <a:documentation>Simple Deployment</a:documentation>
-      <element name="sml:PhysicalComponent">
+      <element name="sml:PhysicalSystem">
          <ref name="sml-x.deployed_DescribedObject"/>
          <ref name="sml.ProcessContents"/> 
          <ref name="sml-x.deployed_PhysicalContents"/>
-         <ref name="sml.method"/>   
+         <optional>
+            <ref name="sml.components"/>
+         </optional>
+         <optional>
+            <ref name="sml.connections"/>
+         </optional>  
       </element>
    </define>
       
