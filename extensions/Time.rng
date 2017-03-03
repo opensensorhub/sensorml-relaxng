@@ -6,7 +6,6 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
 
-   <!-- -->
    <include href="../swe/simpleTypes.rng">   
       <start>
          <ref name="sml.TimeGroup"/>
@@ -129,6 +128,5 @@
          <ref name="gml.timeIndeterminateValueType"/>
       </choice>
    </define>
-   
    
 </grammar>

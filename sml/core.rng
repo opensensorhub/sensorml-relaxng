@@ -14,9 +14,7 @@
    <!-- GML Object Group with SML modification-->
    <define name="sml.GmlObjectGroup">
       <group>
-         <optional>
-            <ref name="gml.id"/>
-         </optional>
+         <ref name="gml.id"/>
          <optional>
             <ref name="gml.description"/>
          </optional>
@@ -24,7 +22,7 @@
             <attribute name="codeSpace">
                <value>uniqueID</value>
             </attribute>
-            <data type="token"/>
+            <data type="anyURI"/>
          </element>	
          <optional>
             <ref name="gml.name"/>
@@ -260,7 +258,7 @@
             <element name="sml:ContactList">
                <ref name="sml.metadataList"/>
                <oneOrMore>
-                  <element name="sml.member">
+                  <element name="sml:member">
                      <ref name="gmd.CI_ResponsibleParty"/>             
                   </element>
                </oneOrMore>

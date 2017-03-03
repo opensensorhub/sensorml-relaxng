@@ -3,10 +3,9 @@
    xmlns="http://relaxng.org/ns/structure/1.0"
    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"  
    xmlns:swe="http://www.opengis.net/swe/2.0"
-   xmlns:gml="http://www.opengis.net/gml"
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
    <!-- -->
-   <include href="./encoding.rng"/> 
+   <include href="../gml/gml4swe.rng"/> 
    
    <!-- AbstractSWEIdentifiable -->
    <define name="swe.AbstractSWEIdentifiable">
@@ -545,7 +544,7 @@
    <define name="swe.referenceTime">
       <a:documentation>Reference Time</a:documentation>
       <attribute name="referenceTime">
-         <data type="date"/>
+         <data type="dateTime"/>
       </attribute>
    </define>
    
@@ -671,7 +670,7 @@
    
    <!-- object ID -->
    <define name="swe.objectID">
-      <a:documentation>Local XML ID</a:documentation>
+      <a:documentation>Local ID</a:documentation>
       <attribute name="id">
          <data type="ID"/>
       </attribute>
@@ -679,7 +678,6 @@
    
    <!-- identifier -->
    <define name="swe.identifier">
-<!--      <a:documentation>Unique Identifier</a:documentation>-->
       <a:documentation>Unique ID</a:documentation>
       <element name="swe:identifier">
          <data type="anyURI"/>
@@ -688,7 +686,6 @@
    
    <!-- label -->
    <define name="swe.label">
-<!--      <a:documentation>Human Readable Label</a:documentation>-->
       <a:documentation>Label</a:documentation>
       <element name="swe:label">
          <data type="token">

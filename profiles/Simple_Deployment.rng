@@ -5,10 +5,10 @@
    xmlns:swe="http://www.opengis.net/swe/2.0"
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
 
+   <include href="../basic_sml/Basic_SensorML.rng"/>
    <include href="../extensions/Position.rng"/>
    <include href="../extensions/Identify_Classify.rng"/>
    <include href="../extensions/Characteristics.rng"/>
-   <include href="../basic_sml/Basic_PhysicalProcess.rng"/>
      
    
    <start>
@@ -19,11 +19,16 @@
    <!-- Simple deployed stationary sensor -->
    <define name="sml-x.SimpleDeployedSensor">
       <a:documentation>Simple Deployment</a:documentation>
-      <element name="sml:PhysicalComponent">
+      <element name="sml:PhysicalSystem">
          <ref name="sml-x.deployed_DescribedObject"/>
          <ref name="sml.ProcessContents"/> 
          <ref name="sml-x.deployed_PhysicalContents"/>
-         <ref name="sml.method"/>   
+         <optional>
+            <ref name="sml.components"/>
+         </optional>
+         <optional>
+            <ref name="sml.connections"/>
+         </optional>  
       </element>
    </define>
       
@@ -34,8 +39,11 @@
          <zeroOrMore>
             <ref name="sml.keywords"/>
          </zeroOrMore>
-         <zeroOrMore>
+         <optional>
             <ref name="sml-x.deployment_identifiers"/>
+         </optional>
+         <zeroOrMore>
+            <ref name="sml.identification"/>
          </zeroOrMore>
          <zeroOrMore>
             <ref name="sml.classification"/>
@@ -50,8 +58,11 @@
          <zeroOrMore>
             <ref name="sml.legalConstraint"/>
          </zeroOrMore>  -->
-         <zeroOrMore>
+         <optional>
             <ref name="sml-x.deployment_characteristics"/>
+         </optional>
+         <zeroOrMore>
+            <ref name="sml.characteristics"/>
          </zeroOrMore>
          <zeroOrMore>
             <ref name="sml.capabilities"/>
@@ -90,27 +101,17 @@
 
    <!-- Characteristics -->
    <define name="sml-x.deployment_characteristics">
-      <a:documentation>Characteristics</a:documentation>
+      <a:documentation>Physical Characteristics</a:documentation>
       <element name="sml:characteristics">
-         <!--         <optional>
-            <ref name="xlink.roles"/>
-            </optional> -->
-         <!--         <choice>
-            <a:documentation>Inline or By Reference</a:documentation>
-            <ref name="xlink.href"/> -->
          <element name="sml:CharacteristicList">
             <ref name="sml.metadataList"/>
-            <oneOrMore>
-               <choice>
-                  <ref name="sml-x.physicalProperties"/>
-                  <a:documentation>Other Characteristics</a:documentation>
-                  <element name="sml:characteristic">
-                     <ref name="swe.dataComponentPropertyWithName"/>
-                  </element>
-               </choice>
-            </oneOrMore>
+            <element name="sml:characteristic">
+               <attribute name="name">
+                  <value>physical</value>
+               </attribute>
+               <ref name="sml-x.physicalProperties"/>
+            </element>
          </element>
-         <!--        </choice>    -->
       </element>
    </define>
    
@@ -126,7 +127,7 @@
       
       <!-- use XYZ Reference Frame -->
       <optional>
-         <element name="localReferenceFrame">
+         <element name="sml:localReferenceFrame">
             <ref name="sml-x.ReferenceFrame_XYZ"/>
          </element>
       </optional>

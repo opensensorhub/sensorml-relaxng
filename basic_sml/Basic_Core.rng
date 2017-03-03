@@ -11,21 +11,19 @@
    <!-- GML Object Group with SML modification-->
    <define name="sml.GmlObjectGroup">
       <group>
+         <ref name="gml.id"/>
          <optional>
-            <ref name="gml.id"/>
-         </optional>
-      <optional>
             <ref name="gml.description"/>
-        </optional>
+         </optional>
          <element name="gml:identifier">
             <attribute name="codeSpace">
                <value>uniqueID</value>
             </attribute>
-            <data type="token"/>
+            <data type="anyURI"/>
          </element> 
-        <optional>
+         <optional>
             <ref name="gml.name"/>
-        </optional>
+         </optional>
       </group>
    </define>
 

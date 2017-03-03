@@ -7,7 +7,7 @@
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
    
    <!-- includes -->
-   <include href="../basic_sml/Basic_Core.rng"/>      
+   <include href="../sml/core.rng"/>      
    
    <!-- Physical Properties -->
    <define name="sml-x.physicalProperties">
@@ -35,6 +35,7 @@
                <ref name="sml-x.height"/>
             </element>   
             <optional>
+              <a:documentation>Weight</a:documentation> 
               <element name="swe:field">
                  <attribute name="name">
                     <value>weight</value>
@@ -43,6 +44,7 @@
               </element>         
             </optional>
             <optional>
+               <a:documentation>Material</a:documentation> 
                <element name="swe:field">
                   <attribute name="name">
                      <value>material</value>
@@ -50,6 +52,10 @@
                   <ref name="sml-x.material"/>
                </element>         
             </optional>
+            <zeroOrMore>
+               <a:documentation>Other Property</a:documentation> 
+               <ref name="swe.field"/>
+            </zeroOrMore>
          </element>
    </define>   
    

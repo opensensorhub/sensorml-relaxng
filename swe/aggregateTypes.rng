@@ -1,209 +1,215 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<grammar
-   xmlns="http://relaxng.org/ns/structure/1.0"
-   xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-   xmlns:swe="http://www.opengis.net/swe/2.0"
-   xmlns:gml="http://www.opengis.net/gml"
-   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
-   <!-- -->
-   <include href="./simpleTypes.rng"/>
-   <!--  -->
-   
-   <!--
-   <start combine="choice">
-      <ref name="swe.AnyData"/>
-   </start> -->
-   
-   <!-- DataRecord -->
-   <define name="swe.DataRecord">
-<!--      <a:documentation>Data Record (Group of fields of any type)</a:documentation>-->
-      <a:documentation>Data Record</a:documentation>
-      <element name="swe:DataRecord">
-         <ref name="swe.AbstractDataComponent"/>
-         <oneOrMore>
-            <a:documentation>Field</a:documentation>
-            <ref name="swe.field"/>
-         </oneOrMore>
-      </element>
-   </define>
-   
-   <!-- Vector -->
-   <define name="swe.Vector">
-<!--      <a:documentation>Vector (N-Dimensional vector of numeric quantities)</a:documentation>-->
-      <a:documentation>Vector</a:documentation>
-      <element name="swe:Vector">
-         <ref name="swe.AbstractDataComponent"/>
-         <ref name="swe.refFrameAttributes"/>
-         <oneOrMore>
-            <a:documentation>Coordinate</a:documentation>
-            <ref name="swe.coordinate"/>
-         </oneOrMore>
-      </element>
-   </define>
-   
-   <!-- DataChoice -->
-   <define name="swe.DataChoice">
-<!--      <a:documentation>Data Choice (Group of possible options)</a:documentation>-->
-      <a:documentation>Data Choice</a:documentation>
-      <element name="swe:DataChoice">
-         <ref name="swe.AbstractDataComponent"/>
-         <optional>
-            <element name="swe:choiceValue">
-               <ref name="swe.Category"/>
-            </element>
-         </optional>
-         <oneOrMore>
-            <a:documentation>Item</a:documentation>
-            <ref name="swe.item"/>
-         </oneOrMore>
-      </element>
-   </define>
-   
-   <!-- DataArray -->
-   <define name="swe.DataArray">
-<!--      <a:documentation>Data Array (Array of N identical components)</a:documentation>-->
-      <a:documentation>Data Array</a:documentation>
-      <element name="swe:DataArray">
-         <ref name="swe.AbstractDataComponent"/>
-         <ref name="swe.elementCount"/>
-         <element name="swe:elementType">
-            <ref name="swe.dataComponentPropertyWithName"/>
-         </element>
-         <optional>
-            <ref name="swe.EncodedValuesGroup"/>
-         </optional>
-      </element>
-   </define>
-   
-   <!-- Square Matrix -->
-   <define name="swe.Matrix">
-<!--      <a:documentation>Square Matrix (Array of N numerical values)</a:documentation>-->
-      <a:documentation>Square Matrix</a:documentation>
-      <element name="swe:Matrix">
-         <ref name="swe.AbstractDataComponent"/>
-         <ref name="swe.refFrameAttributes"/>
-         <ref name="swe.elementCount"/>
-         <element name="swe:elementType">
-            <choice>
-               <a:documentation>Type</a:documentation>
-               <ref name="xlink.href"/>
-               <ref name="swe.AnyNumericalList"/>
-               <ref name="swe.Matrix"/>
-            </choice>
-         </element>
-         <optional>
-            <ref name="swe.EncodedValuesGroup"/>
-         </optional>
-      </element>
-   </define>
-   
-   <!-- elementCount -->
-   <define name="swe.elementCount">
-      <element name="swe:elementCount">
-         <choice>
-            <a:documentation>Array Size</a:documentation>      
-            <attribute name="ref">
-               <a:documentation>By Reference</a:documentation>      
-               <data type="IDREF"/>
-            </attribute>
-            <ref name="swe.Count"/>
-         </choice>
-      </element>
-   </define>
-   
-   <!-- dataComponentProperty -->
-   <define name="swe.dataComponentProperty">
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+  xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+  xmlns:swe="http://www.opengis.net/swe/2.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <!-- -->
+  <include href="./encoding.rng" />
+  <!-- -->
+
+  <!-- <start combine="choice"> <ref name="swe.AnyData"/> </start> -->
+
+  <!-- DataRecord -->
+  <define name="swe.DataRecord">
+    <!-- <a:documentation>Data Record (Group of fields of any type)</a:documentation> -->
+    <a:documentation>Data Record</a:documentation>
+    <element name="swe:DataRecord">
+      <ref name="swe.AbstractDataComponent" />
+      <oneOrMore>
+        <a:documentation>Field</a:documentation>
+        <ref name="swe.field" />
+      </oneOrMore>
+    </element>
+  </define>
+
+  <!-- Vector -->
+  <define name="swe.Vector">
+    <!-- <a:documentation>Vector (N-Dimensional vector of numeric quantities)</a:documentation> -->
+    <a:documentation>Vector</a:documentation>
+    <element name="swe:Vector">
+      <ref name="swe.AbstractDataComponent" />
+      <ref name="swe.refFrameAttributes" />
+      <oneOrMore>
+        <a:documentation>Coordinate</a:documentation>
+        <ref name="swe.coordinate" />
+      </oneOrMore>
+    </element>
+  </define>
+
+  <!-- DataChoice -->
+  <define name="swe.DataChoice">
+    <!-- <a:documentation>Data Choice (Group of possible options)</a:documentation> -->
+    <a:documentation>Data Choice</a:documentation>
+    <element name="swe:DataChoice">
+      <ref name="swe.AbstractDataComponent" />
       <optional>
-         <ref name="xlink.roles"/>
+        <element name="swe:choiceValue">
+          <ref name="swe.Category" />
+        </element>
       </optional>
+      <oneOrMore>
+        <a:documentation>Item</a:documentation>
+        <ref name="swe.item" />
+      </oneOrMore>
+    </element>
+  </define>
+
+  <!-- DataArray -->
+  <define name="swe.DataArray">
+    <!-- <a:documentation>Data Array (Array of N identical components)</a:documentation> -->
+    <a:documentation>Data Array</a:documentation>
+    <element name="swe:DataArray">
+      <ref name="swe.AbstractDataComponent" />
+      <ref name="swe.elementCount" />
+      <element name="swe:elementType">
+        <ref name="swe.dataComponentPropertyWithName" />
+      </element>
+      <optional>
+        <a:documentation>Encoded Values</a:documentation>
+        <ref name="swe.EncodedValuesGroup" />
+      </optional>
+    </element>
+  </define>
+
+  <!-- Square Matrix -->
+  <define name="swe.Matrix">
+    <!-- <a:documentation>Square Matrix (Array of N numerical values)</a:documentation> -->
+    <a:documentation>Square Matrix</a:documentation>
+    <element name="swe:Matrix">
+      <ref name="swe.AbstractDataComponent" />
+      <ref name="swe.refFrameAttributes" />
+      <ref name="swe.elementCount" />
+      <element name="swe:elementType">
+        <choice>
+          <a:documentation>Type</a:documentation>
+          <ref name="xlink.href" />
+          <ref name="swe.AnyNumericalList" />
+          <ref name="swe.Matrix" />
+        </choice>
+      </element>
+      <optional>
+        <ref name="swe.EncodedValuesGroup" />
+      </optional>
+    </element>
+  </define>
+
+  <!-- elementCount -->
+  <define name="swe.elementCount">
+    <element name="swe:elementCount">
+      <choice>
+        <a:documentation>Array Size</a:documentation>
+        <attribute name="ref">
+          <a:documentation>By Reference</a:documentation>
+          <data type="IDREF" />
+        </attribute>
+        <element name="swe:Count">
+          <optional>
+            <ref name="swe.definition"/>
+          </optional>
+          <optional>
+            <ref name="swe.axisID"/>
+          </optional>
+          <optional>
+            <ref name="swe.countValue"/>
+          </optional>
+        </element>
+      </choice>
+    </element>
+  </define>
+
+  <!-- dataComponentProperty -->
+  <define name="swe.dataComponentProperty">
+    <optional>
+      <ref name="xlink.roles" />
+    </optional>
+    <choice>
+      <a:documentation>Type</a:documentation>
+      <ref name="xlink.href" />
+      <ref name="swe.AnyDataList" />
+    </choice>
+  </define>
+
+  <!-- dataComponentPropertyWithName -->
+  <define name="swe.dataComponentPropertyWithName">
+    <ref name="swe.nameAtt" />
+    <ref name="swe.dataComponentProperty" />
+  </define>
+
+  <!-- field -->
+  <define name="swe.field">
+    <element name="swe:field">
+      <ref name="swe.dataComponentPropertyWithName" />
+    </element>
+  </define>
+
+  <!-- item -->
+  <define name="swe.item">
+    <element name="swe:item">
+      <ref name="swe.dataComponentPropertyWithName" />
+    </element>
+  </define>
+
+  <!-- coordinate -->
+  <define name="swe.coordinate">
+    <element name="swe:coordinate">
+      <ref name="swe.nameAtt" />
+      <!--<optional> <ref name="xlink.roles"/> </optional> -->
       <choice>
         <a:documentation>Type</a:documentation>
-        <ref name="xlink.href"/>
- 	      <ref name="swe.AnyDataList"/>
+        <ref name="xlink.href" />
+        <ref name="swe.AnyNumericalList" />
       </choice>
-   </define>
-   
-   <!-- dataComponentPropertyWithName -->
-   <define name="swe.dataComponentPropertyWithName">
-      <ref name="swe.nameAtt"/>
-      <ref name="swe.dataComponentProperty"/>
-   </define>
-   
-   <!-- field -->
-   <define name="swe.field">
-      <element name="swe:field">
-         <ref name="swe.dataComponentPropertyWithName"/>
-      </element>
-   </define>
-   
-   <!-- item -->
-   <define name="swe.item">
-      <element name="swe:item">
-         <ref name="swe.dataComponentPropertyWithName"/>
-      </element>
-   </define>
-   
-   <!-- coordinate -->
-   <define name="swe.coordinate">
-      <element name="swe:coordinate">
-         <ref name="swe.nameAtt"/>
-         <!--<optional>
-            <ref name="xlink.roles"/>
-         </optional>-->
-         <choice>
-            <a:documentation>Type</a:documentation>
-            <ref name="xlink.href"/>
-		        <ref name="swe.AnyNumericalList"/>
-         </choice>
-      </element>
-   </define>
-   
-   <!-- reference frames attributes -->
-   <define name="swe.refFrameAttributes">
+    </element>
+  </define>
+
+  <!-- reference frames attributes -->
+  <define name="swe.refFrameAttributes">
+    <optional>
+      <ref name="swe.referenceFrame" />
+    </optional>
+    <optional>
+      <ref name="swe.localFrame" />
+    </optional>
+  </define>
+
+  <!-- AnyData Group -->
+  <define name="swe.AnyData">
+    <choice>
+      <a:documentation>Type</a:documentation>
+      <ref name="swe.AnyDataList" />
+    </choice>
+  </define>
+
+  <define name="swe.AnyDataList">
+    <ref name="swe.AnySimpleList" />
+    <ref name="swe.DataRecord" />
+    <ref name="swe.DataChoice" />
+    <ref name="swe.DataArray" />
+    <ref name="swe.Vector" />
+    <ref name="swe.Matrix" />
+  </define>
+
+  <!-- EncodedValueGroup -->
+  <define name="swe.EncodedValuesGroup">
+    <a:documentation>Encoded Values</a:documentation>
+    <ref name="swe.encoding" />
+    <optional>
+      <ref name="swe.arrayValues" />
+    </optional>
+  </define>
+
+  <!-- arrayValues -->
+  <define name="swe.arrayValues">
+    <element name="swe:values">
       <optional>
-         <ref name="swe.referenceFrame"/>
-      </optional>
-      <optional>
-         <ref name="swe.localFrame"/>
-      </optional>
-   </define>
-   
-   <!-- AnyData Group -->
-   <define name="swe.AnyData">
-      <choice>
-         <a:documentation>Type</a:documentation>
-         <ref name="swe.AnyDataList"/>
-      </choice>
-   </define>
-   
-   <define name="swe.AnyDataList">
-      <ref name="swe.AnySimpleList"/>
-      <ref name="swe.DataRecord"/>
-      <ref name="swe.DataChoice"/>
-      <ref name="swe.DataArray"/>
-      <ref name="swe.Vector"/>
-      <ref name="swe.Matrix"/>
-   </define>
-   
-   <!-- EncodedValueGroup -->
-   <define name="swe.EncodedValuesGroup">
-      <ref name="swe.encoding"/>
-      <optional>
-         <ref name="swe.arrayValues"/>
-      </optional>
-   </define>
-   
-   <!-- arrayValues -->
-   <define name="swe.arrayValues">
-      <optional>
-         <ref name="xlink.roles"/>
+        <ref name="xlink.roles" />
       </optional>
       <choice>
-         <ref name="xlink.href"/>
-         <element name="swe:values">
-            <text/>
-         </element>
+        <ref name="xlink.href" />
+        <text>
+          <a:documentation>Inline Values</a:documentation>
+        </text>
       </choice>
-   </define>
-   
+    </element>
+  </define>
+
 </grammar>
