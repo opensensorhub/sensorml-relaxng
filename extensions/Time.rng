@@ -3,49 +3,132 @@
    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
    xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:gml="http://www.opengis.net/gml/3.2"
    xmlns:swe="http://www.opengis.net/swe/2.0"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
 
    <!-- -->
-   <include href="../swe/simpleTypes.rng"/>   
+   <include href="../swe/simpleTypes.rng">   
+      <start>
+         <ref name="sml.TimeGroup"/>
+      </start>
+   </include>
    
-
-   <!-- ISO Time -->
-   <define name="swe-x.ReferenceFrame_XYZ">
-      <a:documentation>XYZ Reference Frame</a:documentation> 
-      <element name="sml:ReferenceFrame">
-         <ref name="swe.objectID"/>
-         <element name="swe:identifier">
-            <value>http://sensorml.com/ont/swe/position/CartesianFrame</value>
-         </element>
-         <ref name="swe.label"/>
-         <optional>
-            <ref name="swe.description"/>  
-         </optional>  
-         <element name="sml:origin">
-            <data type="string"/>
-         </element>
-         <element name="sml:axis">
-            <attribute name="sml:name">
-               <value>x</value>
-            </attribute>
-            <data type="string"/>
-         </element>
-         <element name="sml:axis">
-            <attribute name="sml:name">
-               <value>y</value>
-            </attribute>
-            <data type="string"/>
-         </element>
-         <element name="sml:axis">
-            <attribute name="sml:name">
-               <value>z</value>
-            </attribute>
-            <data type="string"/>
-         </element>
+   <!-- Time Definitions -->
+   <define name="sml.TimeGroup" combine="choice">
+      <choice>
+         <ref name="swe-x.SamplingTime_ISO"/>
+         <ref name="swe-x.SamplingTimeRange_ISO"/>
+         <ref name="swe-x.ValidTime_ISO"/>
+         <ref name="swe-x.ValidTimeRange_ISO"/>
+      </choice>
+   </define>
+   
+   
+   
+<!-- ISO-8601 DateTime  -->
+  
+   <!-- ISO Sampling Time -->
+   <define name="swe-x.SamplingTime_ISO">
+      <a:documentation>ISO-8601 Sampling Time</a:documentation> 
+      <element name="swe:Time">
+         <ref name="swe-x.SamplingTime"/>
+         <ref name="swe-x.iso-timeUnits"/>
+         <ref name="swe-x.iso-timeValue"/>
       </element>
    </define>
+   
+   <!-- ISO Sampling TimeRange -->
+   <define name="swe-x.SamplingTimeRange_ISO">
+      <a:documentation>ISO-8601 Sampling TimeRange</a:documentation> 
+      <element name="swe:Time">
+         <ref name="swe-x.SamplingTime"/>
+         <ref name="swe-x.iso-timeUnits"/>
+         <ref name="swe-x.iso-timeRangeValue"/>
+      </element>
+   </define>
+   
+   <!-- ISO Valid Time -->
+   <define name="swe-x.ValidTime_ISO">
+      <a:documentation>ISO-8601 Valid Time</a:documentation> 
+      <element name="swe:Time">
+         <ref name="swe-x.SamplingTime"/>
+         <ref name="swe-x.iso-timeUnits"/>
+         <ref name="swe-x.iso-timeValue"/>
+      </element>
+   </define>
+   
+   <!-- ISO Valid TimeRange -->
+   <define name="swe-x.ValidTimeRange_ISO">
+      <a:documentation>ISO-8601 Valid TimeRange</a:documentation> 
+      <element name="swe:Time">
+         <ref name="swe-x.SamplingTime"/>
+         <ref name="swe-x.iso-timeUnits"/>
+         <ref name="swe-x.iso-timeRangeValue"/>
+      </element>
+   </define>
+   
 
+<!-- TIME TYPES -->
 
-
+   <define name="swe-x.SamplingTime">
+      <a:documentation>Sampling Time</a:documentation> 
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/SamplingTime</value>
+         </attribute>
+         <element name="swe:label">
+            <value>Sampling Time</value>
+         </element>  
+   </define>
+   
+   <define name="swe-x.ValidTime">
+      <a:documentation>Valid Time</a:documentation> 
+      <attribute name="definition">
+         <value>http://sensorml.com/ont/swe/property/ValidTime</value>
+      </attribute>
+      <element name="swe:label">
+         <value>Valid Time</value>
+      </element>  
+   </define>
+   
+   <!-- ISO-8601 time units -->
+   <define name="swe-x.iso-timeUnits">
+      <element name="swe:uom">
+         <attribute name="xlink:href">
+            <value>http://www.opengis.net/def/uom/ISO-8601/0/Gregorian</value>
+         </attribute>
+      </element>
+   </define>  
+   
+  
+ 
+   <!-- iso time Value -->
+   <define name="swe-x.iso-timeValue">
+      <a:documentation>Value</a:documentation>
+      <element name="swe:value">
+         <ref name="swe-x.isoTimePositionType"/>
+      </element>
+   </define>
+   
+   <!-- time range Value -->
+   <define name="swe-x.iso-timeRangeValue">
+      <a:documentation>Values</a:documentation>
+      <element name="swe:value">
+         <list>
+            <ref name="swe-x.isoTimePositionType"/>
+            <ref name="swe-x.isoTimePositionType"/>
+         </list>
+      </element>
+   </define>
+   
+   <!-- iso time position type -->
+   <define name="swe-x.isoTimePositionType">
+      <choice>
+         <data type="dateTime"/>
+         <data type="date"/>
+         <data type="time"/>
+         <ref name="gml.timeIndeterminateValueType"/>
+      </choice>
+   </define>
+   
    
 </grammar>
