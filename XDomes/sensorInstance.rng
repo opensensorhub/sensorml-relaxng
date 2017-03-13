@@ -146,34 +146,42 @@
 -->         
             <a:documentation>Depth Option</a:documentation>
             <choice>
-               <element name="sml:setMode">
-                  <a:documentation>200m Depth Option</a:documentation>
-                  <attribute name="ref">
-                     <value>modes/depthOption</value>
-                  </attribute>
-                  <value>depthOption_200m</value>
-               </element>
-               <element name="sml:setMode">
-                  <a:documentation>500m Depth Option</a:documentation>
-                  <attribute name="ref">
-                     <value>modes/depthOption</value>
-                  </attribute>
-                  <value>depthOption_500m</value>
-               </element>
-               <element name="sml:setMode">
-                  <a:documentation>1000m Depth Option</a:documentation>
-                  <attribute name="ref">
-                     <value>modes/depthOption</value>
-                  </attribute>
-                  <value>depthOption_1000m</value>
-               </element>
-               <element name="sml:setMode">
-                  <a:documentation>6000m Depth Option</a:documentation>
-                  <attribute name="ref">
-                     <value>modes/depthOption</value>
-                  </attribute>
-                  <value>depthOption_6000m</value>
-               </element>
+              <group>
+                 <a:documentation>200m Depth Option</a:documentation>
+                 <element name="sml:setMode">
+                    <attribute name="ref">
+                       <value>modes/depthOption</value>
+                    </attribute>
+                    <value>depthOption_200m</value>
+                 </element>
+              </group>
+              <group>
+                 <a:documentation>500m Depth Option</a:documentation>
+                 <element name="sml:setMode">
+                    <attribute name="ref">
+                       <value>modes/depthOption</value>
+                    </attribute>
+                    <value>depthOption_500m</value>
+                 </element>
+              </group>
+              <group>
+                 <a:documentation>1000m Depth Option</a:documentation>
+                 <element name="sml:setMode">
+                    <attribute name="ref">
+                       <value>modes/depthOption</value>
+                    </attribute>
+                    <value>depthOption_1000m</value>
+                 </element>
+              </group>
+              <group>
+                 <a:documentation>6000m Depth Option</a:documentation>
+                 <element name="sml:setMode">
+                    <attribute name="ref">
+                       <value>modes/depthOption</value>
+                    </attribute>
+                    <value>depthOption_6000m</value>
+                 </element>
+              </group>
             </choice>
 <!--            
             <zeroOrMore>
