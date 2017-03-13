@@ -8,12 +8,12 @@
 
    <include href="../swe/simpleTypes.rng">   
       <start>
-         <ref name="sml.TimeGroup"/>
+         <ref name="sml-x.TimeGroup"/>
       </start>
    </include>
    
    <!-- Time Definitions -->
-   <define name="sml.TimeGroup" combine="choice">
+   <define name="sml-x.TimeGroup" combine="choice">
       <choice>
          <ref name="swe-x.SamplingTime_ISO"/>
          <ref name="swe-x.SamplingTimeRange_ISO"/>

@@ -30,7 +30,8 @@
          </zeroOrMore>
          <zeroOrMore>
             <ref name="sml.classification"/>
-         </zeroOrMore>         
+         </zeroOrMore>  
+         <ref name="sml-x.instance_history"/>
          <element name="sml:typeOf">
             <ref name="xlink.hrefWithTitle"/>
          </element>         
@@ -194,6 +195,112 @@
          </element>
       </element>
    </define>
+   
+   <!-- History -->
+   <a:documentation>Instance History</a:documentation>
+   <define name="sml-x.instance_history">
+      <element name="sml:history">
+         <element name="sml:EventList">
+            <ref name="sml.metadataList"/>
+   
+               <element name="member">
+                  <attribute name="name">
+                     <value>manufactureDate</value>
+                  </attribute>
+                  <element name="sml:Event">
+                     <attribute name="definition">
+                        <value>http://sensorml.com/ont/swe/property/manufactureDate</value>
+                     </attribute>             
+                     <element name="swe.label">
+                        <value>Manufacture Date</value>
+                     </element>                 
+                     <optional>
+                        <ref name="swe.description"/>
+                     </optional>              
+                     <element name="sml:time">
+                        <element name="gml:TimeInstance">
+                           <element name="timePosition">
+                              <value type="dateTime"/>
+                           </element>   
+                        </element>   
+                     </element>
+                     <optional>
+                        <element name="property">
+                           <ref name="swe.AnyData"/>
+                        </element>
+                     </optional>
+                     <ref name="sml.configuration"/>
+                  </element>
+               </element>
+   
+            <element name="member">
+               <attribute name="name">
+                  <value>lastRepairDate</value>
+               </attribute>
+               <element name="sml:Event">
+                  <attribute name="definition">
+                     <value>http://sensorml.com/ont/swe/property/lastRepairDate</value>
+                  </attribute>             
+                  <element name="swe.label">
+                     <value>Last Repair Date</value>
+                  </element>                 
+                  <optional>
+                     <ref name="swe.description"/>
+                  </optional>              
+                  <element name="sml:time">
+                     <element name="gml:TimeInstance">
+                        <element name="timePosition">
+                           <value type="dateTime"/>
+                        </element>   
+                     </element>   
+                  </element>
+                  <optional>
+                     <element name="property">
+                        <ref name="swe.AnyData"/>
+                     </element>
+                  </optional>
+                  <ref name="sml.configuration"/>
+               </element>
+            </element>
+    
+            <element name="member">
+               <attribute name="name">
+                  <value>lastCalibrationDate</value>
+               </attribute>
+               <element name="sml:Event">
+                  <attribute name="definition">
+                     <value>http://sensorml.com/ont/swe/property/lastCalibrationDate</value>
+                  </attribute>             
+                  <element name="swe.label">
+                     <value>Last Calibration Date</value>
+                  </element>                 
+                  <optional>
+                     <ref name="swe.description"/>
+                  </optional>              
+                  <element name="sml:time">
+                     <element name="gml:TimeInstance">
+                        <element name="timePosition">
+                           <value type="dateTime"/>
+                        </element>   
+                     </element>   
+                  </element>
+                  <optional>
+                     <element name="property">
+                        <ref name="swe.AnyData"/>
+                     </element>
+                  </optional>
+                  <ref name="sml.configuration"/>
+               </element>
+            </element>
+            
+            <zeroOrMore>
+               <element name="sml:member">
+                  <ref name="sml.Event"/>
+               </element>
+            </zeroOrMore>
+         </element>
+      </element>
+   </define> 
    
 
 </grammar>
