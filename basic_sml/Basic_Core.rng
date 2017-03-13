@@ -201,36 +201,6 @@
       </element>
    </define>
 
-
-   <!-- Term -->
-   <define name="Term">
-      <a:documentation>Term</a:documentation>
-      <element name="sml:Term">
-         <optional>
-            <attribute name="definition">
-               <data type="anyURI"/>
-            </attribute>
-         </optional>
-         <element name="sml:label">
-            <data type="string">
-               <param name="minLength">1</param>
-            </data>
-         </element>
-         <optional>
-            <element name="sml:codeSpace">
-               <ref name="xlink.href">
-                  <a:documentation>Code Space</a:documentation>
-               </ref>
-            </element>
-         </optional>
-         <element name="sml:value">
-            <data type="token">
-               <param name="minLength">1</param>
-            </data>
-         </element>
-      </element>
-   </define>
-
    <!-- Valid Time -->
    <define name="sml.validTime">
       <a:documentation>Temporal Validity</a:documentation>

@@ -24,76 +24,27 @@
          <zeroOrMore>
             <ref name="sml.keywords"/>
          </zeroOrMore>
-         <ref name="sml-x.discovery_identifiers"/>
-         <ref name="sml-x.hardware_identifiers"/>
+         <ref name="sml-x.instance_identifiers"/>
          <zeroOrMore>
             <ref name="sml.identification"/>
          </zeroOrMore>
          <zeroOrMore>
             <ref name="sml.classification"/>
-         </zeroOrMore>   
-         
+         </zeroOrMore>         
          <element name="sml:typeOf">
             <ref name="xlink.hrefWithTitle"/>
-         </element>
-         
+         </element>         
          <ref name="sml-x.instance_configuration"/>
-         
-         <!-- use XYZ Reference Frame -->
-         <ref name="sml-x.ReferenceFrame_XYZ"/> 
-
-          <ref name="sml.components"/>
-
+         <ref name="sml-x.instance_PhysicalContents"/>
+         <optional>
+            <ref name="sml.components"/>
+         </optional>  
          <optional>
             <ref name="sml.connections"/>
          </optional>  
       </element>
    </define>
-      
-   <!-- Described Deployed Object -->
-   <define name="sml-x.deployed_DescribedObject">
-      <group>
-         <ref name="sml.GmlObjectGroup"/> 
-         <zeroOrMore>
-            <ref name="sml.keywords"/>
-         </zeroOrMore>
-         <ref name="sml-x.instance_identifiers"/>
-         <zeroOrMore>
-            <ref name="sml.classification"/>
-         </zeroOrMore>
-<!--     <optional>
-            <ref name="sml.validTime"/>
-         </optional> 
-
-       <optional>
-            <ref name="sml.securityConstraint"/>
-         </optional>
-         <zeroOrMore>
-            <ref name="sml.legalConstraint"/>
-            </zeroOrMore>  -->
-         <!--
-         <optional>
-            <ref name="sml-x.deployment_characteristics"/>
-         </optional>
-         <zeroOrMore>
-            <ref name="sml.characteristics"/>
-         </zeroOrMore>
-         <zeroOrMore>
-            <ref name="sml.capabilities"/>
-         </zeroOrMore>
-         <zeroOrMore>
-            <ref name="sml.contacts"/>
-         </zeroOrMore>
-         <zeroOrMore>
-            <ref name="sml.documentation"/>
-         </zeroOrMore>  
-        <zeroOrMore>
-            <ref name="sml.history"/>
-        </zeroOrMore> 
-         -->
-      </group>
-   </define>
-      
+   
    <!-- Instance Identifiers -->
    <!-- supports both discovery and deployment identifiers -->
    <define name="sml-x.instance_identifiers">
@@ -140,9 +91,10 @@
       </optional>
       
       <!-- use XYZ Reference Frame -->
-      <ref name="sml-x.ReferenceFrame_XYZ"/>     
-      
-      
+      <element name="sml:localReferenceFrame">
+         <ref name="sml-x.ReferenceFrame_XYZ"/>     
+      </element>
+            
       <!-- Ignore Time Reference Frame for NOW -->
       
 <!--      <zeroOrMore>
@@ -194,33 +146,33 @@
 -->         
             <a:documentation>Depth Option</a:documentation>
             <choice>
-               <a:documentation>200m Depth Option</a:documentation>
                <element name="sml:setMode">
+                  <a:documentation>200m Depth Option</a:documentation>
                   <attribute name="ref">
                      <value>modes/depthOption</value>
                   </attribute>
-                  <data type="NCName">depthOption_200m</data>
+                  <value>depthOption_200m</value>
                </element>
-               <a:documentation>500m Depth Option</a:documentation>
                <element name="sml:setMode">
+                  <a:documentation>500m Depth Option</a:documentation>
                   <attribute name="ref">
                      <value>modes/depthOption</value>
                   </attribute>
-                  <data type="NCName">depthOption_200m</data>
+                  <value>depthOption_500m</value>
                </element>
-               <a:documentation>1000m Depth Option</a:documentation>
                <element name="sml:setMode">
+                  <a:documentation>1000m Depth Option</a:documentation>
                   <attribute name="ref">
                      <value>modes/depthOption</value>
                   </attribute>
-                  <data type="NCName">depthOption_1000m</data>
+                  <value>depthOption_1000m</value>
                </element>
-               <a:documentation>6000m Depth Option</a:documentation>
                <element name="sml:setMode">
+                  <a:documentation>6000m Depth Option</a:documentation>
                   <attribute name="ref">
                      <value>modes/depthOption</value>
                   </attribute>
-                  <data type="NCName">depthOption_6000m</data>
+                  <value>depthOption_6000m</value>
                </element>
             </choice>
 <!--            
