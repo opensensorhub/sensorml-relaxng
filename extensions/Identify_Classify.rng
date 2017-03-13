@@ -36,6 +36,16 @@
          <ref name="sml-x.softwareVersion"/>
       </optional>
    </define>   
+
+   <!-- Hardware Identifier List -->
+   <define name="sml-x.req_hardware_identifiers">
+      <a:documentation>Hardware Identifier List</a:documentation> 
+         <ref name="sml-x.manufacturer"/>
+         <ref name="sml-x.modelNumber"/>
+         <ref name="sml-x.serialNumber"/>
+         <ref name="sml-x.firmwareVersion"/>
+         <ref name="sml-x.softwareVersion"/>
+   </define>   
    
    <!-- Identifiers -->
    
