@@ -29,6 +29,12 @@
       <optional>
          <ref name="sml-x.serialNumber"/>
       </optional>
+      <optional>
+         <ref name="sml-x.firmwareVersion"/>
+      </optional>
+      <optional>
+         <ref name="sml-x.softwareVersion"/>
+      </optional>
    </define>   
    
    <!-- Identifiers -->
@@ -114,26 +120,107 @@
          </element>
       </define>
       
-      <!-- serial number -->
-      <define name="sml-x.serialNumber">
-         <a:documentation>Serial Number</a:documentation>
-         <element name="sml:identifier">
-            <element name="sml:Term">
-               <attribute name="definition">
-                  <value>http://sensorml.com/ont/swe/property/SerialNumber</value>
-               </attribute>
-               <element name="sml:label">
-                  <value>Serial Number</value>
-               </element>
-               <element name="sml:value">
-                  <data type="token">
-                     <param name="minLength">1</param>
-                  </data>
-               </element>
+   <!-- serial number -->
+   <define name="sml-x.serialNumber">
+      <a:documentation>Serial Number</a:documentation>
+      <element name="sml:identifier">
+         <element name="sml:Term">
+            <attribute name="definition">
+               <value>http://sensorml.com/ont/swe/property/SerialNumber</value>
+            </attribute>
+            <element name="sml:label">
+               <value>Serial Number</value>
+            </element>
+            <element name="sml:value">
+               <data type="token">
+                  <param name="minLength">1</param>
+               </data>
             </element>
          </element>
-      </define>
-      
+      </element>
+   </define>
+   
+   <!-- firmware version -->
+   <define name="sml-x.firmwareVersion">
+      <a:documentation>Firmware Version</a:documentation>
+      <element name="sml:identifier">
+         <element name="sml:Term">
+            <attribute name="definition">
+               <value>http://sensorml.com/ont/swe/property/FirmwareVersion</value>
+            </attribute>
+            <element name="sml:label">
+               <value>Firware Version</value>
+            </element>
+            <element name="sml:value">
+               <data type="token">
+                  <param name="minLength">1</param>
+               </data>
+            </element>
+         </element>
+      </element>
+   </define>
+
+   <!-- software version -->
+   <define name="sml-x.softwareVersion">
+      <a:documentation>Software Version</a:documentation>
+      <element name="sml:identifier">
+         <element name="sml:Term">
+            <attribute name="definition">
+               <value>http://sensorml.com/ont/swe/property/SoftwareVersion</value>
+            </attribute>
+            <element name="sml:label">
+               <value>Software Version</value>
+            </element>
+            <element name="sml:value">
+               <data type="token">
+                  <param name="minLength">1</param>
+               </data>
+            </element>
+         </element>
+      </element>
+   </define>
+
+   <!-- mission ID -->
+   <define name="sml-x.missionID">
+      <a:documentation>Mission ID</a:documentation>
+      <element name="sml:identifier">
+         <element name="sml:Term">
+            <attribute name="definition">
+               <value>http://sensorml.com/ont/swe/property/MissionID</value>
+            </attribute>
+            <element name="sml:label">
+               <value>Mission ID</value>
+            </element>
+            <element name="sml:value">
+               <data type="token">
+                  <param name="minLength">1</param>
+               </data>
+            </element>
+         </element>
+      </element>
+   </define>
+   
+   <!-- tail number -->
+   <define name="sml-x.tailNumber">
+      <a:documentation>Tail Number</a:documentation>
+      <element name="sml:identifier">
+         <element name="sml:Term">
+            <attribute name="definition">
+               <value>http://sensorml.com/ont/swe/property/TailNumber</value>
+            </attribute>
+            <element name="sml:label">
+               <value>Tail Number</value>
+            </element>
+            <element name="sml:value">
+               <data type="token">
+                  <param name="minLength">1</param>
+               </data>
+            </element>
+         </element>
+      </element>
+   </define>
+   
+   
 </grammar>
    
     

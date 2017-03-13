@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+   xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+   <include href="../basic_sml/Basic_SensorML.rng"/>
+   <include href="../extensions/Position.rng"/>
+   <include href="../extensions/Identify_Classify.rng"/>
+   <include href="../extensions/Characteristics.rng"/>
+     
+   
+   <start>
+      <ref name="sml-x.TeledyneSensor"/>
+   </start>
+  
+
+   <!-- Teledyne sensor instance-->
+   <define name="sml-x.TeledyneSensor">
+      <a:documentation>Teledyne Sensor</a:documentation>
+      <element name="sml:PhysicalSystem">
+         <ref name="sml.GmlObjectGroup"/> 
+         <zeroOrMore>
+            <ref name="sml.keywords"/>
+         </zeroOrMore>
+         <ref name="sml-x.discovery_identifiers"/>
+         <ref name="sml-x.hardware_identifiers"/>
+         <zeroOrMore>
+            <ref name="sml.identification"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="sml.classification"/>
+         </zeroOrMore>   
+         
+         <element name="sml:typeOf">
+            <ref name="xlink.hrefWithTitle"/>
+         </element>
+         
+         <ref name="sml-x.instance_configuration"/>
+         
+         <!-- use XYZ Reference Frame -->
+         <ref name="sml-x.ReferenceFrame_XYZ"/> 
+
+          <ref name="sml.components"/>
+
+         <optional>
+            <ref name="sml.connections"/>
+         </optional>  
+      </element>
+   </define>
+      
+   <!-- Described Deployed Object -->
+   <define name="sml-x.deployed_DescribedObject">
+      <group>
+         <ref name="sml.GmlObjectGroup"/> 
+         <zeroOrMore>
+            <ref name="sml.keywords"/>
+         </zeroOrMore>
+         <ref name="sml-x.instance_identifiers"/>
+         <zeroOrMore>
+            <ref name="sml.classification"/>
+         </zeroOrMore>
+<!--     <optional>
+            <ref name="sml.validTime"/>
+         </optional> 
+
+       <optional>
+            <ref name="sml.securityConstraint"/>
+         </optional>
+         <zeroOrMore>
+            <ref name="sml.legalConstraint"/>
+            </zeroOrMore>  -->
+         <!--
+         <optional>
+            <ref name="sml-x.deployment_characteristics"/>
+         </optional>
+         <zeroOrMore>
+            <ref name="sml.characteristics"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="sml.capabilities"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="sml.contacts"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="sml.documentation"/>
+         </zeroOrMore>  
+        <zeroOrMore>
+            <ref name="sml.history"/>
+        </zeroOrMore> 
+         -->
+      </group>
+   </define>
+      
+   <!-- Instance Identifiers -->
+   <!-- supports both discovery and deployment identifiers -->
+   <define name="sml-x.instance_identifiers">
+      <a:documentation>Instance Identifiers</a:documentation>
+      <element name="sml:identification">
+         <element name="sml:IdentifierList">
+            <ref name="sml.metadataList"/> 
+            <ref name="sml-x.discovery_identifiers"/>
+            <ref name="sml-x.hardware_identifiers"/>
+            <zeroOrMore>
+               <a:documentation>Other Identifier</a:documentation>
+               <element name="sml:identifier">
+                  <ref name="sml.Term"/>
+               </element>
+            </zeroOrMore>
+          </element>        
+      </element>
+   </define>
+
+   <!-- Characteristics -->
+   <define name="sml-x.instance_characteristics">
+      <a:documentation>Physical Characteristics</a:documentation>
+      <element name="sml:characteristics">
+         <element name="sml:CharacteristicList">
+            <ref name="sml.metadataList"/>
+            <element name="sml:characteristic">
+               <attribute name="name">
+                  <value>physical</value>
+               </attribute>
+               <ref name="sml-x.physicalProperties"/>
+            </element>
+         </element>
+      </element>
+   </define>
+   
+
+   <!-- Deployed Physical Contents -->
+   <define name="sml-x.instance_PhysicalContents">
+      <optional>
+         <a:documentation>Link to Platform</a:documentation>
+         <element name="sml:attachedTo">
+            <ref name="xlink.hrefWithTitle"/>
+         </element>
+      </optional>
+      
+      <!-- use XYZ Reference Frame -->
+      <ref name="sml-x.ReferenceFrame_XYZ"/>     
+      
+      
+      <!-- Ignore Time Reference Frame for NOW -->
+      
+<!--      <zeroOrMore>
+         <element name="sml:temporalReferenceFrame">
+            <ref name="gml.TimeCoordinateSystem"/>
+         </element>
+         </zeroOrMore> -->
+      
+      <!-- choose between stationary location or position (with orientation) -->
+      <optional>
+         <element name="sml:position">
+            <choice>
+               <ref name="sml-x.stationary_location"/>
+               <ref name="sml-x.stationary_position"/>
+            </choice>
+         </element>
+      </optional>
+      
+   </define>
+   
+   <define name="sml-x.instance_configuration">
+      <element name="sml:configuration">
+         <element name="sml:Setting">
+<!--            <optional>
+            <ref name="gml.id"/>
+            </optional> 
+            <zeroOrMore>
+               <element name="sml:setValue">
+                  <ref name="sml.ref"/>
+                  <data type="token"/>
+               </element>
+            </zeroOrMore>
+            <zeroOrMore>
+               <element name="sml:setArrayValue">
+                  <ref name="sml.ref"/>
+                  <data type="token"/>
+               </element>
+            </zeroOrMore>
+            <zeroOrMore>
+               <element name="sml:setConstraint">
+                  <choice>
+                     <ref name="swe.AllowedTimes"/>
+                     <ref name="swe.AllowedTokens"/>
+                     <ref name="swe.AllowedValues"/>
+                  </choice>
+               </element>
+            </zeroOrMore>
+            </optional>
+-->         
+            <a:documentation>Depth Option</a:documentation>
+            <choice>
+               <a:documentation>200m Depth Option</a:documentation>
+               <element name="sml:setMode">
+                  <attribute name="ref">
+                     <value>modes/depthOption</value>
+                  </attribute>
+                  <data type="NCName">depthOption_200m</data>
+               </element>
+               <a:documentation>500m Depth Option</a:documentation>
+               <element name="sml:setMode">
+                  <attribute name="ref">
+                     <value>modes/depthOption</value>
+                  </attribute>
+                  <data type="NCName">depthOption_200m</data>
+               </element>
+               <a:documentation>1000m Depth Option</a:documentation>
+               <element name="sml:setMode">
+                  <attribute name="ref">
+                     <value>modes/depthOption</value>
+                  </attribute>
+                  <data type="NCName">depthOption_1000m</data>
+               </element>
+               <a:documentation>6000m Depth Option</a:documentation>
+               <element name="sml:setMode">
+                  <attribute name="ref">
+                     <value>modes/depthOption</value>
+                  </attribute>
+                  <data type="NCName">depthOption_6000m</data>
+               </element>
+            </choice>
+<!--            
+            <zeroOrMore>
+               <element name="sml:setStatus">
+                  <ref name="sml.ref"/>
+                  <data type="string"/>
+               </element>
+            </zeroOrMore>
+-->            
+         </element>
+      </element>
+   </define>
+   
+
+</grammar>

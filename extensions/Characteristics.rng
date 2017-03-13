@@ -35,20 +35,27 @@
                <ref name="sml-x.height"/>
             </element>   
             <optional>
-              <a:documentation>Weight</a:documentation> 
+              <a:documentation>Weight in Water</a:documentation> 
               <element name="swe:field">
                  <attribute name="name">
-                    <value>weight</value>
+                    <value>weightInWater</value>
                  </attribute>
-                 <ref name="sml-x.weight"/>
+                 <ref name="sml-x.weightInWater"/>
               </element>         
+            </optional>
+            <optional>
+               <a:documentation>Weight in Air</a:documentation> 
+               <element name="swe:field">
+                  <attribute name="name">
+                     <value>weightInAir</value>
+                  </attribute>
+                  <ref name="sml-x.weightInAir"/>
+               </element>         
             </optional>
             <optional>
                <a:documentation>Material</a:documentation> 
                <element name="swe:field">
-                  <attribute name="name">
-                     <value>material</value>
-                  </attribute>
+                  <ref name="swe.nameAtt"/>
                   <ref name="sml-x.material"/>
                </element>         
             </optional>
@@ -68,9 +75,15 @@
          <attribute name="definition">
             <value>http://sensorml.com/ont/swe/property/length</value>
          </attribute>
+         <optional>
+            <ref name="swe.axisID"/>
+         </optional>
          <element name="swe:label">
             <value>Length</value>
          </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
          <element name="swe:uom">
             <attribute name="code">
                <value>mm</value>
@@ -90,9 +103,15 @@
          <attribute name="definition">
             <value>http://sensorml.com/ont/swe/property/width</value>
          </attribute>
+         <optional>
+            <ref name="swe.axisID"/>
+         </optional>
          <element name="swe:label">
             <value>Width</value>
          </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
          <element name="swe:uom">
             <attribute name="code">
                <value>mm</value>
@@ -111,9 +130,15 @@
          <attribute name="definition">
             <value>http://sensorml.com/ont/swe/property/height</value>
          </attribute>
+         <optional>
+            <ref name="swe.axisID"/>
+         </optional>
          <element name="swe:label">
             <value>Height</value>
-         </element>  
+         </element>
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
          <element name="swe:uom">
             <attribute name="code">
                <value>mm</value>
@@ -125,16 +150,19 @@
       </element>
    </define>
    
-   <!-- weight -->
-   <define name="sml-x.weight">
-      <a:documentation>Weight</a:documentation> 
+   <!-- weight in water -->
+   <define name="sml-x.weightInWater">
+      <a:documentation>Weight in Water</a:documentation> 
       <element name="swe:Quantity">
          <attribute name="definition">
-            <value>http://sensorml.com/ont/swe/property/weight</value>
+            <value>http://sensorml.com/ont/swe/property/weight-in-water</value>
          </attribute>
          <element name="swe:label">
-            <value>Weight</value>
+            <value>Weight in Water</value>
          </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
          <element name="swe:uom">
             <attribute name="code">
                <value>kg</value>
@@ -146,6 +174,31 @@
       </element>
    </define>
 
+   <!-- weight in water -->
+   <define name="sml-x.weightInAir">
+      <a:documentation>Weight in Air</a:documentation> 
+      <element name="swe:Quantity">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/weight-in-air</value>
+         </attribute>
+         <element name="swe:label">
+            <value>Weight in Air</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="swe:uom">
+            <attribute name="code">
+               <value>kg</value>
+            </attribute>
+         </element>
+         <element name="sml:value">
+            <data type="decimal"/>
+         </element>
+      </element>
+   </define>
+   
+
    <!-- material -->
    <define name="sml-x.material">
       <a:documentation>Material</a:documentation> 
@@ -153,9 +206,10 @@
          <attribute name="definition">
             <value>http://sensorml.com/ont/swe/property/material</value>
          </attribute>
-         <element name="swe:label">
-            <value>Material</value>
-         </element>  
+         <ref name="swe.label"/>
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
          <element name="sml:value">
             <data type="token"/>
          </element>
