@@ -93,7 +93,7 @@
       
       <!-- use XYZ Reference Frame -->
       <element name="sml:localReferenceFrame">
-         <ref name="sml-x.ReferenceFrame_XYZ"/>     
+         <ref name="sml-x.ACDCP_ReferenceFrame"/>     
       </element>
             
       <!-- Ignore Time Reference Frame for NOW -->
@@ -301,6 +301,46 @@
          </element>
       </element>
    </define> 
+   
+   <!-- REFERENCE FRAME  -->
+   <define name="sml-x.ACDCP_ReferenceFrame">
+      <a:documentation>ADCP Reference Frame</a:documentation> 
+      <element name="sml:SpatialFrame">
+         <attribute name="gml:id">
+            <value>ADCP_SENSOR_FRAME</value>
+         </attribute>
+         <element name="swe:identifier">
+            <value>http://sensorml.com/ont/swe/position/ADCP_sensorFrame</value>
+         </element>
+         <element name="swe:label">
+            <value>ADCP Sensor Frame</value>
+         </element>
+         <optional>
+            <ref name="swe.description"/>  
+         </optional>  
+         <element name="sml:origin">
+            <value>In the middle of the beam sources as indicated on the face of the sensor</value>
+         </element>
+         <element name="sml:axis">
+            <attribute name="name">
+               <value>x</value>
+            </attribute>
+            <value>Beams 1-2 Axis</value>
+         </element>
+         <element name="sml:axis">
+            <attribute name="name">
+               <value>y</value>
+            </attribute>
+            <value>Beams 3-4 Axis</value>
+         </element>
+         <element name="sml:axis">
+            <attribute name="name">
+               <value>z</value>
+            </attribute>
+            <value>+Z is up</value>
+         </element>
+      </element>
+   </define>
    
 
 </grammar>
