@@ -24,7 +24,7 @@
          <zeroOrMore>
             <ref name="sml.keywords"/>
          </zeroOrMore>
-         <ref name="sml-x.req_instance_identifiers"/>
+         <ref name="sml-x.instance_identifiers"/>
          <zeroOrMore>
             <ref name="sml.identification"/>
          </zeroOrMore>
@@ -53,7 +53,7 @@
          <element name="sml:IdentifierList">
             <ref name="sml.metadataList"/> 
             <ref name="sml-x.discovery_identifiers"/>
-            <ref name="sml-x.hardware_identifiers"/>
+            <ref name="sml-x.req_hardware_identifiers"/>
             <zeroOrMore>
                <a:documentation>Other Identifier</a:documentation>
                <element name="sml:identifier">
