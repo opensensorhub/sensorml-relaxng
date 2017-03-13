@@ -24,7 +24,7 @@
          <zeroOrMore>
             <ref name="sml.keywords"/>
          </zeroOrMore>
-         <ref name="sml-x.instance_identifiers"/>
+         <ref name="sml-x.req_instance_identifiers"/>
          <zeroOrMore>
             <ref name="sml.identification"/>
          </zeroOrMore>
