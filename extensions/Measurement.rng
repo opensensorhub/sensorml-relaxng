@@ -247,8 +247,6 @@
     </define>
     
     
-    
-    
     <!-- Impulse Response ... output of a transducer as a function of time given an input impulse of 
     infinite magnitude and infinitesimal duration -->
     
