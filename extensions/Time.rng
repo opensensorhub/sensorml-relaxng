@@ -66,6 +66,28 @@
       </element>
    </define>
    
+   
+   <!-- Date of last calibration  -->
+   
+   <define name="sml-x.lastCalibrationDate">
+      <a:documentation>
+         DateTime of last calibration 
+      </a:documentation> 
+      <element name="swe:Time">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/lastCalibrationDate</value>
+         </attribute>
+         <element name="swe:label">
+            <value>Last Calibration Date</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <ref name="swe-x.iso-timeUnits"/>
+         <ref name="swe-x.iso-timeValue"/>
+      </element>
+   </define>
+   
 
 <!-- TIME TYPES -->
 
