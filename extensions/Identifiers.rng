@@ -229,6 +229,48 @@
          </element>
       </element>
    </define>
+
+   <!-- cruise ID -->
+   <define name="sml-x.cruiseID">
+      <a:documentation>Cruise ID</a:documentation>
+      <element name="sml:identifier">
+         <element name="sml:Term">
+            <attribute name="definition">
+               <value>http://sensorml.com/ont/swe/property/CruiseID</value>
+            </attribute>
+            <element name="sml:label">
+               <value>Cruise ID</value>
+            </element>
+            <element name="sml:value">
+               <data type="token">
+                  <param name="minLength">1</param>
+               </data>
+            </element>
+         </element>
+      </element>
+   </define>
+
+   <!-- ship ID -->
+   <define name="sml-x.shipID">
+      <a:documentation>Ship ID</a:documentation>
+      <element name="sml:identifier">
+         <element name="sml:Term">
+            <attribute name="definition">
+               <value>http://sensorml.com/ont/swe/property/ShipID</value>
+            </attribute>
+            <element name="sml:label">
+               <value>Ship ID</value>
+            </element>
+            <element name="sml:value">
+               <data type="token">
+                  <param name="minLength">1</param>
+               </data>
+            </element>
+         </element>
+      </element>
+   </define>
+   
+   
    
    
 </grammar>

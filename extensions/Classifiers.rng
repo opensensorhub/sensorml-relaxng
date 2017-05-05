@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    xmlns:sml="http://www.opengis.net/sensorml/2.0" 
+    xmlns:gml="http://www.opengis.net/gml/3.2" 
+    xmlns:swe="http://www.opengis.net/swe/2.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    
+    <!-- includes -->
+    <include href="../sml/core.rng"/>
+    
+
+    <!-- intended application -->
+    <define name="sml-x.intendedApplication">
+        <a:documentation>Intended Application</a:documentation> 
+        <element name="sml:identifier">
+            <element name="sml:Term">
+                <attribute name="definition">
+                    <value>http://sensorml.com/ont/swe/property/IntendedApplication</value>
+                </attribute>
+                <element name="sml:label">
+                    <value>Intended Application</value>
+                </element>
+                <element name="sml:value">
+                    <data type="token">
+                        <param name="minLength">1</param>
+                    </data>
+                </element>
+            </element>
+        </element>
+    </define>
+    
+    <!-- sensor type -->
+    <define name="sml-x.sensorType">
+        <a:documentation>Sensor Type</a:documentation> 
+        <element name="sml:identifier">
+            <element name="sml:Term">
+                <attribute name="definition">
+                    <value>http://sensorml.com/ont/swe/property/SensorType</value>
+                </attribute>
+                <element name="sml:label">
+                    <value>Sensor Type</value>
+                </element>
+                <element name="sml:value">
+                    <data type="token">
+                        <param name="minLength">1</param>
+                    </data>
+                </element>
+            </element>
+        </element>
+    </define>
+    
+    
+</grammar>
