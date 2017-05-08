@@ -8,7 +8,44 @@
    
    <!-- includes -->
    <include href="../sml/core.rng"/>
+   
+   <!-- identifier group (all) -->
+   <define name="sml-x.identifierGroup">
+      <optional>
+         <ref name="sml-x.shortName"/>        
+      </optional>
+      <optional>
+         <ref name="sml-x.longName"/>         
+      </optional>
+      <optional>
+         <ref name="sml-x.manufacturer"/>
+      </optional>
+      <optional>
+         <ref name="sml-x.modelNumber"/>
+      </optional>
+      <optional>
+         <ref name="sml-x.serialNumber"/>
+      </optional>
+      <optional>
+         <ref name="sml-x.firmwareVersion"/>
+      </optional>
+      <optional>
+         <ref name="sml-x.softwareVersion"/>
+      </optional>
+      <optional>
+         <ref name="sml-x.missionID"/>
+      </optional>
+      <optional>
+         <ref name="sml-x.cruiseID"/>
+      </optional>
+      <optional>
+         <ref name="sml-x.shipID"/>
+      </optional>
+      <optional>
+         <ref name="sml-x.tailNumber"/>
+      </optional>
       
+   </define>   
    
    <!-- Discovery Identifier List -->
    <define name="sml-x.discovery_identifiers">

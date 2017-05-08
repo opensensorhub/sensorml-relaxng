@@ -9,6 +9,15 @@
     <!-- includes -->
     <include href="../sml/core.rng"/>
     
+    <!-- classifier group (all) -->
+    <define name="sml-x.classifierGroup">
+        <zeroOrMore>
+            <ref name="sml-x.intendedApplication"/>        
+        </zeroOrMore>
+        <zeroOrMore>
+            <ref name="sml-x.sensorType"/>        
+        </zeroOrMore>
+    </define>        
 
     <!-- intended application -->
     <define name="sml-x.intendedApplication">

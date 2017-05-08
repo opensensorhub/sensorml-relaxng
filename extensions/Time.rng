@@ -88,7 +88,29 @@
       </element>
    </define>
    
-
+   <!-- Initial Release Date  -->
+   
+   <define name="sml-x.initialReleaseDate">
+      <a:documentation>
+         Date of Initial Reklease 
+      </a:documentation> 
+      <element name="swe:Time">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/initialReleaseDate</value>
+         </attribute>
+         <element name="swe:label">
+            <value>Initial Release Date</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <ref name="swe-x.iso-timeUnits"/>
+         <ref name="swe-x.iso-timeValue"/>
+      </element>
+   </define>
+   
+   
+   
 <!-- TIME TYPES -->
 
    <define name="swe-x.SamplingTime">

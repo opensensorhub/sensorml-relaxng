@@ -43,6 +43,33 @@
         </element>
     </define>
     
+    <!--  Range ... range of possible values -->
+    
+    <define name="sml-x.range">
+        <a:documentation>
+             Range ... the range of possible measurements
+        </a:documentation> 
+        <element name="swe:QuantityRange">
+            <attribute name="definition">
+                <value>http://sensorml.com/ont/swe/property/rangeOfPossible</value>
+            </attribute>
+            <element name="swe:label">
+                <value> Range of Possible Measurements</value>
+            </element>  
+            <optional>
+                <ref name="swe.description"/>
+            </optional>
+            <element name="swe:uom">
+                <attribute name="code">
+                    <data type="token"/>
+                </attribute>
+            </element>
+            <element name="sml:value">
+                <data type="decimal"/>
+            </element>
+        </element>
+    </define>
+    
     
     <!-- Sensitivity  ... resolution of measurement -->
     
@@ -70,6 +97,35 @@
             </element>
         </element>
     </define>
+    
+    <!-- Accuracy  ...  of measurement -->
+    
+    <define name="sml-x.accuracy">
+        <a:documentation>
+            Accuracy ... quality of measurement (%) 
+        </a:documentation> 
+        <element name="swe:Quantity">
+            <attribute name="definition">
+                <value>http://sensorml.com/ont/swe/property/accuracy</value>
+            </attribute>
+            <element name="swe:label">
+                <value>Accuracy</value>
+            </element>  
+            <optional>
+                <ref name="swe.description"/>
+            </optional>
+            <element name="swe:uom">
+                <attribute name="code">
+                    <value>%</value>
+                </attribute>
+            </element>
+            <element name="sml:value">
+                <data type="decimal"/>
+            </element>
+        </element>
+    </define>
+    
+    
     
     
     <!-- Minimum Threshold ... min value at which measurement is detected  -->
@@ -126,7 +182,9 @@
         </element>
     </define>
     
-    
+  
+
+
     <!-- Sampling Period ... time between measurements -->
     
     <define name="sml-x.samplingPeriod">
@@ -181,6 +239,7 @@
             </element>
         </element>
     </define>
+     
      
     
     <!-- Calibration ... curve of stimulus value vs measured value -->

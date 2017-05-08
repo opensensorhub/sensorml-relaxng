@@ -4,36 +4,54 @@
    xmlns:sml="http://www.opengis.net/sensorml/2.0" 
    xmlns:gml="http://www.opengis.net/gml/3.2" 
    xmlns:swe="http://www.opengis.net/swe/2.0"
+   xmlns:sml-x="http://www.opengis.net/sensorml-ext/2.0"
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
    
    <!-- includes -->
-   <include href="../sml/core.rng"/>      
+   <include href="../sml/core.rng"/>  
    
-   <!-- Physical Properties -->
+   <!-- characteristics group (all) -->
+   <define name="sml-x.characteristicsGroup">
+      <optional>
+         <a:documentation>Physical Properties</a:documentation>
+         <ref name="sml-x.physicalProperties"/>
+      </optional>
+   </define>
+   
+   <!-- Physical Properties Group -->
    <define name="sml-x.physicalProperties">
       <a:documentation>Physical Properties</a:documentation> 
          <element name="swe:DataRecord">
             <element name="swe:label">
                <value>Physical Properties</value>
             </element>  
-            <element name="swe:field">
+            <optional>
+               <a:documentation>Length</a:documentation> 
+               <element name="swe:field">
                <attribute name="name">
                   <value>length</value>
                </attribute>
                <ref name="sml-x.length"/>
-            </element>         
-            <element name="swe:field">
-               <attribute name="name">
-                  <value>width</value>
-               </attribute>
-               <ref name="sml-x.width"/>
-            </element>         
-            <element name="swe:field">
-               <attribute name="name">
-                  <value>height</value>
-               </attribute>
-               <ref name="sml-x.height"/>
-            </element>   
+               </element>   
+            </optional>
+            <optional>
+               <a:documentation>Width</a:documentation>               
+              <element name="swe:field">
+                 <attribute name="name">
+                    <value>width</value>
+                 </attribute>
+                 <ref name="sml-x.width"/>
+              </element>     
+            </optional>
+            <optional>
+               <a:documentation>Height</a:documentation>             
+               <element name="swe:field">
+                  <attribute name="name">
+                     <value>height</value>
+                  </attribute>
+                  <ref name="sml-x.height"/>
+               </element> 
+            </optional>
             <optional>
               <a:documentation>Weight in Water</a:documentation> 
               <element name="swe:field">
@@ -59,8 +77,15 @@
                   <ref name="sml-x.material"/>
                </element>         
             </optional>
+            <optional>
+               <a:documentation>IP Rating</a:documentation> 
+               <element name="swe:field">
+                  <ref name="swe.nameAtt"/>
+                  <ref name="sml-x.ingressProtection"/>
+               </element>         
+            </optional>
             <zeroOrMore>
-               <a:documentation>Other Property</a:documentation> 
+               <a:documentation>Other Physical Property</a:documentation> 
                <ref name="swe.field"/>
             </zeroOrMore>
          </element>
@@ -215,6 +240,437 @@
          </element>
       </element>
    </define>  
+
+   <!-- Ingress Protection Rating -->
+   <define name="sml-x.ingressProtection">
+      <a:documentation>Ingress Protection Rating</a:documentation> 
+      <element name="swe:Category">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/ingressProtection</value>
+         </attribute>
+         <element name="sml:label">
+            <value>Ingress Protection Rating</value>
+         </element>
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="sml:value">
+            <data type="token"/>
+         </element>
+      </element>
+   </define>  
+   
+   <!-- Electrical Properties Group -->
+   
+   <!-- Physical Properties Group -->
+   <define name="sml-x.electricalProperties">
+      <a:documentation>Electrical Properties</a:documentation> 
+      <element name="swe:DataRecord">
+         <element name="swe:label">
+            <value>Electrical Properties</value>
+         </element>  
+         <optional>
+            <a:documentation>Voltage Range</a:documentation> 
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>voltageRange</value>
+               </attribute>
+               <ref name="sml-x.voltageRange"/>
+            </element>   
+         </optional>
+         <optional>
+            <a:documentation>Current Type</a:documentation> 
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>currentType</value>
+               </attribute>
+               <ref name="sml-x.currentType"/>
+            </element>   
+         </optional>
+         <optional>
+            <a:documentation>Typical Power Consumption</a:documentation> 
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>typicalPowerConsumption</value>
+               </attribute>
+               <ref name="sml-x.typicalPower"/>
+            </element>   
+         </optional>
+         <optional>
+            <a:documentation>Total Power Consumption</a:documentation> 
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>totalPowerConsumption</value>
+               </attribute>
+               <ref name="sml-x.totalPower"/>
+            </element>   
+         </optional>
+         <optional>
+            <a:documentation>Typical Power Consumption at Specific Voltage</a:documentation> 
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>typicalPowerConsumption</value>
+               </attribute>
+               <ref name="sml-x.typicalPowerQualified"/>
+            </element>   
+         </optional>
+         <optional>
+            <a:documentation>Total Power Consumption</a:documentation> 
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>totalPowerConsumption</value>
+               </attribute>
+               <ref name="sml-x.totalPowerQualified"/>
+            </element>   
+         </optional>
+         <optional>
+            <a:documentation>Battery Powered (yes/no)</a:documentation> 
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>batteryPowered</value>
+               </attribute>
+               <ref name="sml-x.batteryPower"/>
+            </element>   
+         </optional>
+         <optional>
+            <a:documentation>Battery Type</a:documentation> 
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>batteryType</value>
+               </attribute>
+               <ref name="sml-x.batteryType"/>
+            </element>   
+         </optional>
+         <optional>
+            <a:documentation>Battery Capacity (mA-hrs)</a:documentation> 
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>batteryCapacity-mAH</value>
+               </attribute>
+               <ref name="sml-x.batteryCapacity-mAH"/>
+            </element>   
+         </optional>
+         <optional>
+            <a:documentation>Battery Capacity (W-hrs)</a:documentation> 
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>batteryCapacity-WH</value>
+               </attribute>
+               <ref name="sml-x.batteryCapacity-WH"/>
+            </element>   
+         </optional>        
+      </element>
+   </define>
+         
+   <!-- voltage range-->
+   
+   <define name="sml-x.voltageRange">
+      <a:documentation>
+         Operating Voltage Range
+      </a:documentation> 
+      <element name="swe:QuantityRange">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/operatingVoltageRange</value>
+         </attribute>
+         <element name="swe:label">
+            <value> Operating Voltage Range</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="swe:uom">
+            <attribute name="code">
+               <value>V</value>
+            </attribute>
+         </element>
+         <element name="sml:value">
+            <data type="decimal"/>
+         </element>
+      </element>
+   </define>
+   
+   <!-- Current Type-->
+   
+   <define name="sml-x.currentType">
+      <a:documentation>
+         Current Type
+      </a:documentation> 
+      <element name="swe:Category">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/electricalCurrentType</value>
+         </attribute>
+         <element name="swe:label">
+            <value> Electrical Current Type</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="sml:value">
+            <choice>
+               <value>AC</value>
+               <value>DC</value>
+            </choice>
+         </element>
+      </element>
+   </define>
+
+   <!-- Battery Powered ? -->
+   
+   <define name="sml-x.batteryPower">
+      <a:documentation>
+         Current Type
+      </a:documentation> 
+      <element name="swe:Boolean">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/isBatteryPowered</value>
+         </attribute>
+         <element name="swe:label">
+            <value> Battery Power</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="sml:value">
+            <data type="boolean"/>
+         </element>
+      </element>
+   </define>
+   
+   <!-- Battery Type-->
+   
+   <define name="sml-x.batteryType">
+      <a:documentation>
+         Current Type
+      </a:documentation> 
+      <element name="swe:Category">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/batteryType</value>
+         </attribute>
+         <element name="swe:label">
+            <value> Electrical Battery Type</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="sml:value">
+            <data type="token"/>
+         </element>
+      </element>
+   </define>
+   
+ 
+   <!-- Battery Capacity (mA-Hour) -->
+   
+   <define name="sml-x.batteryCapacity-mAH">
+      <a:documentation>
+         Battery Capacity (mA-H)
+      </a:documentation> 
+      <element name="swe:QuantityRange">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/batteryCapacity</value>
+         </attribute>
+         <element name="swe:label">
+            <value> Battery Capacity</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="swe:uom">
+            <attribute name="code">
+               <value>mAh</value>
+            </attribute>
+         </element>
+         <element name="sml:value">
+            <data type="decimal"/>
+         </element>
+      </element>
+   </define>
+   
+   <!-- Battery Capacity (W-Hr) -->
+   
+   <define name="sml-x.batteryCapacity-WH">
+      <a:documentation>
+         Battery Capacity (W-H)
+      </a:documentation> 
+      <element name="swe:QuantityRange">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/batteryCapacity</value>
+         </attribute>
+         <element name="swe:label">
+            <value> Battery Capacity</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="swe:uom">
+            <attribute name="code">
+               <value>Wh</value>
+            </attribute>
+         </element>
+         <element name="sml:value">
+            <data type="decimal"/>
+         </element>
+      </element>
+   </define>
+   
+   <!-- Total Power Consumption (unqualified) -->
+   
+   <define name="sml-x.totalPower">
+      <a:documentation>
+         Total Power Unqualified
+      </a:documentation> 
+      <element name="swe:QuantityRange">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/totalPowerConsumption</value>
+         </attribute>
+         <element name="swe:label">
+            <value> Total Power Consumption</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="swe:uom">
+            <attribute name="code">
+               <value>A</value>
+            </attribute>
+         </element>
+         <element name="sml:value">
+            <data type="decimal"/>
+         </element>
+      </element>
+   </define>
+   
+   <!-- Typical Power Consumption (unqualified) -->
+   
+   <define name="sml-x.typicalPower">
+      <a:documentation>
+         Typical Power Unqualified
+      </a:documentation> 
+      <element name="swe:QuantityRange">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/typicalPowerConsumption</value>
+         </attribute>
+         <element name="swe:label">
+            <value> Typical Power Consumption</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="swe:uom">
+            <attribute name="code">
+               <value>A</value>
+            </attribute>
+         </element>
+         <element name="sml:value">
+            <data type="decimal"/>
+         </element>
+      </element>
+   </define>
+   
+   <!-- Total Power Consumption (at Specific Voltage) -->
+   
+   <define name="sml-x.totalPowerQualified">
+      <a:documentation>
+         Total Power at Specific Voltage
+      </a:documentation> 
+      <element name="sml-x:ConditionalQuantity">
+         <element name="sml-x:condition">
+            <element name="swe:Quantity">
+               <attribute name="definition">
+                  <value>http://sensorml.com/ont/swe/property/operatingVoltage</value>
+               </attribute>
+               <element name="swe:label">
+                  <value>Operating Voltage</value>
+               </element>  
+               <optional>
+                  <ref name="swe.description"/>
+               </optional>
+               <element name="swe:uom">
+                  <attribute name="code">
+                     <value>V</value>
+                  </attribute>
+               </element>
+               <element name="sml:value">
+                  <data type="decimal"/>
+               </element>
+            </element>
+         </element>
+         <element name="sml-x:value">
+            <element name="swe:QuantityRange">
+               <attribute name="definition">
+                  <value>http://sensorml.com/ont/swe/property/totalPowerConsumption</value>
+               </attribute>
+               <element name="swe:label">
+                  <value> Total Power Consumption</value>
+               </element>  
+               <optional>
+                  <ref name="swe.description"/>
+               </optional>
+               <element name="swe:uom">
+                  <attribute name="code">
+                     <value>A</value>
+                  </attribute>
+               </element>
+               <element name="sml:value">
+                  <data type="decimal"/>
+               </element>
+            </element>
+         </element>
+      </element>       
+   </define>
+   
+   <!-- Typical Power Consumption (at Specific Voltage) -->
+   
+   <define name="sml-x.typicalPowerQualified">
+      <a:documentation>
+         Typical Power at Specific Voltage
+      </a:documentation> 
+      <element name="sml-x:ConditionalQuantity">
+         <element name="sml-x:condition">
+            <element name="swe:Quantity">
+               <attribute name="definition">
+                  <value>http://sensorml.com/ont/swe/property/operatingVoltage</value>
+               </attribute>
+               <element name="swe:label">
+                  <value>Operating Voltage</value>
+               </element>  
+               <optional>
+                  <ref name="swe.description"/>
+               </optional>
+               <element name="swe:uom">
+                  <attribute name="code">
+                     <value>V</value>
+                  </attribute>
+               </element>
+               <element name="sml:value">
+                  <data type="decimal"/>
+               </element>
+            </element>
+         </element>
+         <element name="sml-x:value">
+            <element name="swe:QuantityRange">
+               <attribute name="definition">
+                  <value>http://sensorml.com/ont/swe/property/typicalPowerConsumption</value>
+               </attribute>
+               <element name="swe:label">
+                  <value> Typical Power Consumption</value>
+               </element>  
+               <optional>
+                  <ref name="swe.description"/>
+               </optional>
+               <element name="swe:uom">
+                  <attribute name="code">
+                     <value>A</value>
+                  </attribute>
+               </element>
+               <element name="sml:value">
+                  <data type="decimal"/>
+               </element>
+            </element>
+         </element>
+      </element>       
+   </define> 
+   
  
 </grammar>
    

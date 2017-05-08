@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    xmlns:sml="http://www.opengis.net/sensorml/2.0" 
+    xmlns:gml="http://www.opengis.net/gml/3.2" 
+    xmlns:swe="http://www.opengis.net/swe/2.0"
+    xmlns:sml-x="http://www.opengis.net/sensorml-ext/2.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    
+    <!-- includes -->
+    <include href="../sml/core.rng"/>
+
+
+    <!-- other group (all) -->
+    <define name="sml-x.conditionalDataGroup">
+        <zeroOrMore>
+            <ref name="sml-x.conditionalDataRecord"/>        
+        </zeroOrMore>
+        <zeroOrMore>
+            <ref name="sml-x.conditionalQuantity"/>        
+        </zeroOrMore>
+        <zeroOrMore>
+            <ref name="sml-x.conditionalQuantityRange"/>        
+        </zeroOrMore>
+    </define>        
+
+
+    <!-- Conditional DataRecord -->
+    
+    <define name="sml-x.conditionalDataRecord">
+        <element name="sml-x:ConditionalDataRecord">
+            <element name="sml-x:condition">
+                <oneOrMore>
+                    <choice>
+                        <ref name="swe.Quantity"/>
+                        <ref name="swe.Category"/>
+                        <ref name="swe.Boolean"/>
+                        <ref name="swe.Text"/>
+                        <ref name="swe.Time"/>                      
+                    </choice>                   
+                </oneOrMore>
+            </element>
+            <element name="sml-x:value">
+                <ref name="swe.DataRecord"/>
+            </element>
+        </element>       
+    </define>
+    
+
+    <!-- Conditional Quantity -->
+    
+    <define name="sml-x.conditionalQuantity">
+        <element name="sml-x:ConditionalQuantity">
+            <element name="sml-x:condition">
+                <oneOrMore>
+                    <choice>
+                        <ref name="swe.Quantity"/>
+                        <ref name="swe.Category"/>
+                        <ref name="swe.Boolean"/>
+                        <ref name="swe.Text"/>
+                        <ref name="swe.Time"/>                      
+                    </choice>                   
+                </oneOrMore>
+            </element>
+            <element name="sml-x:value">
+                <ref name="swe.Quantity"/>
+            </element>
+        </element>       
+    </define>
+    
+    <!-- Conditional QuantityRange -->
+       
+    <define name="sml-x.conditionalQuantityRange">
+        <element name="sml-x:ConditionalQuantity">
+            <element name="sml-x:condition">
+                <oneOrMore>
+                    <choice>
+                        <ref name="swe.Quantity"/>
+                        <ref name="swe.Category"/>
+                        <ref name="swe.Boolean"/>
+                        <ref name="swe.Text"/>
+                        <ref name="swe.Time"/>                      
+                    </choice>                   
+                </oneOrMore>
+            </element>
+            <element name="sml-x:value">
+                <ref name="swe.QuantityRange"/>
+            </element>
+        </element>       
+    </define>
+    
+    
+       
+</grammar>
