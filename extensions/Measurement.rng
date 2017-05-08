@@ -6,12 +6,62 @@
     xmlns:swe="http://www.opengis.net/swe/2.0"
     datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
 
-
 <!-- includes -->
     <include href="../sml/SensorML.rng" />
     <include href="./Time.rng"/>
     
-
+    <!-- measurements group (all) -->
+    <define name="sml-x.measurementsGroup">
+        <optional>
+            <a:documentation>Dynamic Range</a:documentation>
+            <ref name="sml-x.dynamicRange"/>
+        </optional>
+        <optional>
+            <a:documentation>Range of Values</a:documentation>
+            <ref name="sml-x.range"/>
+        </optional>
+        <optional>
+            <a:documentation>Sensitivity</a:documentation>
+            <ref name="sml-x.sensitivity"/>
+        </optional>
+        <optional>
+            <a:documentation>Accuracy</a:documentation>
+            <ref name="sml-x.accuracy"/>
+        </optional>
+        <optional>
+            <a:documentation>Minimum Threshold</a:documentation>
+            <ref name="sml-x.minimumThreshold"/>
+        </optional>
+        <optional>
+            <a:documentation>Sampling Frequency</a:documentation>
+            <ref name="sml-x.samplingFrequency"/>
+        </optional>
+        <optional>
+            <a:documentation>Sampling Period</a:documentation>
+            <ref name="sml-x.samplingPeriod"/>
+        </optional>
+        <optional>
+            <a:documentation>Sampling Duration</a:documentation>
+            <ref name="sml-x.samplingDuration"/>
+        </optional>
+        <optional>
+            <a:documentation>Calibration Curve</a:documentation>
+            <ref name="sml-x.calibration"/>
+        </optional>
+        <optional>
+            <a:documentation>Frequency Response</a:documentation>
+            <ref name="sml-x.frequencyResponse"/>
+        </optional>
+        <optional>
+            <a:documentation>Impulse Response</a:documentation>
+            <ref name="sml-x.impulseResponse"/>
+        </optional>
+        <optional>
+            <a:documentation>Latency Time</a:documentation>
+            <ref name="sml-x.latencyTime"/>
+        </optional>
+    </define>
+    
 
     <!-- Measurement is for properties that relate to qualifying measurement;
     these can be used in capabilities or parameters -->
@@ -265,7 +315,7 @@
     
     <!-- Frequency Response ... response of a transducer to various frequencies of the stimulus -->
     
-    <define name="sml-x.freqResponse">
+    <define name="sml-x.frequencyResponse">
         <a:documentation>
             Frequency Response ... response relative to electromagnetic frquencies 
         </a:documentation> 
