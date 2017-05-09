@@ -5,7 +5,8 @@
    xmlns:swe="http://www.opengis.net/swe/2.0"
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
 
-   <include href="../basic_sml/Basic_SensorML.rng"/>
+<!--   <include href="../basic_sml/Basic_SensorML.rng"/> -->
+   <include href="../sml/SensorML.rng"/>
    <include href="../extensions/Position.rng"/>
    <include href="../extensions/Identifiers.rng"/>
    <include href="../extensions/Classifers.rng"/>
