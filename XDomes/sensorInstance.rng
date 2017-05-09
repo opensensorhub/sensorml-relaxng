@@ -12,11 +12,11 @@
    <include href="../extensions/Classifers.rng"/>
    <include href="../extensions/Characteristics.rng"/>
      
-   
+<!--   
    <start>
       <ref name="sml-x.TeledyneSensor"/>
    </start>
-  
+  -->
 
    <!-- Teledyne sensor instance-->
    <define name="sml-x.TeledyneSensor">
