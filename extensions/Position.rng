@@ -370,7 +370,7 @@
             <value>http://sensorml.com/ont/swe/property/NED_Orientation</value>
          </attribute>
          <attribute name="referenceFrame">
-            <data type="anyURI"/>
+            <value>http://www.opengis.net/def/crs/EPSG/0/NED</value>
          </attribute>
          <optional>
             <attribute name="localFrame">
