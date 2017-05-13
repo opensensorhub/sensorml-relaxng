@@ -56,9 +56,10 @@
          <zeroOrMore>
             <ref name="sml.legalConstraint"/>
          </zeroOrMore>  -->
-         <optional>
-            <ref name="sml-x.characteristicsGroup"/>
-         </optional>
+         <zeroOrMore>
+            <a:documentation>Characteristics</a:documentation>
+            <ref name="sml-x.characteristicsExtensions"/>
+         </zeroOrMore>
          <zeroOrMore>
             <ref name="sml.capabilities"/>
          </zeroOrMore>

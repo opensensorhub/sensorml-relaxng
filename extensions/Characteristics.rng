@@ -10,23 +10,33 @@
    <!-- includes -->
    <include href="../sml/core.rng"/>  
    
+   
+   <!-- Characteristics Extensions -->
+   <define name="sml-x.characteristicsExtensions">
+      <a:documentation>Characterstics</a:documentation>
+      <element name="sml:characteristics">
+         <element name="sml:CharacteristicList">
+            <ref name="sml.metadataList"/>
+            <ref name="sml-x.characteristicsGroup"/>
+         </element>
+      </element>
+   </define>
+
+   
    <!-- characteristics group (all) -->
    <define name="sml-x.characteristicsGroup">
-      <a:documentation>Characteristics</a:documentation>
-      <group>
-         <optional>
-            <a:documentation>Physical Properties</a:documentation>
-            <ref name="sml-x.physicalProperties"/>
-         </optional>
-         <optional>
-            <a:documentation>Electrical Properties</a:documentation>
-            <ref name="sml-x.electricalProperties"/>
-         </optional>
-         <zeroOrMore>
-            <a:documentation>Other Characteristics</a:documentation>
-            <ref name="sml.characteristics"/>
-         </zeroOrMore>
-      </group>      
+      <optional>
+         <a:documentation>Physical Properties</a:documentation>
+         <ref name="sml-x.physicalProperties"/>
+      </optional>
+      <optional>
+         <a:documentation>Electrical Properties</a:documentation>
+         <ref name="sml-x.electricalProperties"/>
+      </optional>
+      <zeroOrMore>
+         <a:documentation>Other Characteristics</a:documentation>
+         <ref name="sml.characteristics"/>
+      </zeroOrMore>
    </define>
    
    <!-- Physical Properties Group -->
