@@ -10,7 +10,8 @@
    <include href="../extensions/Identifiers.rng"/>
    <include href="../extensions/Classifiers.rng"/>
    <include href="../extensions/Characteristics.rng"/>
-     
+   <include href="../extensions/Capabilities.rng"/>
+   
    
    <start>
       <ref name="sml-x.PhysicalSystem_OEM"/>
@@ -46,6 +47,7 @@
          <optional>
             <ref name="sml-x.classifierExtension"/>
          </optional>
+         
 <!--         <optional>
             <ref name="sml.validTime"/>
          </optional> 
@@ -61,7 +63,8 @@
             <ref name="sml-x.characteristicsExtensions"/>
          </zeroOrMore>
          <zeroOrMore>
-            <ref name="sml.capabilities"/>
+            <a:documentation>Capabilities</a:documentation>
+            <ref name="sml-x.capabilitiesExtensions"/>
          </zeroOrMore>
          <zeroOrMore>
             <ref name="sml.contacts"/>
