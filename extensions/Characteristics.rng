@@ -12,19 +12,20 @@
    
    <!-- characteristics group (all) -->
    <define name="sml-x.characteristicsGroup">
-      <optional>
-         <a:documentation>Physical Properties</a:documentation>
-         <ref name="sml-x.physicalProperties"/>
-      </optional>
-      <optional>
-         <a:documentation>Electrical Properties</a:documentation>
-         <ref name="sml-x.electricalProperties"/>
-      </optional>
-      <zeroOrMore>
-         <a:documentation>Other Characteristics</a:documentation>
-         <ref name="sml.characteristics"/>
-      </zeroOrMore>
-      
+      <group>
+         <optional>
+            <a:documentation>Physical Properties</a:documentation>
+            <ref name="sml-x.physicalProperties"/>
+         </optional>
+         <optional>
+            <a:documentation>Electrical Properties</a:documentation>
+            <ref name="sml-x.electricalProperties"/>
+         </optional>
+         <zeroOrMore>
+            <a:documentation>Other Characteristics</a:documentation>
+            <ref name="sml.characteristics"/>
+         </zeroOrMore>
+      </group>      
    </define>
    
    <!-- Physical Properties Group -->
