@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+   xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+   <include href="../basic_sml/Basic_SensorML.rng"/>
+   <include href="../extensions/Position.rng"/>
+   <include href="../extensions/Identifiers.rng"/>
+   <include href="../extensions/Classifiers.rng"/>
+   <include href="../extensions/Characteristics.rng"/>
+     
+   
+   <start>
+      <ref name="sml-x.SimpleDeployedSensor"/>
+   </start>
+  
+
+   <!-- Simple deployed stationary sensor -->
+   <define name="sml-x.SimpleDeployedSensor">
+      <a:documentation>Simple Deployment</a:documentation>
+      <element name="sml:PhysicalSystem">
+         <ref name="sml-x.deployed_DescribedObject"/>
+         <ref name="sml.ProcessContents"/> 
+         <ref name="sml-x.deployed_PhysicalContents"/>
+         <optional>
+            <ref name="sml.components"/>
+         </optional>
+         <optional>
+            <ref name="sml.connections"/>
+         </optional>  
+      </element>
+   </define>
+      
+   <!-- Described Deployed Object -->
+   <define name="sml-x.deployed_DescribedObject">
+      <group>
+         <ref name="sml.GmlObjectGroup"/> 
+         <zeroOrMore>
+            <ref name="sml.keywords"/>
+         </zeroOrMore>
+         <optional>
+            <ref name="sml-x.identifierExtension"/>
+         </optional>
+         <optional>
+            <ref name="sml.classifierExtension"/>
+         </optional>
+<!--         <optional>
+            <ref name="sml.validTime"/>
+         </optional> 
+
+       <optional>
+            <ref name="sml.securityConstraint"/>
+         </optional>
+         <zeroOrMore>
+            <ref name="sml.legalConstraint"/>
+         </zeroOrMore>  -->
+         <optional>
+            <ref name="sml-x.deployment_characteristics"/>
+         </optional>
+         <zeroOrMore>
+            <ref name="sml.characteristics"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="sml.capabilities"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="sml.contacts"/>
+         </zeroOrMore>
+<!--         <zeroOrMore>
+            <ref name="sml.documentation"/>
+         </zeroOrMore>  -->
+         <!-- REMOVE HISTORY FOR NOW ?? - REQUIRE IT TO BE LINKED -->
+        <zeroOrMore>
+            <ref name="sml.history"/>
+         </zeroOrMore> 
+      </group>
+   </define>
+      
+
+   <!-- Characteristics -->
+   <define name="sml-x.deployment_characteristics">
+      <a:documentation>Physical Characteristics</a:documentation>
+      <element name="sml:characteristics">
+         <element name="sml:CharacteristicList">
+            <ref name="sml.metadataList"/>
+            <element name="sml:characteristic">
+               <attribute name="name">
+                  <value>physical</value>
+               </attribute>
+               <ref name="sml-x.physicalProperties"/>
+            </element>
+         </element>
+      </element>
+   </define>
+   
+
+   <!-- Deployed Physical Contents -->
+   <define name="sml-x.deployed_PhysicalContents">
+      <optional>
+         <a:documentation>Link to Platform</a:documentation>
+         <element name="sml:attachedTo">
+            <ref name="xlink.hrefWithTitle"/>
+         </element>
+      </optional>
+      
+      <!-- use XYZ Reference Frame -->
+      <optional>
+         <element name="sml:localReferenceFrame">
+            <ref name="sml-x.ReferenceFrame_XYZ"/>
+         </element>
+      </optional>
+      
+      <!-- Ignore Time Reference Frame for NOW -->
+<!--      <zeroOrMore>
+         <element name="sml:temporalReferenceFrame">
+            <ref name="gml.TimeCoordinateSystem"/>
+         </element>
+         </zeroOrMore> -->
+      
+      <!-- choose between stationary location or position (with orientation) -->
+      <optional>
+         <element name="sml:position">
+            <choice>
+               <ref name="sml-x.stationary_location"/>
+               <ref name="sml-x.stationary_position"/>
+            </choice>
+         </element>
+      </optional>
+      
+   </define>
+
+</grammar>

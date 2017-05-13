@@ -4,6 +4,7 @@
    xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:gml="http://www.opengis.net/gml/3.2"
    xmlns:swe="http://www.opengis.net/swe/2.0"
    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+   <!-- GML Point (byPoint)  -->
    
    <!-- Position is for extensions related to physical position 
         (location, orientation, and state)  -->
@@ -15,7 +16,15 @@
    <include href="../sml/PhysicalProcess.rng"/>   
    
    <define name="sml-x.PositionGroup">
-      
+      <a:documentation>Location Description (byDescription)</a:documentation>
+      <ref name="sml-x.locationDescription"/>
+      <a:documentation>GML Point (byPoint)</a:documentation>
+      <ref name="sml-x.gmlPoint"/>
+      <a:documentation>xyz Location Vector (byLocation)</a:documentation>
+      <ref name="sml-x.xyzLocationVector"/>
+      <a:documentation>GPS Location Vector (byLocation)</a:documentation>
+      <ref name="sml-x.gpsLocationVector"/>
+      <!-- Add position types -->
    </define>
    
    
@@ -118,7 +127,6 @@
       </element>
    </define>   
    
-   <!-- GML Point (byPoint)  -->
    <define name="sml-x.gmlPoint">
       <a:documentation>GML Point Location</a:documentation>
       <element name="gml:Point">
