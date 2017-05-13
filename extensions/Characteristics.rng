@@ -12,6 +12,7 @@
    
    <!-- characteristics group (all) -->
    <define name="sml-x.characteristicsGroup">
+      <a:documentation>Characteristics</a:documentation>
       <group>
          <optional>
             <a:documentation>Physical Properties</a:documentation>
