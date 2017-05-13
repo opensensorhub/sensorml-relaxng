@@ -9,7 +9,127 @@
 <!-- includes -->
     <include href="../sml/SensorML.rng" />
     <include href="./Time.rng"/>
+
+
+    <!-- Measurement Properties Group -->
+    <define name="sml-x.measurementProperties">
+        <a:documentation>Measurement Properties</a:documentation> 
+        <element name="swe:DataRecord">
+            <element name="swe:label">
+                <value>Measurement Properties</value>
+            </element> 
+            <optional>
+                <a:documentation>Dynamic Range</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>dyanmicRange</value>
+                    </attribute>            
+                    <ref name="sml-x.dynamicRange"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Range of Values</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>range</value>
+                    </attribute>
+                    <ref name="sml-x.range"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Sensitivity</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>sensitivity</value>
+                    </attribute>
+                    <ref name="sml-x.sensitivity"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Accuracy</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>accuracy</value>
+                    </attribute>
+                    <ref name="sml-x.accuracy"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Minimum Threshold</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>minThreshold</value>
+                    </attribute>
+                    <ref name="sml-x.minimumThreshold"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Sampling Frequency</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>samplingFreq</value>
+                    </attribute>
+                    <ref name="sml-x.samplingFrequency"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Sampling Period</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>samplingPeriod</value>
+                    </attribute>
+                    <ref name="sml-x.samplingPeriod"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Sampling Duration</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>samplingDuration</value>
+                    </attribute>
+                    <ref name="sml-x.samplingDuration"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Calibration Curve</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>calibrationCurve</value>
+                    </attribute>
+                    <ref name="sml-x.calibration"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Frequency Response</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>freqResponse</value>
+                    </attribute>
+                    <ref name="sml-x.frequencyResponse"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Impulse Response</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>impulseResponse</value>
+                    </attribute>
+                    <ref name="sml-x.impulseResponse"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Latency Time</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>latency</value>
+                    </attribute>
+                    <ref name="sml-x.latencyTime"/>
+                </element>
+            </optional>
+        </element>
+    </define>   
     
+
     <!-- measurements group (all) -->
     <define name="sml-x.measurementsGroup">
         <optional>

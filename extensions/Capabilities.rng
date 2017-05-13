@@ -9,6 +9,7 @@
    
    <!-- includes -->
    <include href="../sml/core.rng"/>  
+   <include href="./Measurement.rng"/>
    
    
    <!-- Capabilities Extensions -->
@@ -27,7 +28,7 @@
    <define name="sml-x.capabilitiesGroup">
       <optional>
          <a:documentation>Measurement Capabilities</a:documentation>
-         <ref name="sml-x.measurementProperties"/>
+         <ref name="sml-x.measurementPropertiesGroup"/>
       </optional>
 <!--      <optional>
          <a:documentation>Operating Environment</a:documentation>
@@ -43,17 +44,6 @@
       </zeroOrMore>
    </define>
    
-   <!-- Measuremernt Properties Group -->
-   <define name="sml-x.measurementProperties">
-      <a:documentation>Measurement Properties</a:documentation> 
-      <element name="swe:DataRecord">
-         <element name="swe:label">
-            <value>Measurement Properties</value>
-         </element> 
-         <ref name="sml-x.capabilitiesGroup"/>
-        </element>
-   </define>   
- 
-</grammar>
+ </grammar>
    
     
