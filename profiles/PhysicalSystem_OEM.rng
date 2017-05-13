@@ -64,7 +64,7 @@
          </zeroOrMore>
          <zeroOrMore>
             <a:documentation>Capabilities</a:documentation>
-            <ref name="sml-x.capabilitiesExtensions"/>
+            <ref name="sml-x.capabilitiesExtension"/>
          </zeroOrMore>
          <zeroOrMore>
             <ref name="sml.contacts"/>

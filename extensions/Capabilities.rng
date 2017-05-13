@@ -13,7 +13,7 @@
    
    
    <!-- Capabilities Extensions -->
-   <define name="sml-x.capabilitiesExtensions">
+   <define name="sml-x.capabilitiesExtension">
       <a:documentation>Capabilities</a:documentation>
       <element name="sml:capabilities">
          <element name="sml:CapabilityList">
@@ -28,7 +28,7 @@
    <define name="sml-x.capabilitiesGroup">
       <optional>
          <a:documentation>Measurement Capabilities</a:documentation>
-         <ref name="sml-x.measurementPropertiesGroup"/>
+         <ref name="sml-x.measurementProperties"/>
       </optional>
 <!--      <optional>
          <a:documentation>Operating Environment</a:documentation>
@@ -39,8 +39,8 @@
             <ref name="sml-x.survivableRange"/>
       </optional>  -->
       <zeroOrMore>
-         <a:documentation>Other Characteristics</a:documentation>
-         <ref name="sml.characteristics"/>
+         <a:documentation>Other Capabilities</a:documentation>
+         <ref name="sml.capabilities"/>
       </zeroOrMore>
    </define>
    

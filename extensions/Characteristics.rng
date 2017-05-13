@@ -12,7 +12,7 @@
    
    
    <!-- Characteristics Extensions -->
-   <define name="sml-x.characteristicsExtensions">
+   <define name="sml-x.characteristicsExtension">
       <a:documentation>Characteristics</a:documentation>
       <element name="sml:characteristics">
          <element name="sml:CharacteristicList">
