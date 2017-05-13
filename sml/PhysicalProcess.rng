@@ -59,11 +59,13 @@
          </element>
      </optional>
      <optional>
+        <a:documentation>Local Spatial Reference Frame</a:documentation>
         <element name="sml:localReferenceFrame">
            <ref name="sml.ReferenceFrame"/>
         </element>     
      </optional>
      <zeroOrMore>
+        <a:documentation>Temporal Reference Frame</a:documentation>
         <element name="sml:temporalReferenceFrame">
            <ref name="gml.TimeCoordinateSystem" />     
         </element>
@@ -98,6 +100,7 @@
          <choice>
             <a:documentation>Inline or By Reference</a:documentation>
             <ref name="xlink.href"/>
+            <a:documentation>Position Options</a:documentation>
             <choice>
                <ref name="swe.Text"/>
                <ref name="gml.Point"/>
@@ -105,6 +108,7 @@
                <ref name="swe.DataRecord"/>
                <ref name="swe.DataArray"/>
                <ref name="swe.Matrix"/>
+               <a:documentation>Position Process</a:documentation>
                <ref name="sml.ProcessGroup"/>
             </choice>   
          </choice>

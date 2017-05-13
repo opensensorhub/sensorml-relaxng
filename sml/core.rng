@@ -110,13 +110,18 @@
                <a:documentation>Inline Identifier List</a:documentation>
                <ref name="sml.metadataList"/>               
                <oneOrMore>
-                  <element name="sml:identifier">
-                     <ref name="sml.Term"/>
-                  </element>
+                  <ref name="sml.Identifier"/>
                </oneOrMore>
             </element>
          </choice>         
       </element>
+   </define>
+   
+   <!-- Identifier -->
+   <define name="sml.Identifier">
+     <element name="sml:identifier">
+        <ref name="sml.Term"/>
+     </element>
    </define>
    
    <!-- Classification -->
@@ -133,12 +138,17 @@
                <a:documentation>Inline Classifier List</a:documentation>
                <ref name="sml.metadataList"/>               
                <oneOrMore>
-                  <element name="sml:classifier">
-                     <ref name="sml.Term"/>
-                  </element>
+                  <ref name="sml.Classifier"/>
                </oneOrMore>
             </element>
          </choice>         
+      </element>
+   </define>
+   
+   <!-- Classifier -->
+   <define name="sml.Classifier">
+      <element name="sml:classifier">
+         <ref name="sml.Term"/>
       </element>
    </define>
    

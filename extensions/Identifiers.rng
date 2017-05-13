@@ -9,41 +9,68 @@
    <!-- includes -->
    <include href="../sml/core.rng"/>
    
+   <define name="sml-x.identifierExtension">
+      <a:documentation>OEM Identifiers</a:documentation>
+      <element name="sml:identification">
+         <element name="sml:IdentifierList">
+            <ref name="sml.metadataList"/> 
+            <ref name="sml-x.identifierGroup"/>
+         </element>        
+      </element>     
+   </define>
+   
    <!-- identifier group (all) -->
    <define name="sml-x.identifierGroup">
       <optional>
+         <a:documentation>Short Name</a:documentation>
          <ref name="sml-x.shortName"/>        
       </optional>
       <optional>
+         <a:documentation>Long Name</a:documentation>
          <ref name="sml-x.longName"/>         
       </optional>
       <optional>
+         <a:documentation>Manufacturer Name</a:documentation>
          <ref name="sml-x.manufacturer"/>
       </optional>
       <optional>
+         <a:documentation>Model Number</a:documentation>
          <ref name="sml-x.modelNumber"/>
       </optional>
       <optional>
+         <a:documentation>Seriual Number</a:documentation>
          <ref name="sml-x.serialNumber"/>
       </optional>
       <optional>
+         <a:documentation>Firmware Version</a:documentation>
          <ref name="sml-x.firmwareVersion"/>
       </optional>
       <optional>
+         <a:documentation>Software Version</a:documentation>
          <ref name="sml-x.softwareVersion"/>
       </optional>
       <optional>
+         <a:documentation>Mission ID</a:documentation>
          <ref name="sml-x.missionID"/>
       </optional>
       <optional>
+         <a:documentation>Cruise ID</a:documentation>
          <ref name="sml-x.cruiseID"/>
       </optional>
       <optional>
+         <a:documentation>Ship ID</a:documentation>
          <ref name="sml-x.shipID"/>
       </optional>
       <optional>
+         <a:documentation>Aircraft Tail Number</a:documentation>
          <ref name="sml-x.tailNumber"/>
       </optional>
+      <zeroOrMore>
+         <a:documentation>Other Identifier</a:documentation>
+         <element name="sml:identifier">
+            <ref name="sml.Term"/>
+         </element>
+      </zeroOrMore>
       
    </define>   
    
@@ -196,7 +223,7 @@
                <value>http://sensorml.com/ont/swe/property/FirmwareVersion</value>
             </attribute>
             <element name="sml:label">
-               <value>Firware Version</value>
+               <value>Firmware Version</value>
             </element>
             <element name="sml:value">
                <data type="token">
@@ -256,7 +283,7 @@
                <value>http://sensorml.com/ont/swe/property/TailNumber</value>
             </attribute>
             <element name="sml:label">
-               <value>Tail Number</value>
+               <value>Aircraft Tail Number</value>
             </element>
             <element name="sml:value">
                <data type="token">
@@ -306,8 +333,6 @@
          </element>
       </element>
    </define>
-   
-   
    
    
 </grammar>

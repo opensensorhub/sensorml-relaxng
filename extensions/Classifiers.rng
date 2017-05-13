@@ -9,14 +9,34 @@
     <!-- includes -->
     <include href="../sml/core.rng"/>
     
+    <define name="sml-x.classificationExtension">
+        <a:documentation>Classifiers</a:documentation>
+        <element name="sml:identification">
+            <element name="sml:IdentifierList">
+                <ref name="sml.metadataList"/> 
+                <ref name="sml-x.classifierGroup"/>
+            </element>        
+        </element>     
+    </define>
+    
+
     <!-- classifier group (all) -->
     <define name="sml-x.classifierGroup">
         <zeroOrMore>
+            <a:documentation>Intended Applications</a:documentation>
             <ref name="sml-x.intendedApplication"/>        
         </zeroOrMore>
         <zeroOrMore>
+            <a:documentation>Sensor Types</a:documentation>
             <ref name="sml-x.sensorType"/>        
         </zeroOrMore>
+        <zeroOrMore>
+            <a:documentation>Other Classifier</a:documentation>
+            <element name="sml:classifier">
+                <ref name="sml.Term"/>
+            </element>
+        </zeroOrMore>
+        
     </define>        
 
     <!-- intended application -->

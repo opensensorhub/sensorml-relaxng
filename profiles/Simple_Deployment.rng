@@ -74,7 +74,7 @@
 <!--         <zeroOrMore>
             <ref name="sml.documentation"/>
          </zeroOrMore>  -->
-         <!-- REMOVE HISTORY FOR NOW - REQUIRE IT TO BE LINKED -->
+         <!-- REMOVE HISTORY FOR NOW ?? - REQUIRE IT TO BE LINKED -->
         <zeroOrMore>
             <ref name="sml.history"/>
          </zeroOrMore> 
