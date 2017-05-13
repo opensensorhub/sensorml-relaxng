@@ -404,9 +404,7 @@
                <value>V</value>
             </attribute>
          </element>
-         <element name="sml:value">
-            <data type="decimal"/>
-         </element>
+         <ref name="swe.quantityRangeValue"/>
       </element>
    </define>
    
@@ -501,9 +499,7 @@
                <value>mAh</value>
             </attribute>
          </element>
-         <element name="sml:value">
-            <data type="decimal"/>
-         </element>
+         <ref name="swe.quantityRangeValue"/>
       </element>
    </define>
    
@@ -528,9 +524,7 @@
                <value>Wh</value>
             </attribute>
          </element>
-         <element name="sml:value">
-            <data type="decimal"/>
-         </element>
+         <ref name="swe.quantityRangeValue"/>
       </element>
    </define>
    
@@ -555,9 +549,7 @@
                <value>A</value>
             </attribute>
          </element>
-         <element name="sml:value">
-            <data type="decimal"/>
-         </element>
+         <ref name="swe.quantityRangeValue"/>
       </element>
    </define>
    
@@ -582,9 +574,7 @@
                <value>A</value>
             </attribute>
          </element>
-         <element name="sml:value">
-            <data type="decimal"/>
-         </element>
+         <ref name="swe.quantityRangeValue"/>
       </element>
    </define>
    
@@ -632,9 +622,7 @@
                      <value>A</value>
                   </attribute>
                </element>
-               <element name="sml:value">
-                  <data type="decimal"/>
-               </element>
+               <ref name="swe.quantityRangeValue"/>
             </element>
          </element>
       </element>       
@@ -684,9 +672,7 @@
                      <value>A</value>
                   </attribute>
                </element>
-               <element name="sml:value">
-                  <data type="decimal"/>
-               </element>
+               <ref name="swe.quantityRangeValue"/>
             </element>
          </element>
       </element>       
