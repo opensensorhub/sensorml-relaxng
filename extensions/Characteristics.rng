@@ -607,7 +607,7 @@
             </element>
          </element>
          <element name="sml-x:value">
-            <element name="swe:QuantityRange">
+            <element name="swe:Quantity">
                <attribute name="definition">
                   <value>http://sensorml.com/ont/swe/property/totalPowerConsumption</value>
                </attribute>
@@ -622,7 +622,7 @@
                      <value>A</value>
                   </attribute>
                </element>
-               <ref name="swe.quantityRangeValue"/>
+               <ref name="swe.quantityValue"/>
             </element>
          </element>
       </element>       
@@ -657,7 +657,7 @@
             </element>
          </element>
          <element name="sml-x:value">
-            <element name="swe:QuantityRange">
+            <element name="swe:Quantity">
                <attribute name="definition">
                   <value>http://sensorml.com/ont/swe/property/typicalPowerConsumption</value>
                </attribute>
@@ -672,7 +672,7 @@
                      <value>A</value>
                   </attribute>
                </element>
-               <ref name="swe.quantityRangeValue"/>
+               <ref name="swe.quantityValue"/>
             </element>
          </element>
       </element>       

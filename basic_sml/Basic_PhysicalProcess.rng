@@ -101,12 +101,19 @@
             <a:documentation>Inline or By Reference</a:documentation>
             <ref name="xlink.href"/>
             <choice>
+               <a:documentation>Location Description</a:documentation>
                <ref name="swe.Text"/>
+               <a:documentation>Location Point (GML Point)</a:documentation>
                <ref name="gml.Point"/>
+               <a:documentation>Location Vector</a:documentation>
                <ref name="swe.Vector"/>
+               <a:documentation>Object State</a:documentation>
                <ref name="swe.DataRecord"/>
+               <a:documentation>Dynamic Position or State</a:documentation>
                <ref name="swe.DataArray"/>
+               <a:documentation>Quaternion</a:documentation>
                <ref name="swe.Matrix"/>
+               <a:documentation>Position or State by Process</a:documentation>
                <ref name="sml.ProcessGroup"/>
             </choice>
          </choice>

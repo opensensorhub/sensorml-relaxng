@@ -25,6 +25,8 @@
       <a:documentation>GPS Location Vector (byLocation)</a:documentation>
       <ref name="sml-x.gpsLocationVector"/>
       <!-- Add position types -->
+      <a:documentation>Other Positions</a:documentation>
+      <ref name="sml.position"/>
    </define>
    
    
