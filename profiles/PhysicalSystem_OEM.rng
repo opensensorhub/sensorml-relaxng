@@ -44,7 +44,7 @@
             <ref name="sml-x.identifierExtension"/>
          </optional>
          <optional>
-            <ref name="sml.classifierExtension"/>
+            <ref name="sml-x.classifierExtension"/>
          </optional>
 <!--         <optional>
             <ref name="sml.validTime"/>

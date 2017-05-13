@@ -10,7 +10,7 @@
    <include href="../sml/core.rng"/>
    
    <define name="sml-x.identifierExtension">
-      <a:documentation>OEM Identifiers</a:documentation>
+      <a:documentation>Identifiers</a:documentation>
       <element name="sml:identification">
          <element name="sml:IdentifierList">
             <ref name="sml.metadataList"/> 
