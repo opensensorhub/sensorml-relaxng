@@ -57,7 +57,7 @@
             <ref name="sml.legalConstraint"/>
          </zeroOrMore>  -->
          <optional>
-            <ref name="sml-x.deployment_characteristics"/>
+            <ref name="sml-x.characteristicsGroup"/>
          </optional>
          <zeroOrMore>
             <ref name="sml.characteristics"/>

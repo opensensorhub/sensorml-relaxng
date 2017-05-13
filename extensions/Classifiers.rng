@@ -11,8 +11,8 @@
     
     <define name="sml-x.classifierExtension">
         <a:documentation>Classifiers</a:documentation>
-        <element name="sml:identification">
-            <element name="sml:IdentifierList">
+        <element name="sml:classification">
+            <element name="sml:ClassifierList">
                 <ref name="sml.metadataList"/> 
                 <ref name="sml-x.classifierGroup"/>
             </element>        
