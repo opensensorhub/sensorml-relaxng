@@ -102,6 +102,7 @@
             <ref name="xlink.href"/>
             <a:documentation>Position Options</a:documentation>
             <choice>
+               <a:documentation>By description</a:documentation>
                <ref name="swe.Text"/>
                <ref name="gml.Point"/>
                <ref name="swe.Vector"/>
