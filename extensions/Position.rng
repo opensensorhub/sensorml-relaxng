@@ -16,17 +16,22 @@
    <include href="../sml/PhysicalProcess.rng"/>   
    
    <define name="sml-x.PositionGroup">
-      <a:documentation>Location Description (byDescription)</a:documentation>
-      <ref name="sml-x.locationDescription"/>
-      <a:documentation>GML Point (byPoint)</a:documentation>
-      <ref name="sml-x.gmlPoint"/>
-      <a:documentation>xyz Location Vector (byLocation)</a:documentation>
-      <ref name="sml-x.xyzLocationVector"/>
-      <a:documentation>GPS Location Vector (byLocation)</a:documentation>
-      <ref name="sml-x.gpsLocationVector"/>
-      <!-- Add position types -->
-      <a:documentation>Other Positions</a:documentation>
-      <ref name="sml.position"/>
+      <element name="sml.position">
+         <choice>
+            <a:documentation>Location Description (byDescription)</a:documentation>
+            <ref name="sml-x.locationDescription"/>
+            <a:documentation>GML Point (byPoint)</a:documentation>
+            <ref name="sml-x.gmlPoint"/>
+            <a:documentation>xyz Location Vector (byLocation)</a:documentation>
+            <ref name="sml-x.xyzLocationVector"/>
+            <a:documentation>GPS Location Vector (byLocation)</a:documentation>
+            <ref name="sml-x.gpsLocationVector"/>
+            <!-- Add more position types -->
+            
+            <a:documentation>Other Positions</a:documentation>
+            <ref name="sml.position"/>            
+         </choice>
+      </element>
    </define>
    
    
