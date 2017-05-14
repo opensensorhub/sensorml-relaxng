@@ -60,7 +60,7 @@
          </zeroOrMore>  -->
          <zeroOrMore>
             <a:documentation>Characteristics</a:documentation>
-            <ref name="sml-x.characteristicsExtensions"/>
+            <ref name="sml-x.characteristicsExtension"/>
          </zeroOrMore>
          <zeroOrMore>
             <a:documentation>Capabilities</a:documentation>
