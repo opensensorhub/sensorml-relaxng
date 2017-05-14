@@ -10,7 +10,8 @@
    <include href="../extensions/Identifiers.rng"/>
    <include href="../extensions/Classifiers.rng"/>
    <include href="../extensions/Characteristics.rng"/>
-     
+   <include href="../extensions/Capabilities.rng"/>
+   
   
    <start>
       <ref name="sml-x.TeledyneSensor"/>

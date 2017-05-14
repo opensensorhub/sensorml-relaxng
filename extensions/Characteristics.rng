@@ -17,6 +17,7 @@
       <element name="sml:characteristics">
          <element name="sml:CharacteristicList">
             <ref name="sml.metadataList"/>
+            <a:documentation>Characteristics Options</a:documentation>
             <ref name="sml-x.characteristicsGroup"/>
          </element>
       </element>
