@@ -22,7 +22,7 @@
                 <a:documentation>Dynamic Range</a:documentation>
                 <element name="swe:field">
                     <attribute name="name">
-                        <value>dyanmicRange</value>
+                        <value>dynamicRange</value>
                     </attribute>            
                     <ref name="sml-x.dynamicRange"/>
                 </element>
@@ -469,7 +469,7 @@
         <element name="swe:elementCount">
             <element name="swe:Count">
                 <element name="swe:value">
-                    <data type="decimal"/>                                               
+                    <value>2</value>                                               
                 </element>
             </element>
         </element>
@@ -485,7 +485,24 @@
         <a:documentation>
             For CSV format use a space for tokenSeparator, a comma for blockSeparator, and dot for decimalSeparator
         </a:documentation>
-        <ref name="swe.encoding"/>       
-    </define>   
+        <ref name="swe.EncodedValuesGroup" />
+    </define>  
+    
+    <define name="swe.DataArray">
+        <!-- <a:documentation>Data Array (Array of N identical components)</a:documentation> -->
+        <a:documentation>Data Array</a:documentation>
+        <element name="swe:DataArray">
+            <ref name="swe.AbstractDataComponent" />
+            <ref name="swe.elementCount" />
+            <element name="swe:elementType">
+                <ref name="swe.dataComponentPropertyWithName" />
+            </element>
+            <optional>
+                <a:documentation>Encoded Values</a:documentation>
+                <ref name="swe.EncodedValuesGroup" />
+            </optional>
+        </element>
+    </define>
+    
 
 </grammar>

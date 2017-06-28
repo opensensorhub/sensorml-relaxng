@@ -33,7 +33,7 @@
          <zeroOrMore>
             <ref name="sml-x.classifierExtension"/>
          </zeroOrMore>  
-           <ref name="sml-x.instance_history"/> 
+<!--           <ref name="sml-x.instance_history"/> -->
          <element name="sml:typeOf">
             <ref name="xlink.hrefWithTitle"/>
          </element>         

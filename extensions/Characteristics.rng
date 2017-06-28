@@ -92,13 +92,13 @@
                   <ref name="sml-x.weightInAir"/>
                </element>         
             </optional>
-            <optional>
+            <zeroOrMore>
                <a:documentation>Material</a:documentation> 
                <element name="swe:field">
                   <ref name="swe.nameAtt"/>
                   <ref name="sml-x.material"/>
                </element>         
-            </optional>
+            </zeroOrMore>
             <optional>
                <a:documentation>IP Rating</a:documentation> 
                <element name="swe:field">
@@ -310,6 +310,15 @@
             </element>   
          </optional>
          <optional>
+            <a:documentation>Typical Current Consumption</a:documentation> 
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>typicalCurrentConsumption</value>
+               </attribute>
+               <ref name="sml-x.typicalCurrent"/>
+            </element>   
+         </optional>
+         <optional>
             <a:documentation>Typical Power Consumption</a:documentation> 
             <element name="swe:field">
                <attribute name="name">
@@ -354,6 +363,17 @@
                <ref name="sml-x.batteryPower"/>
             </element>   
          </optional>
+         
+         <optional>
+            <a:documentation>Supports Battery (yes/no/optional)</a:documentation>
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>supportsBattery</value>
+               </attribute>
+               <ref name="sml-x.supportsBattery"/>
+            </element>           
+         </optional>
+         
          <optional>
             <a:documentation>Battery Type</a:documentation> 
             <element name="swe:field">
@@ -425,7 +445,7 @@
          <optional>
             <ref name="swe.description"/>
          </optional>
-         <element name="sml:value">
+         <element name="swe:value">
             <choice>
                <value>AC</value>
                <value>DC</value>
@@ -450,7 +470,7 @@
          <optional>
             <ref name="swe.description"/>
          </optional>
-         <element name="sml:value">
+         <element name="swe:value">
             <data type="boolean"/>
          </element>
       </element>
@@ -472,13 +492,46 @@
          <optional>
             <ref name="swe.description"/>
          </optional>
-         <element name="sml:value">
+         <element name="swe:value">
             <data type="token"/>
          </element>
       </element>
    </define>
    
- 
+   <!-- Supports Battery Option-->
+   
+   <define name="sml-x.supportsBattery">
+      <a:documentation>
+         Supports Battery (yes/no/optional)
+      </a:documentation> 
+      <element name="swe:Category">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/supportsBattery</value>
+         </attribute>
+         <element name="swe:label">
+            <value>Supports Battery</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="swe:constraint">
+            <element name="swe:AllowedTokens">
+               <element name="swe:value">
+                  <choice>
+                     <value>yes</value>
+                     <value>no</value>
+                     <value>optional</value>
+                  </choice>                 
+               </element>   
+            </element>   
+         </element>   
+         <element name="swe:value">
+            <data type="token"/>
+         </element>
+      </element>
+   </define>
+   
+   
    <!-- Battery Capacity (mA-Hour) -->
    
    <define name="sml-x.batteryCapacity-mAH">
@@ -529,6 +582,31 @@
       </element>
    </define>
    
+   <!-- Typical Current Consumption (unqualified) -->
+   
+   <define name="sml-x.typicalCurrent">
+      <a:documentation>
+         Typical Current Unqualified
+      </a:documentation> 
+      <element name="swe:QuantityRange">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/typicalCurrentConsumption</value>
+         </attribute>
+         <element name="swe:label">
+            <value> Typical Current Consumption</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="swe:uom">
+            <attribute name="code">
+               <value>A</value>
+            </attribute>
+         </element>
+         <ref name="swe.quantityRangeValue"/>
+      </element>
+   </define>
+   
    <!-- Total Power Consumption (unqualified) -->
    
    <define name="sml-x.totalPower">
@@ -547,7 +625,7 @@
          </optional>
          <element name="swe:uom">
             <attribute name="code">
-               <value>A</value>
+               <value>W</value>
             </attribute>
          </element>
          <ref name="swe.quantityRangeValue"/>
@@ -572,7 +650,7 @@
          </optional>
          <element name="swe:uom">
             <attribute name="code">
-               <value>A</value>
+               <value>W</value>
             </attribute>
          </element>
          <ref name="swe.quantityRangeValue"/>
@@ -599,10 +677,10 @@
                </optional>
                <element name="swe:uom">
                   <attribute name="code">
-                     <value>V</value>
+                     <value>W</value>
                   </attribute>
                </element>
-               <element name="sml:value">
+               <element name="swe:value">
                   <data type="decimal"/>
                </element>
             </element>
@@ -620,7 +698,7 @@
                </optional>
                <element name="swe:uom">
                   <attribute name="code">
-                     <value>A</value>
+                     <value>W</value>
                   </attribute>
                </element>
                <ref name="swe.quantityValue"/>
@@ -652,7 +730,7 @@
                      <value>V</value>
                   </attribute>
                </element>
-               <element name="sml:value">
+               <element name="swe:value">
                   <data type="decimal"/>
                </element>
             </element>
