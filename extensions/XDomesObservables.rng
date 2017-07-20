@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    xmlns:sml="http://www.opengis.net/sensorml/2.0" 
+    xmlns:gml="http://www.opengis.net/gml/3.2" 
+    xmlns:swe="http://www.opengis.net/swe/2.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+<!-- includes -->
+    <include href="../sml/SensorML.rng" />
+    <include href="./Time.rng"/>
+    
+   <!-- Supports both observableProperties and Outputs for XDomes subset of sensors -->
+
+
+    <!-- XDomes Sensor Outputs  -->
+    <define name="sml-x.xdomesOutputs">
+        <a:documentation>XDomes Sensor Outputs</a:documentation> 
+        <element name="swe:DataRecord">
+            <element name="swe:label">
+                <value>Sensor Output</value>
+            </element> 
+            <optional>
+                <a:documentation>Sea Water Temperature</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>seaWaterTemperature</value>
+                    </attribute>            
+                    <ref name="sml-x.seaWaterTemperature"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Sea Water Temperature</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>seaWaterPressure</value>
+                    </attribute>
+                    <ref name="sml-x.seaWaterPressure"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Volumetric Backscatter</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>volumetricBackScatter</value>
+                    </attribute>
+                    <ref name="sml-x.volumetricBackScatter"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Partical Motion</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>particleMotion</value>
+                    </attribute>
+                    <ref name="sml-x.particleMotion"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Conductivity</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>conductivity</value>
+                    </attribute>
+                    <ref name="sml-x.conductivity"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Temperature</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>temperature</value>
+                    </attribute>
+                    <ref name="sml-x.temperature"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Wind Speed</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>windSpeed</value>
+                    </attribute>
+                    <ref name="sml-x.windSpeed"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Wind Direction</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>windDirection</value>
+                    </attribute>
+                    <ref name="sml-x.windDirection"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Wind Velocity</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>windVelocity</value>
+                    </attribute>
+                    <ref name="sml-x.windVelocity"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Water Velocity</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>waterVelocity</value>
+                    </attribute>
+                    <ref name="sml-x.waterVelocity"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Air Pressure</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>airPressure</value>
+                    </attribute>
+                    <ref name="sml-x.airPressure"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Barometric Pressure</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>barometricPressure</value>
+                    </attribute>
+                    <ref name="sml-x.barometricPressure"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Humidity</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>humidity</value>
+                    </attribute>
+                    <ref name="sml-x.humidity"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Air Temperature</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>airTemperature</value>
+                    </attribute>
+                    <ref name="sml-x.airTemperature"/>
+                </element>
+            </optional>
+            <optional>
+                <a:documentation>Water Depth</a:documentation>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>waterDepth</value>
+                    </attribute>
+                    <ref name="sml-x.waterDepth"/>
+                </element>
+            </optional>
+        </element>
+    </define>   
+    
+
+    <!-- Use for outputs for Marine Sensors
+        based on XDome Ontology https://xdomes.org/ont/xdomes/observableProperty -->
+
+    <!-- Sea Water Temperature -->
+  
+    <define name="sml-x.seaWaterTemperature">
+        <a:documentation>
+            Sea Water Temperature 
+        </a:documentation> 
+        <element name="swe:Quantity">
+            <attribute name="definition">
+                <value>https://xdomes.org/ont/xdomes/observableProperty/seaWaterTemperature</value>
+            </attribute>
+            <element name="swe:label">
+                <value>Sea Water Temperature</value>
+            </element>  
+            <optional>
+                <ref name="swe.description"/>
+            </optional>
+            <element name="swe:uom">
+                <attribute name="code">
+                    <choice>
+                        <value>Cel</value>
+                        <value>K</value>
+                        <value>degF</value>
+                    </choice>
+                </attribute>
+            </element>
+            <element name="sml:value">
+                <data type="decimal"/>
+            </element>
+        </element>
+    </define>
+    
+    <!-- Sea Water Pressure -->
+    
+    <define name="sml-x.seaWaterPressure">
+        <a:documentation>
+            Sea Water Pressure 
+        </a:documentation> 
+        <element name="swe:Quantity">
+            <attribute name="definition">
+                <value>https://xdomes.org/ont/xdomes/observableProperty/seaWaterPressure</value>
+            </attribute>
+            <element name="swe:label">
+                <value>Sea Water Pressure</value>
+            </element>  
+            <optional>
+                <ref name="swe.description"/>
+            </optional>
+            <element name="swe:uom">
+                <attribute name="code">
+                    <choice>
+                        <value>bar</value>
+                        <value>Pa</value>
+                        <value>atm</value>
+                        <value>psi</value>
+                    </choice>                
+                </attribute>
+            </element>
+            <element name="sml:value">
+                <data type="decimal"/>
+            </element>
+        </element>
+    </define>
+    
+    <!-- Volumetric Backscatter -->
+    
+    <define name="sml-x.volumetricBackscatter">
+        <a:documentation>
+            Volumetric Backscatter 
+        </a:documentation> 
+        <element name="swe:Quantity">
+            <attribute name="definition">
+                <value>https://xdomes.org/ont/xdomes/observableProperty/volumetricBackscatter</value>
+            </attribute>
+            <element name="swe:label">
+                <value>Volumetric Backscatter</value>
+            </element>  
+            <optional>
+                <ref name="swe.description"/>
+            </optional>
+            <element name="swe:uom">
+                <attribute name="code">
+                    <data type="token"/>
+                </attribute>
+            </element>
+            <element name="sml:value">
+                <data type="decimal"/>
+            </element>
+        </element>
+    </define>
+    
+    <!-- Particle Motion -->
+    
+    <define name="sml-x.particleMotion">
+        <a:documentation>
+            Particle Motion 
+        </a:documentation> 
+        <element name="swe:Quantity">
+            <attribute name="definition">
+                <value>https://xdomes.org/ont/xdomes/observableProperty/particleMotion</value>
+            </attribute>
+            <element name="swe:label">
+                <value>Particle Motion</value>
+            </element>  
+            <optional>
+                <ref name="swe.description"/>
+            </optional>
+            <element name="swe:uom">
+                <attribute name="code">
+                    <data type="token"/>
+                </attribute>
+            </element>
+            <element name="sml:value">
+                <data type="decimal"/>
+            </element>
+        </element>
+    </define>
+    
+    <!-- Conductivity -->
+    
+    <define name="sml-x.conductivity">
+        <a:documentation>
+            Conductivity 
+        </a:documentation> 
+        <element name="swe:Quantity">
+            <attribute name="definition">
+                <value>https://xdomes.org/ont/xdomes/observableProperty/conductivity</value>
+            </attribute>
+            <element name="swe:label">
+                <value>Conductivity</value>
+            </element>  
+            <optional>
+                <ref name="swe.description"/>
+            </optional>
+            <element name="swe:uom">
+                <attribute name="code">
+                    <data type="token"/>
+                </attribute>
+            </element>
+            <element name="sml:value">
+                <data type="decimal"/>
+            </element>
+        </element>
+    </define>
+    
+    <!-- Temperature -->
+    
+    <define name="sml-x.temperature">
+        <a:documentation>
+            Temperature 
+        </a:documentation> 
+        <element name="swe:Quantity">
+            <attribute name="definition">
+                <value>https://xdomes.org/ont/xdomes/observableProperty/temperature</value>
+            </attribute>
+            <element name="swe:label">
+                <value>Temperature</value>
+            </element>  
+            <optional>
+                <ref name="swe.description"/>
+            </optional>
+            <element name="swe:uom">
+                <attribute name="code">
+                    <choice>
+                        <value>Cel</value>
+                        <value>K</value>
+                        <value>degF</value>
+                    </choice>
+                </attribute>
+            </element>
+            <element name="sml:value">
+                <data type="decimal"/>
+            </element>
+        </element>
+    </define>
+    
+    <!-- Wind Speed -->
+    
+    <define name="sml-x.windSpeed">
+        <a:documentation>
+            Wind Speed 
+        </a:documentation> 
+        <element name="swe:Quantity">
+            <attribute name="definition">
+                <value>https://xdomes.org/ont/xdomes/observableProperty/windSpeed</value>
+            </attribute>
+            <element name="swe:label">
+                <value>Wind Speed</value>
+            </element>  
+            <optional>
+                <ref name="swe.description"/>
+            </optional>
+            <element name="swe:uom">
+                <attribute name="code">
+                    <choice>
+                        <value>m/s</value>
+                        <value>km/h</value>
+                        <value>mi_us/h</value>
+                        <value>kn_i</value>                    
+                    </choice>
+                </attribute>
+            </element>
+            <element name="sml:value">
+                <data type="decimal"/>
+            </element>
+        </element>
+    </define>
+    
+    <!-- Wind Direction -->
+    
+    <define name="sml-x.windDirection">
+        <a:documentation>
+            Wind Direction 
+        </a:documentation> 
+        <element name="swe:Quantity">
+            <attribute name="definition">
+                <value>https://xdomes.org/ont/xdomes/observableProperty/windDir</value>
+            </attribute>
+            <element name="swe:label">
+                <value>Wind Direction</value>
+            </element>  
+            <optional>
+                <ref name="swe.description"/>
+            </optional>
+            <element name="swe:uom">
+                <attribute name="code">
+                    <choice>
+                        <value>deg</value>
+                        <value>rad</value>                    
+                    </choice>
+                </attribute>
+            </element>
+            <element name="sml:value">
+                <data type="decimal"/>
+            </element>
+        </element>
+    </define>
+    
+    <!-- Wind Velocity -->
+    
+    <define name="sml-x.windVelocity">
+        <a:documentation>
+            Wind Velocity 
+        </a:documentation> 
+        <element name="swe:Quantity">
+            <attribute name="definition">
+                <value>https://xdomes.org/ont/xdomes/observableProperty/windVelocity</value>
+            </attribute>
+            <element name="swe:label">
+                <value>Wind Velocity</value>
+            </element>  
+            <optional>
+                <ref name="swe.description"/>
+            </optional>
+            <element name="swe:uom">
+                <attribute name="code">
+                    <choice>
+                        <value>m/s</value>
+                        <value>km/h</value>
+                        <value>mi_us/h</value>
+                        <value>kn_i</value>                    
+                    </choice>
+                </attribute>
+            </element>
+            <element name="sml:value">
+                <data type="decimal"/>
+            </element>
+        </element>
+    </define>
+    
+    <!-- Water Velocity -->
+    
+    <define name="sml-x.waterVelocity">
+        <a:documentation>
+            Water Velocity 
+        </a:documentation> 
+        <element name="swe:Quantity">
+            <attribute name="definition">
+                <value>https://xdomes.org/ont/xdomes/observableProperty/waterVelocity</value>
+            </attribute>
+            <element name="swe:label">
+                <value>Water Velocity</value>
+            </element>  
+            <optional>
+                <ref name="swe.description"/>
+            </optional>
+            <element name="swe:uom">
+                <attribute name="code">
+                    <choice>
+                        <value>m/s</value>
+                        <value>km/h</value>
+                        <value>mi_us/h</value>
+                        <value>kn_i</value>                    
+                    </choice>
+                </attribute>
+            </element>
+            <element name="sml:value">
+                <data type="decimal"/>
+            </element>
+        </element>
+    </define>
+    
+    <!-- Air Pressure -->
+    
+    <define name="sml-x.airPressure">
+        <a:documentation>
+            Air Pressure 
+        </a:documentation> 
+        <element name="swe:Quantity">
+            <attribute name="definition">
+                <value>https://xdomes.org/ont/xdomes/observableProperty/airPressure</value>
+            </attribute>
+            <element name="swe:label">
+                <value>Air Pressure</value>
+            </element>  
+            <optional>
+                <ref name="swe.description"/>
+            </optional>
+            <element name="swe:uom">
+                <attribute name="code">
+                    <choice>
+                        <value>bar</value>
+                        <value>Pa</value>
+                        <value>atm</value>
+                        <value>psi</value>
+                        <value>m[Hg]</value>
+                        <value>in_i'Hg</value>
+                    </choice>                
+                </attribute>
+            </element>
+            <element name="sml:value">
+                <data type="decimal"/>
+            </element>
+        </element>
+    </define>
+    
+    <!-- Barometric Pressure -->
+    
+    <define name="sml-x.barometricPressure">
+        <a:documentation>
+            Barometric Pressure 
+        </a:documentation> 
+        <element name="swe:Quantity">
+            <attribute name="definition">
+                <value>https://xdomes.org/ont/xdomes/observableProperty/barometricPressure</value>
+            </attribute>
+            <element name="swe:label">
+                <value>Barometric Pressure</value>
+            </element>  
+            <optional>
+                <ref name="swe.description"/>
+            </optional>
+            <element name="swe:uom">
+                <attribute name="code">
+                    <choice>
+                        <value>bar</value>
+                        <value>Pa</value>
+                        <value>atm</value>
+                        <value>psi</value>
+                        <value>m[Hg]</value>
+                        <value>in_i'Hg</value>
+                    </choice>                
+                </attribute>
+            </element>
+            <element name="sml:value">
+                <data type="decimal"/>
+            </element>
+        </element>
+    </define>
+    
+    <!-- Humidity -->
+    
+    <define name="sml-x.humidity">
+        <a:documentation>
+            Humidity 
+        </a:documentation> 
+        <element name="swe:Quantity">
+            <attribute name="definition">
+                <value>https://xdomes.org/ont/xdomes/observableProperty/humidity</value>
+            </attribute>
+            <element name="swe:label">
+                <value>Humidity</value>
+            </element>  
+            <optional>
+                <ref name="swe.description"/>
+            </optional>
+            <element name="swe:uom">
+                <attribute name="code">
+                    <choice>
+                        <value>%</value>
+                        <value>g/kg</value>
+                        <value>kg/kg</value>
+                    </choice>
+                </attribute>
+            </element>
+            <element name="sml:value">
+                <data type="decimal"/>
+            </element>
+        </element>
+    </define>
+    
+    <!-- Air Temperature -->
+    
+    <define name="sml-x.airTemperature">
+        <a:documentation>
+            Air Temperature 
+        </a:documentation> 
+        <element name="swe:Quantity">
+            <attribute name="definition">
+                <value>https://xdomes.org/ont/xdomes/observableProperty/airTemperature</value>
+            </attribute>
+            <element name="swe:label">
+                <value>Air Temperature</value>
+            </element>  
+            <optional>
+                <ref name="swe.description"/>
+            </optional>
+            <element name="swe:uom">
+                <attribute name="code">
+                    <choice>
+                        <value>Cel</value>
+                        <value>K</value>
+                        <value>degF</value>
+                    </choice>
+                </attribute>
+            </element>
+            <element name="sml:value">
+                <data type="decimal"/>
+            </element>
+        </element>
+    </define>
+    
+    <!-- Water Depth -->
+    
+    <define name="sml-x.waterDepth">
+        <a:documentation>
+            Water Depth 
+        </a:documentation> 
+        <element name="swe:Quantity">
+            <attribute name="definition">
+                <value>https://xdomes.org/ont/xdomes/observableProperty/waterDepth</value>
+            </attribute>
+            <element name="swe:label">
+                <value>Water Depth</value>
+            </element>  
+            <optional>
+                <ref name="swe.description"/>
+            </optional>
+            <element name="swe:uom">
+                <attribute name="code">
+                    <choice>
+                        <value>m</value>
+                        <value>km</value>
+                        <value>ft_us</value>
+                        <value>fur_us</value>
+                    </choice>
+                </attribute>
+            </element>
+            <element name="sml:value">
+                <data type="decimal"/>
+            </element>
+        </element>
+    </define>
+    
+    
+</grammar>

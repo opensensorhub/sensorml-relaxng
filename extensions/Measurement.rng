@@ -198,7 +198,7 @@
         </a:documentation> 
         <element name="swe:Quantity">
             <attribute name="definition">
-                <value>http://sensorml.com/ont/swe/property/sensivity</value>
+                <value>http://sensorml.com/ont/swe/property/sensitivity</value>
             </attribute>
             <element name="swe:label">
                 <value>Sensitivity</value>
