@@ -68,7 +68,7 @@
                      <element name="swe:label">
                         <value>Sensor Output</value>
                      </element> 
-                     <ref sml-x:XDomesObservables"/>>
+                     <ref sml-x:XDomesObservables"/>
                   </element>
                </element>
             </element>
