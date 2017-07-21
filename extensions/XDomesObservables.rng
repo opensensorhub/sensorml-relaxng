@@ -21,6 +21,10 @@
                 <value>Sensor Output</value>
             </element> 
             <optional>
+                <a:documentation>Sampling Time</a:documentation>
+                <def name="swe-x.SamplingTime_ISO"/>
+            </optional>
+            <optional>
                 <a:documentation>Sea Water Temperature</a:documentation>
                 <element name="swe:field">
                     <attribute name="name">
@@ -30,7 +34,7 @@
                 </element>
             </optional>
             <optional>
-                <a:documentation>Sea Water Temperature</a:documentation>
+                <a:documentation>Sea Water Pressure</a:documentation>
                 <element name="swe:field">
                     <attribute name="name">
                         <value>seaWaterPressure</value>
