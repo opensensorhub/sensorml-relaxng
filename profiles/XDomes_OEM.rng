@@ -11,6 +11,7 @@
    <include href="../extensions/Classifiers.rng"/>
    <include href="../extensions/Characteristics.rng"/>
    <include href="../extensions/Capabilities.rng"/>
+   <include href="../profiles/PhysicalSystem_OEM"/>
    <include href="../extensions/XDomesObservables.rng"/>
    
    
