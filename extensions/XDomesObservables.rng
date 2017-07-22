@@ -13,11 +13,16 @@
    <!-- Supports both observableProperties and Outputs for XDomes subset of sensors -->
 
 
-    <!-- XDomes Sensor Outputs  -->
+    <!-- XDomes Sensor Output Fields  -->
     <define name="sml-x.xdomesOutputs">
             <optional>
                 <a:documentation>Sampling Time</a:documentation>
-                <ref name="swe-x.SamplingTime_ISO"/>
+                <element name="swe:field">
+                    <attribute name="name">
+                        <value>samplingTime</value>
+                    </attribute>                               
+                    <ref name="swe-x.SamplingTime_ISO"/>
+                </element>
             </optional>
             <optional>
                 <a:documentation>Sea Water Temperature</a:documentation>

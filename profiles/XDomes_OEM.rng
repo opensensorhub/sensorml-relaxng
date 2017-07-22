@@ -25,7 +25,7 @@
       <a:documentation>OEM Sensor System</a:documentation>
       <element name="sml:PhysicalSystem">
          <ref name="sml-x.OEM_DescribedObject"/> 
-<!--         <ref name="sml-x.XDomesProcessContents"/>  -->
+         <ref name="sml-x.XDomesProcessContents"/>  
          <ref name="sml-x.deployed_PhysicalContents"/>
          <optional>
             <ref name="sml.components"/>
