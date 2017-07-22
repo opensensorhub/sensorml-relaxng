@@ -69,7 +69,7 @@
                     <attribute name="name">
                         <value>samplingFreq</value>
                     </attribute>
-                    <ref name="sml-x.samplingFrequency"/>
+                    <ref name="sml-x.samplingFreq"/>
                 </element>
             </optional>
             <optional>
