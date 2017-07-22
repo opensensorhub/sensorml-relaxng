@@ -15,151 +15,150 @@
 
     <!-- XDomes Sensor Output Fields  -->
     <define name="sml-x.xdomesOutputs">
-            <optional>
-                <a:documentation>Sampling Time</a:documentation>
-                <element name="swe:field">
-                    <attribute name="name">
-                        <value>samplingTime</value>
-                    </attribute>                               
-                    <ref name="swe-x.SamplingTime_ISO"/>
-                </element>
-            </optional>
-            <optional>
-                <a:documentation>Sea Water Temperature</a:documentation>
-                <element name="swe:field">
-                    <attribute name="name">
-                        <value>seaWaterTemperature</value>
-                    </attribute>            
-                    <ref name="sml-x.seaWaterTemperature"/>
-                </element>
-            </optional>
-            <optional>
-                <a:documentation>Sea Water Pressure</a:documentation>
-                <element name="swe:field">
-                    <attribute name="name">
-                        <value>seaWaterPressure</value>
-                    </attribute>
-                    <ref name="sml-x.seaWaterPressure"/>
-                </element>
-            </optional>
-            <optional>
-                <a:documentation>Volumetric Backscatter</a:documentation>
-                <element name="swe:field">
-                    <attribute name="name">
-                        <value>volumetricBackScatter</value>
-                    </attribute>
-                    <ref name="sml-x.volumetricBackScatter"/>
-                </element>
-            </optional>
-            <optional>
-                <a:documentation>Partical Motion</a:documentation>
-                <element name="swe:field">
-                    <attribute name="name">
-                        <value>particleMotion</value>
-                    </attribute>
-                    <ref name="sml-x.particleMotion"/>
-                </element>
-            </optional>
-            <optional>
-                <a:documentation>Conductivity</a:documentation>
-                <element name="swe:field">
-                    <attribute name="name">
-                        <value>conductivity</value>
-                    </attribute>
-                    <ref name="sml-x.conductivity"/>
-                </element>
-            </optional>
-            <optional>
-                <a:documentation>Temperature</a:documentation>
-                <element name="swe:field">
-                    <attribute name="name">
-                        <value>temperature</value>
-                    </attribute>
-                    <ref name="sml-x.temperature"/>
-                </element>
-            </optional>
-            <optional>
-                <a:documentation>Wind Speed</a:documentation>
-                <element name="swe:field">
-                    <attribute name="name">
-                        <value>windSpeed</value>
-                    </attribute>
-                    <ref name="sml-x.windSpeed"/>
-                </element>
-            </optional>
-            <optional>
-                <a:documentation>Wind Direction</a:documentation>
-                <element name="swe:field">
-                    <attribute name="name">
-                        <value>windDirection</value>
-                    </attribute>
-                    <ref name="sml-x.windDirection"/>
-                </element>
-            </optional>
-            <optional>
-                <a:documentation>Wind Velocity</a:documentation>
-                <element name="swe:field">
-                    <attribute name="name">
-                        <value>windVelocity</value>
-                    </attribute>
-                    <ref name="sml-x.windVelocity"/>
-                </element>
-            </optional>
-            <optional>
-                <a:documentation>Water Velocity</a:documentation>
-                <element name="swe:field">
-                    <attribute name="name">
-                        <value>waterVelocity</value>
-                    </attribute>
-                    <ref name="sml-x.waterVelocity"/>
-                </element>
-            </optional>
-            <optional>
-                <a:documentation>Air Pressure</a:documentation>
-                <element name="swe:field">
-                    <attribute name="name">
-                        <value>airPressure</value>
-                    </attribute>
-                    <ref name="sml-x.airPressure"/>
-                </element>
-            </optional>
-            <optional>
-                <a:documentation>Barometric Pressure</a:documentation>
-                <element name="swe:field">
-                    <attribute name="name">
-                        <value>barometricPressure</value>
-                    </attribute>
-                    <ref name="sml-x.barometricPressure"/>
-                </element>
-            </optional>
-            <optional>
-                <a:documentation>Humidity</a:documentation>
-                <element name="swe:field">
-                    <attribute name="name">
-                        <value>humidity</value>
-                    </attribute>
-                    <ref name="sml-x.humidity"/>
-                </element>
-            </optional>
-            <optional>
-                <a:documentation>Air Temperature</a:documentation>
-                <element name="swe:field">
-                    <attribute name="name">
-                        <value>airTemperature</value>
-                    </attribute>
-                    <ref name="sml-x.airTemperature"/>
-                </element>
-            </optional>
-            <optional>
-                <a:documentation>Water Depth</a:documentation>
-                <element name="swe:field">
-                    <attribute name="name">
-                        <value>waterDepth</value>
-                    </attribute>
-                    <ref name="sml-x.waterDepth"/>
-                </element>
-            </optional>
-        </element>
+        <optional>
+            <a:documentation>Sampling Time</a:documentation>
+            <element name="swe:field">
+                <attribute name="name">
+                    <value>samplingTime</value>
+                </attribute>                               
+                <ref name="swe-x.SamplingTime_ISO"/>
+            </element>
+        </optional>
+        <optional>
+            <a:documentation>Sea Water Temperature</a:documentation>
+            <element name="swe:field">
+                <attribute name="name">
+                    <value>seaWaterTemperature</value>
+                </attribute>            
+                <ref name="sml-x.seaWaterTemperature"/>
+            </element>
+        </optional>
+        <optional>
+            <a:documentation>Sea Water Pressure</a:documentation>
+            <element name="swe:field">
+                <attribute name="name">
+                    <value>seaWaterPressure</value>
+                </attribute>
+                <ref name="sml-x.seaWaterPressure"/>
+            </element>
+        </optional>
+        <optional>
+            <a:documentation>Volumetric Backscatter</a:documentation>
+            <element name="swe:field">
+                <attribute name="name">
+                    <value>volumetricBackScatter</value>
+                </attribute>
+                <ref name="sml-x.volumetricBackScatter"/>
+            </element>
+        </optional>
+        <optional>
+            <a:documentation>Partical Motion</a:documentation>
+            <element name="swe:field">
+                <attribute name="name">
+                    <value>particleMotion</value>
+                </attribute>
+                <ref name="sml-x.particleMotion"/>
+            </element>
+        </optional>
+        <optional>
+            <a:documentation>Conductivity</a:documentation>
+            <element name="swe:field">
+                <attribute name="name">
+                    <value>conductivity</value>
+                </attribute>
+                <ref name="sml-x.conductivity"/>
+            </element>
+        </optional>
+        <optional>
+            <a:documentation>Temperature</a:documentation>
+            <element name="swe:field">
+                <attribute name="name">
+                    <value>temperature</value>
+                </attribute>
+                <ref name="sml-x.temperature"/>
+            </element>
+        </optional>
+        <optional>
+            <a:documentation>Wind Speed</a:documentation>
+            <element name="swe:field">
+                <attribute name="name">
+                    <value>windSpeed</value>
+                </attribute>
+                <ref name="sml-x.windSpeed"/>
+            </element>
+        </optional>
+        <optional>
+            <a:documentation>Wind Direction</a:documentation>
+            <element name="swe:field">
+                <attribute name="name">
+                    <value>windDirection</value>
+                </attribute>
+                <ref name="sml-x.windDirection"/>
+            </element>
+        </optional>
+        <optional>
+            <a:documentation>Wind Velocity</a:documentation>
+            <element name="swe:field">
+                <attribute name="name">
+                    <value>windVelocity</value>
+                </attribute>
+                <ref name="sml-x.windVelocity"/>
+            </element>
+        </optional>
+        <optional>
+            <a:documentation>Water Velocity</a:documentation>
+            <element name="swe:field">
+                <attribute name="name">
+                    <value>waterVelocity</value>
+                </attribute>
+                <ref name="sml-x.waterVelocity"/>
+            </element>
+        </optional>
+        <optional>
+            <a:documentation>Air Pressure</a:documentation>
+            <element name="swe:field">
+                <attribute name="name">
+                    <value>airPressure</value>
+                </attribute>
+                <ref name="sml-x.airPressure"/>
+            </element>
+        </optional>
+        <optional>
+            <a:documentation>Barometric Pressure</a:documentation>
+            <element name="swe:field">
+                <attribute name="name">
+                    <value>barometricPressure</value>
+                </attribute>
+                <ref name="sml-x.barometricPressure"/>
+            </element>
+        </optional>
+        <optional>
+            <a:documentation>Humidity</a:documentation>
+            <element name="swe:field">
+                <attribute name="name">
+                    <value>humidity</value>
+                </attribute>
+                <ref name="sml-x.humidity"/>
+            </element>
+        </optional>
+        <optional>
+            <a:documentation>Air Temperature</a:documentation>
+            <element name="swe:field">
+                <attribute name="name">
+                    <value>airTemperature</value>
+                </attribute>
+                <ref name="sml-x.airTemperature"/>
+            </element>
+        </optional>
+        <optional>
+            <a:documentation>Water Depth</a:documentation>
+            <element name="swe:field">
+                <attribute name="name">
+                    <value>waterDepth</value>
+                </attribute>
+                <ref name="sml-x.waterDepth"/>
+            </element>
+        </optional>
     </define>   
     
 
