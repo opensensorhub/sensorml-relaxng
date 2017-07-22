@@ -48,7 +48,7 @@
                 <attribute name="name">
                     <value>volumetricBackScatter</value>
                 </attribute>
-                <ref name="sml-x.volumetricBackScatter"/>
+                <ref name="sml-x.volumetricBackscatter"/>
             </element>
         </optional>
         <optional>
