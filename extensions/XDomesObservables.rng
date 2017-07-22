@@ -15,7 +15,6 @@
 
     <!-- XDomes Sensor Output Fields  -->
     <define name="sml-x.xdomesOutputs">
-        <group>
         <optional>
             <a:documentation>Sampling Time</a:documentation>
             <element name="swe:field">
@@ -160,7 +159,6 @@
                 <ref name="sml-x.waterDepth"/>
             </element>
         </optional>
-        </group>
     </define>   
     
 
