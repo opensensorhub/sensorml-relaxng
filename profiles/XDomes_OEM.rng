@@ -69,10 +69,7 @@
                         <element name="swe:label">
                            <value>Sensor Output</value>
                         </element> 
-                        <element name="field">
-                           <attribute name="time"/>
                            <ref name="sml-x.xdomesOutputs"/>
-                        </element>  
                      </element>
                   </element>
                </element>
