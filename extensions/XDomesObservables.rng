@@ -15,14 +15,9 @@
 
     <!-- XDomes Sensor Outputs  -->
     <define name="sml-x.xdomesOutputs">
-        <a:documentation>XDomes Sensor Outputs</a:documentation> 
-        <element name="swe:DataRecord">
-            <element name="swe:label">
-                <value>Sensor Output</value>
-            </element> 
             <optional>
                 <a:documentation>Sampling Time</a:documentation>
-                <def name="swe-x.SamplingTime_ISO"/>
+                <ref name="swe-x.SamplingTime_ISO"/>
             </optional>
             <optional>
                 <a:documentation>Sea Water Temperature</a:documentation>
