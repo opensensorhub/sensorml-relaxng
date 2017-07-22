@@ -65,11 +65,15 @@
                      <attribute name="name">
                         <value>sensorOutput</value>
                      </attribute>
-                  <element name="swe:DataRecord">
-                     <element name="swe:label">
-                        <value>Sensor Output</value>
-                     </element> 
-                     <ref name="sml-x.xdomesOutputs"/>
+                     <element name="swe:DataRecord">
+                        <element name="swe:label">
+                           <value>Sensor Output</value>
+                        </element> 
+                        <element name="field">
+                           <attribute name="time"/>
+                           <ref name="sml-x.xdomesOutputs"/>
+                        </element>  
+                     </element>
                   </element>
                </element>
             </element>
