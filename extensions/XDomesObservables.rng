@@ -15,7 +15,7 @@
 
     <!-- XDomes Sensor Output Fields  -->
     <define name="sml-x.xdomesOutputs">
-        <optional>
+<!--        <optional>
             <a:documentation>Sampling Time</a:documentation>
             <element name="swe:field">
                 <attribute name="name">
@@ -23,7 +23,7 @@
                 </attribute>                               
                 <ref name="swe-x.SamplingTime_ISO"/>
             </element>
-        </optional>
+        </optional>  -->
         <optional>
             <a:documentation>Sea Water Temperature</a:documentation>
             <element name="swe:field">
