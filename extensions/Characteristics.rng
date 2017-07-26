@@ -50,7 +50,7 @@
    
    <!-- Physical Properties Group -->
    <define name="sml-x.physicalProperties">
-      <a:documentation>Physical Properties</a:documentation> 
+ <!--     <a:documentation>Physical Properties</a:documentation> -->
          <element name="swe:DataRecord">
             <element name="swe:label">
                <value>Physical Properties</value>
@@ -65,7 +65,7 @@
                </element>   
             </optional>
             <optional>
-               <a:documentation>Width</a:documentation>               
+ <!--              <a:documentation>Width</a:documentation>         -->      
               <element name="swe:field">
                  <attribute name="name">
                     <value>width</value>
