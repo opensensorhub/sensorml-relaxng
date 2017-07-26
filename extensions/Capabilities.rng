@@ -44,15 +44,15 @@
             <ref name="sml-x.operationalEnvironment"/>        
             </element>
       </optional>
-      <!--       <optional>
-         <a:documentation>Survivable Ranges</a:documentation>
+      <optional>
+         <a:documentation>Survivable Environment</a:documentation>
          <element name="sml:characteristic">
             <attribute name="name">
-               <value>survivableRange</value>
+               <value>survivableEnvironment</value>
             </attribute>
-            <ref name="sml-x.survivableRange"/>
+            <ref name="sml-x.survivableEnvironment"/>
          </element>
-      </optional>  -->
+      </optional> 
       <zeroOrMore>
          <a:documentation>Other Capabilities</a:documentation>
          <ref name="sml.capabilities"/>
