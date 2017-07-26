@@ -33,8 +33,8 @@
             <attribute name="name">
                <value>physicalProperties</value>
             </attribute>
+            <ref name="sml-x.physicalProperties"/>
          </element>
-         <ref name="sml-x.physicalProperties"/>
       </optional>
       <optional>
          <a:documentation>Electrical Properties</a:documentation>
@@ -42,8 +42,8 @@
             <attribute name="name">
                <value>electricalProperties</value>
             </attribute>
+            <ref name="sml-x.electricalProperties"/>
          </element>
-         <ref name="sml-x.electricalProperties"/>
       </optional>
       <zeroOrMore>
          <a:documentation>Other Characteristics</a:documentation>
