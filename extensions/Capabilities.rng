@@ -35,7 +35,7 @@
             <ref name="sml-x.measurementProperties"/>
          </element>
       </optional>
-<!--      <optional>
+     <optional>
          <a:documentation>Operating Environment</a:documentation>
          <element name="sml:characteristic">
             <attribute name="name">
@@ -44,11 +44,11 @@
             <ref name="sml-x.operationalEnvironment"/>        
             </element>
       </optional>
-      <optional>
+      <!--       <optional>
          <a:documentation>Survivable Ranges</a:documentation>
          <element name="sml:characteristic">
             <attribute name="name">
-               <value>operationalEnvironment</value>
+               <value>survivableRange</value>
             </attribute>
             <ref name="sml-x.survivableRange"/>
          </element>
@@ -58,6 +58,188 @@
          <ref name="sml.capabilities"/>
       </zeroOrMore>
    </define>
+   
+  
+   <!--  ***********************************************************  -->
+   
+   <!-- Operational Environment  -->
+   
+   <define name="sml-x.operationalEnvironment">
+      <a:documentation>Operational Environment</a:documentation>
+      <element name="swe:DataRecord">
+         <element name="swe:label">
+            <value>Operational Environment</value>
+         </element>  
+         <optional>
+            <a:documentation>Operational Temperature</a:documentation> 
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>operationalTemperature</value>
+               </attribute>
+               <ref name="sml-x.operationalTemperature"/>
+            </element>   
+         </optional>
+         <optional>
+            <a:documentation>Operational Pressure</a:documentation>      
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>operationalPressure</value>
+               </attribute>
+               <ref name="sml-x.operationalPressure"/>
+            </element>     
+         </optional>
+         <optional>
+            <a:documentation> Operational Depth</a:documentation>             
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>operationalDepth</value>
+               </attribute>
+               <ref name="sml-x.operationalDepth"/>
+            </element> 
+         </optional>
+         <optional>
+            <a:documentation>Operational Altitude</a:documentation> 
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>operationalAltitude</value>
+               </attribute>
+               <ref name="sml-x.operationalAltitude"/>
+            </element>         
+         </optional>
+      </element>
+   </define>   
+   
+   <!-- Operational Ranges -->
+   
+   <!-- Operational Temperature -->
+   <define name="sml-x.operationalTemperature">
+      <a:documentation>Operational Temperature</a:documentation> 
+      <element name="swe:QuantityRange">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/operationalTemperature</value>
+         </attribute>
+         <optional>
+            <ref name="swe.axisID"/>
+         </optional>
+         <element name="swe:label">
+            <value>Operational Temperature</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="swe:uom">
+            <attribute name="code">
+               <choice>
+                  <value>Cel</value>
+                  <value>K</value>
+                  <value>degF</value>
+               </choice>
+            </attribute>
+         </element>
+         <ref name="swe.quantityRangeValue"/>
+      </element>
+   </define>
+   
+   <!-- Operational Pressure -->
+   <define name="sml-x.operationalPressure">
+      <a:documentation>Operational Pressure</a:documentation> 
+      <element name="swe:QuantityRange">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/operationalPressure</value>
+         </attribute>
+         <optional>
+            <ref name="swe.axisID"/>
+         </optional>
+         <element name="swe:label">
+            <value>Operational Pressure</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="swe:uom">
+            <attribute name="code">
+               <choice>
+                  <value>bar</value>
+                  <value>Pa</value>
+                  <value>atm</value>
+                  <value>psi</value>
+               </choice>                
+            </attribute>
+         </element>
+         <ref name="swe.quantityRangeValue"/>
+      </element>
+   </define>
+   
+   <!-- Operational Depth -->
+   <define name="sml-x.operationalDepth">
+      <a:documentation>Operational Depth</a:documentation> 
+      <element name="swe:QuantityRange">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/operationalDepth</value>
+         </attribute>
+         <optional>
+            <ref name="swe.axisID"/>
+         </optional>
+         <element name="swe:label">
+            <value>Operational Depth</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="swe:uom">
+            <attribute name="code">
+               <choice>
+                  <value>m</value>
+                  <value>km</value>
+                  <value>mi_us</value>
+                  <value>ft_us</value>
+               </choice>
+            </attribute>
+         </element>
+         <ref name="swe.quantityRangeValue"/>
+      </element>
+   </define>
+   
+   
+   <!-- Operational Altitude -->
+   <define name="sml-x.operationalAltitude">
+      <a:documentation>Operational Altitude</a:documentation> 
+      <element name="swe:QuantityRange">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/operationalAltitude</value>
+         </attribute>
+         <optional>
+            <ref name="swe.axisID"/>
+         </optional>
+         <element name="swe:label">
+            <value>Operational Altitude</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="swe:uom">
+            <attribute name="code">
+               <choice>
+                  <value>m</value>
+                  <value>km</value>
+                  <value>mi_us</value>
+                  <value>ft_us</value>
+               </choice>
+            </attribute>
+         </element>
+         <ref name="swe.quantityRangeValue"/>
+      </element>
+   </define>
+   
+   
+   
+   <!--  ***********************************************************  -->
+   
+   <!-- Survivable Environment Range  -->
+   
+   
+   
+   
    
  </grammar>
    

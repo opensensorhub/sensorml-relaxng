@@ -54,7 +54,11 @@
       </group>
    </define>
    
+   
+   <!--  ***********************************************************  -->
+   
    <!-- Physical Properties Group -->
+   
    <define name="sml-x.physicalProperties">
       <a:documentation>Physical Properties</a:documentation>
          <element name="swe:DataRecord">
@@ -295,6 +299,9 @@
          </element>
       </element>
    </define>  
+ 
+ 
+ <!--  ***********************************************************  -->
    
    <!-- Electrical Properties Group -->
    
@@ -770,7 +777,7 @@
          </element>
       </element>       
    </define> 
-   
+        
  
 </grammar>
    
