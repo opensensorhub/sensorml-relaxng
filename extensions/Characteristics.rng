@@ -26,6 +26,7 @@
    
    <!-- characteristics group (all) -->
    <define name="sml-x.characteristicsGroup">
+      <group>
       <optional>
          <a:documentation>Physical Properties</a:documentation>
          <element name="sml:characteristic">
@@ -50,6 +51,7 @@
             <ref name="swe.dataComponentPropertyWithName"/>
          </element>
       </zeroOrMore>
+      </group>
    </define>
    
    <!-- Physical Properties Group -->
