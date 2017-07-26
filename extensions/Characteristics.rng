@@ -29,14 +29,18 @@
       <optional>
          <a:documentation>Physical Properties</a:documentation>
          <element name="sml:characteristic">
-            <attribute name="physicalProperties"/>
+            <attribute name="name">
+               <value>physicalProperties</value>
+            </attribute>
          </element>
          <ref name="sml-x.physicalProperties"/>
       </optional>
       <optional>
          <a:documentation>Electrical Properties</a:documentation>
          <element name="sml:characteristic">
-            <attribute name="electricalProperties"/>
+            <attribute name="name">
+               <value>electricalProperties</value>
+            </attribute>
          </element>
          <ref name="sml-x.electricalProperties"/>
       </optional>
