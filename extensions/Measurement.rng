@@ -156,9 +156,7 @@
                     <data type="token"/>
                 </attribute>
             </element>
-            <element name="sml:value">
-                <data type="decimal"/>
-            </element>
+            <ref name="swe.quantityRangeValue"/>
         </element>
     </define>
     
@@ -183,9 +181,7 @@
                     <data type="token"/>
                 </attribute>
             </element>
-            <element name="sml:value">
-                <data type="decimal"/>
-            </element>
+            <ref name="swe.quantityRangeValue"/>
         </element>
     </define>
     
