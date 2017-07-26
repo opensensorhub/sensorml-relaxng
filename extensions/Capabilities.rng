@@ -237,9 +237,217 @@
    
    <!-- Survivable Environment Range  -->
    
+   <define name="sml-x.survivableEnvironment">
+      <a:documentation>Survivable Environment</a:documentation>
+      <element name="swe:DataRecord">
+         <element name="swe:label">
+            <value>Survivable Environment</value>
+         </element>  
+         <optional>
+            <a:documentation>Survivable Temperature Range</a:documentation> 
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>survivalTemperature</value>
+               </attribute>
+               <ref name="sml-x.survivableTemperature"/>
+            </element>   
+         </optional>
+         <optional>
+            <a:documentation>Survivable Pressure Range</a:documentation>      
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>survivablePressure</value>
+               </attribute>
+               <ref name="sml-x.survivablePressure"/>
+            </element>     
+         </optional>
+         <optional>
+            <a:documentation> Maximum Survivable Pressure</a:documentation>             
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>maxSurvivablePressure</value>
+               </attribute>
+               <ref name="sml-x.maxSurvivablePressure"/>
+            </element> 
+         </optional>
+         <optional>
+            <a:documentation>Maximum Survivable Altitude</a:documentation> 
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>maxSurvivableAltitude</value>
+               </attribute>
+               <ref name="sml-x.maxSurvivableAltitude"/>
+            </element>         
+         </optional>
+         <optional>
+            <a:documentation>Maximum Survivable Depth</a:documentation> 
+            <element name="swe:field">
+               <attribute name="name">
+                  <value>maxSurvivableDepth</value>
+               </attribute>
+               <ref name="sml-x.maxSurvivableDepth"/>
+            </element>         
+         </optional>
+      </element>
+   </define>   
    
+   <!-- Survivable Environmental Ranges -->
    
+   <!-- Survivable Temperature -->
+   <define name="sml-x.survivableTemperature">
+      <a:documentation>Survivable Temperature</a:documentation> 
+      <element name="swe:QuantityRange">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/survivableTemperature</value>
+         </attribute>
+         <optional>
+            <ref name="swe.axisID"/>
+         </optional>
+         <element name="swe:label">
+            <value>Survivable Temperature</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="swe:uom">
+            <attribute name="code">
+               <choice>
+                  <value>Cel</value>
+                  <value>K</value>
+                  <value>degF</value>
+               </choice>
+            </attribute>
+         </element>
+         <ref name="swe.quantityRangeValue"/>
+      </element>
+   </define>
    
+   <!-- Survivable Pressure -->
+   <define name="sml-x.survivablePressure">
+      <a:documentation>Survivable Pressure</a:documentation> 
+      <element name="swe:QuantityRange">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/survivablePressure</value>
+         </attribute>
+         <optional>
+            <ref name="swe.axisID"/>
+         </optional>
+         <element name="swe:label">
+            <value>Survivable Pressure</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="swe:uom">
+            <attribute name="code">
+               <choice>
+                  <value>bar</value>
+                  <value>Pa</value>
+                  <value>atm</value>
+                  <value>psi</value>
+               </choice>
+            </attribute>
+         </element>
+         <ref name="swe.quantityRangeValue"/>
+      </element>
+   </define>
+   
+   <!-- Maximum Survivable Pressure -->
+   <define name="sml-x.maxSurvivablePressure">
+      <a:documentation>Maximum Survivable Pressure</a:documentation> 
+      <element name="swe:QuantityRange">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/maxSurvivablePressure</value>
+         </attribute>
+         <optional>
+            <ref name="swe.axisID"/>
+         </optional>
+         <element name="swe:label">
+            <value>Maximum Survivable Pressure</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="swe:uom">
+            <attribute name="code">
+               <choice>
+                  <value>bar</value>
+                  <value>Pa</value>
+                  <value>atm</value>
+                  <value>psi</value>
+               </choice>
+            </attribute>
+         </element>
+         <element name="sml:value">
+            <data type="decimal"/>
+         </element>
+      </element>
+   </define>
+   
+   <!-- Maximum Survivable Depth -->
+   <define name="sml-x.maxSurvivableDepth">
+      <a:documentation>Maximum Survivable Depth</a:documentation> 
+      <element name="swe:QuantityRange">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/maxSurvivableDepth</value>
+         </attribute>
+         <optional>
+            <ref name="swe.axisID"/>
+         </optional>
+         <element name="swe:label">
+            <value>Maximum Survivable Depth</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="swe:uom">
+            <attribute name="code">
+               <choice>
+                  <value>m</value>
+                  <value>km</value>
+                  <value>mi_us</value>
+                  <value>ft_us</value>
+               </choice>
+            </attribute>
+         </element>
+         <element name="sml:value">
+            <data type="decimal"/>
+         </element>
+      </element>
+   </define>
+   
+   <!-- Maximum Survivable Altitude -->
+   <define name="sml-x.maxSurvivableAltitude">
+      <a:documentation>Maximum Survivable Altitude</a:documentation> 
+      <element name="swe:QuantityRange">
+         <attribute name="definition">
+            <value>http://sensorml.com/ont/swe/property/maxSurvivableAltitude</value>
+         </attribute>
+         <optional>
+            <ref name="swe.axisID"/>
+         </optional>
+         <element name="swe:label">
+            <value>Maximum Survivable Altitude</value>
+         </element>  
+         <optional>
+            <ref name="swe.description"/>
+         </optional>
+         <element name="swe:uom">
+            <attribute name="code">
+               <choice>
+                  <value>m</value>
+                  <value>km</value>
+                  <value>mi_us</value>
+                  <value>ft_us</value>
+               </choice>
+            </attribute>
+         </element>
+         <element name="sml:value">
+            <data type="decimal"/>
+         </element>
+      </element>
+   </define>
+  
    
  </grammar>
    
