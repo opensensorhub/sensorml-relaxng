@@ -28,15 +28,23 @@
    <define name="sml-x.characteristicsGroup">
       <optional>
          <a:documentation>Physical Properties</a:documentation>
+         <element name="sml:characteristic">
+            <attribute name="physicalProperties"/>
+         </element>
          <ref name="sml-x.physicalProperties"/>
       </optional>
       <optional>
          <a:documentation>Electrical Properties</a:documentation>
+         <element name="sml:characteristic">
+            <attribute name="electricalProperties"/>
+         </element>
          <ref name="sml-x.electricalProperties"/>
       </optional>
       <zeroOrMore>
          <a:documentation>Other Characteristics</a:documentation>
-         <ref name="sml.characteristics"/>
+         <element name="sml:characteristic">
+            <ref name="swe.dataComponentPropertyWithName"/>
+         </element>
       </zeroOrMore>
    </define>
    
