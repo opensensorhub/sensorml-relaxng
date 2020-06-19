@@ -42,9 +42,6 @@
       <a:documentation>XYZ Reference Frame</a:documentation> 
       <element name="sml:SpatialFrame">
          <ref name="swe.objectID"/>
-         <element name="swe:identifier">
-            <value>http://sensorml.com/ont/swe/position/CartesianFrame</value>
-         </element>
          <ref name="swe.label"/>
          <optional>
             <ref name="swe.description"/>  
@@ -96,11 +93,7 @@
       <element name="swe:DataRecord">
          <optional>
             <attribute name="definition">
-               <choice>
-                  <value>http://sensorml.com/ont/swe/property/SensorPosition</value>
-                  <value>http://sensorml.com/ont/swe/property/PlatformPosition</value>
-                  <value>http://sensorml.com/ont/swe/property/Position</value>
-               </choice>
+               <value>http://sensorml.com/ont/swe/property/Position</value>
             </attribute>
          </optional>
          <element name="swe:label">
@@ -161,8 +154,8 @@
       </optional>
       <attribute name="definition">
          <choice>
-            <value>http://sensorml.com/ont/swe/property/SensorLocation</value>
-            <value>http://sensorml.com/ont/swe/property/PlatformLocation</value>
+            <value>http://www.opengis.net/def/property/OGC/0/SensorLocation</value>
+            <value>http://www.opengis.net/def/property/OGC/0/PlatformLocation</value>
             <value>http://sensorml.com/ont/swe/property/TargetLocation</value>
             <value>http://sensorml.com/ont/swe/property/Location</value>
          </choice>
@@ -193,7 +186,7 @@
                <value>x</value>
             </attribute>
             <attribute name="definition">
-               <value>http://sensorml/ont/swe/position/Distance</value>
+               <value>http://qudt.org/vocab/quantitykind/Distance</value>
             </attribute>
             <element name="swe:uom">
                <attribute name="code">
@@ -215,7 +208,7 @@
                <value>y</value>
             </attribute>
             <attribute name="definition">
-               <value>http://sensorml/ont/swe/position/Distance</value>
+               <value>http://qudt.org/vocab/quantitykind/Distance</value>
             </attribute>
             <element name="swe:uom">
                <attribute name="code">
@@ -237,7 +230,7 @@
                <value>z</value>
             </attribute>
             <attribute name="definition">
-               <value>http://sensorml/ont/swe/position/Distance</value>
+               <value>http://qudt.org/vocab/quantitykind/Distance</value>
             </attribute>
             <element name="swe:uom">
                <attribute name="code">
@@ -264,14 +257,14 @@
          </optional>
          <attribute name="definition">
             <choice>
-               <value>http://sensorml.com/ont/swe/property/SensorLocation</value>
-               <value>http://sensorml.com/ont/swe/property/PlatformLocation</value>
+               <value>http://www.opengis.net/def/property/OGC/0/SensorLocation</value>
+               <value>http://www.opengis.net/def/property/OGC/0/PlatformLocation</value>
                <value>http://sensorml.com/ont/swe/property/TargetLocation</value>
                <value>http://sensorml.com/ont/swe/property/Location</value>
             </choice>
          </attribute>
          <attribute name="referenceFrame">
-            <value>http://www.opengis.net/def/crs/EPSG/8.5/4979</value>
+            <value>http://www.opengis.net/def/crs/EPSG/0/4979</value>
          </attribute>
          <optional>
             <attribute name="localFrame">
@@ -296,7 +289,7 @@
                  <value>Lat</value>
               </attribute>
               <attribute name="definition">
-                 <value>http://sensorml/ont/swe/position/GeodeticLatitude</value>
+                 <value>http://sensorml.com/ont/swe/property/GeodeticLatitude</value>
               </attribute>
               <element name="swe:uom">
                  <attribute name="code">
@@ -318,7 +311,7 @@
                  <value>Long</value>
               </attribute>
               <attribute name="definition">
-                 <value>http://sensorml/ont/swe/position/Longitude</value>
+                 <value>http://sensorml.com/ont/swe/property/Longitude</value>
               </attribute>
               <element name="swe:uom">
                  <attribute name="code">
@@ -340,7 +333,7 @@
                  <value>h</value>
               </attribute>
               <attribute name="definition">
-                 <value>http://sensorml/ont/swe/position/HeightAboveEllipsoid</value>
+                 <value>http://sensorml.com/ont/swe/property/HeightAboveEllipsoid</value>
               </attribute>
               <element name="swe:uom">
                  <attribute name="code">
@@ -367,7 +360,11 @@
             </attribute>
          </optional>
          <attribute name="definition">
-            <value>http://sensorml.com/ont/swe/property/NED_Orientation</value>
+            <choice>
+               <value>http://www.opengis.net/def/property/OGC/0/SensorOrientation</value>
+               <value>http://www.opengis.net/def/property/OGC/0/PlatformOrientatiomn</value>
+               <value>http://sensorml.com/ont/swe/property/Orientation</value>
+            </choice>
          </attribute>
          <attribute name="referenceFrame">
             <value>http://www.opengis.net/def/crs/EPSG/0/NED</value>
@@ -395,7 +392,7 @@
                    <value>x</value>
                 </attribute>
                 <attribute name="definition">
-                   <value>http://sensorml/ont/swe/position/Roll</value>
+                   <value>http://sensorml.com/ont/swe/property/RollAngle</value>
                 </attribute>
                 <element name="swe:uom">
                    <attribute name="code">
@@ -417,7 +414,7 @@
                    <value>y</value>
                 </attribute>
                 <attribute name="definition">
-                   <value>http://sensorml/ont/swe/position/Pitch</value>
+                   <value>http://sensorml.com/ont/swe/property/PitchAngle</value>
                 </attribute>
                 <element name="swe:uom">
                    <attribute name="code">
@@ -439,7 +436,7 @@
                    <value>z</value>
                 </attribute>
                 <attribute name="definition">
-                   <value>http://sensorml/ont/swe/position/TrueHeading</value>
+                   <value>http://sensorml.com/ont/swe/property/TrueHeading</value>
                 </attribute>
                 <element name="swe:uom">
                    <attribute name="code">
@@ -465,8 +462,8 @@
          </optional>
          <attribute name="definition">
             <choice>
-               <value>http://sensorml.com/ont/swe/property/SensorOrientation</value>
-               <value>http://sensorml.com/ont/swe/property/PlatformOrientatiomn</value>
+               <value>http://www.opengis.net/def/property/OGC/0/SensorOrientation</value>
+               <value>http://www.opengis.net/def/property/OGC/0/PlatformOrientatiomn</value>
                <value>http://sensorml.com/ont/swe/property/Orientation</value>
             </choice>
          </attribute>
@@ -496,7 +493,7 @@
                    <value>x</value>
                 </attribute>
                 <attribute name="definition">
-                   <value>http://sensorml/ont/swe/position/OrientationAboutX</value>
+                   <value>http://qudt.org/vocab/quantitykind/PlaneAngle</value>
                 </attribute>
                 <element name="swe:uom">
                    <attribute name="code">
@@ -518,7 +515,7 @@
                    <value>y</value>
                 </attribute>
                 <attribute name="definition">
-                   <value>http://sensorml/ont/swe/position/OrientationAboutY</value>
+                   <value>http://qudt.org/vocab/quantitykind/PlaneAngle</value>
                 </attribute>
                 <element name="swe:uom">
                    <attribute name="code">
@@ -540,7 +537,7 @@
                    <value>z</value>
                 </attribute>
                 <attribute name="definition">
-                   <value>http://sensorml/ont/swe/position/OrientationAboutZ</value>
+                   <value>http://qudt.org/vocab/quantitykind/PlaneAngle</value>
                 </attribute>
                 <element name="swe:uom">
                    <attribute name="code">
