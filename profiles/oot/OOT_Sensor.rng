@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+   xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+   xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+   <include href="../../basic_sml/Basic_SensorML.rng"/>
+   <include href="../../extensions/Position.rng"/>
+   <include href="../../extensions/Identifiers.rng"/>
+   <include href="../../extensions/Classifiers.rng"/>
+   <include href="../../extensions/Characteristics.rng"/>
+   <include href="../../extensions/Capabilities.rng"/>
+   <include href="../../profiles/PhysicalSystem_OEM.rng"/>
+   
+   
+   <start>
+      <ref name="oot.sensor"/>
+   </start>   
+  
+
+   <!-- Simple float sensor -->
+   <define name="oot.sensor">
+      <a:documentation>OOT Float Sensor</a:documentation>
+      <element name="sml:PhysicalComponent">
+         <ref name="sml-x.OEM_DescribedObject"/> 
+         <ref name="oot.capabilities.response"/>
+      </element>
+   </define>
+   
+   
+   <!-- Response Model Capabilities -->
+   <define name="oot.capabilities.response">
+      <a:documentation>Response Capabilities</a:documentation>
+      <element name="sml:capabilities">
+         <element name="sml:CapabilitiesList">
+            <ref name="sml.metadataList"/>
+            <element name="sml:capabilities">
+               <attribute name="name">
+                  <value>response</value>
+               </attribute>
+               <ref name="sml-x.range"/>
+               <ref name="sml-x.dynamicRange"/>
+               <ref name="sml-x.samplingFreq"/>
+            </element>
+         </element>
+      </element>
+   </define>
+ 
+ </grammar>

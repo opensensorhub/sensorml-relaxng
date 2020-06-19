@@ -143,7 +143,7 @@
         </a:documentation> 
         <element name="swe:QuantityRange">
             <attribute name="definition">
-                <value>http://sensorml.com/ont/swe/property/dynamicRange</value>
+                <value>http://sensorml.com/ont/swe/property/DynamicRange</value>
             </attribute>
             <element name="swe:label">
                 <value>Dynamic Range</value>
@@ -160,18 +160,19 @@
         </element>
     </define>
     
-    <!--  Range ... range of possible values -->
+    
+    <!-- Measurement Range ... range of measurable values -->
     
     <define name="sml-x.range">
         <a:documentation>
-             Range ... the range of possible measurements
+             Measurement Range ... the range of measurable values
         </a:documentation> 
         <element name="swe:QuantityRange">
             <attribute name="definition">
-                <value>http://sensorml.com/ont/swe/property/rangeOfPossible</value>
+                <value>http://www.w3.org/ns/ssn/systems/MeasurementRange</value>
             </attribute>
             <element name="swe:label">
-                <value> Range of Possible Measurements</value>
+                <value>Measurement Range</value>
             </element>  
             <optional>
                 <ref name="swe.description"/>
@@ -269,16 +270,17 @@
             </element>
         </element>
     </define>
+    
         
     <!-- Sampling Frequency ... the frequency of measurement (uom: 1/sec)  -->
     
     <define name="sml-x.samplingFreq">
         <a:documentation>
-            Sampling Frequency ... the number of measurement samples over a second of time 
+            Sampling Frequency ... the number of measurement samples per second 
         </a:documentation> 
         <element name="swe:Quantity">
             <attribute name="definition">
-                <value>http://sensorml.com/ont/swe/property/samplingFrequency</value>
+                <value>http://sensorml.com/ont/swe/property/SamplingFrequency</value>
             </attribute>
             <element name="swe:label">
                 <value>Sampling Frequency</value>
@@ -288,7 +290,7 @@
             </optional>
             <element name="swe:uom">
                 <attribute name="code">
-                    <value>1/s</value>
+                    <value>Hz</value>
                 </attribute>
             </element>
             <element name="sml:value">
@@ -296,9 +298,7 @@
             </element>
         </element>
     </define>
-    
-  
-
+     
 
     <!-- Sampling Period ... time between measurements -->
     
@@ -308,7 +308,7 @@
         </a:documentation> 
         <element name="swe:Quantity">
             <attribute name="definition">
-                <value>http://sensorml.com/ont/swe/property/samplingPeriod</value>
+                <value>http://sensorml.com/ont/swe/property/SamplingPeriod</value>
             </attribute>
             <element name="swe:label">
                 <value>Sampling Period</value>
@@ -336,7 +336,7 @@
         </a:documentation> 
         <element name="swe:Quantity">
             <attribute name="definition">
-                <value>http://sensorml.com/ont/swe/property/samplingDuration</value>
+                <value>http://sensorml.com/ont/swe/property/SamplingDuration</value>
             </attribute>
             <element name="swe:label">
                 <value>Sampling Duration</value>
@@ -354,7 +354,34 @@
             </element>
         </element>
     </define>
-     
+    
+    
+    <!-- Integration Time -->
+
+    <define name="sml-x.integrationTime">
+        <a:documentation>
+            Integration Time
+        </a:documentation> 
+        <element name="swe:Quantity">
+            <attribute name="definition">
+                <value>http://sensorml.com/ont/swe/property/IntegrationTime</value>
+            </attribute>
+            <element name="swe:label">
+                <value>Integration Time</value>
+            </element>  
+            <optional>
+                <ref name="swe.description"/>
+            </optional>
+            <element name="swe:uom">
+                <attribute name="code">
+                    <value>ms</value>
+                </attribute>
+            </element>
+            <element name="sml:value">
+                <data type="decimal"/>
+            </element>
+        </element>
+    </define>     
      
     
     <!-- Calibration ... curve of stimulus value vs measured value -->
@@ -365,7 +392,7 @@
         </a:documentation> 
         <element name="swe:DataArray">
             <attribute name="definition">
-                <value>http://sensorml.com/ont/swe/property/calibration</value>
+                <value>http://sensorml.com/ont/swe/property/CharacteristicCurve</value>
             </attribute>
             <element name="swe:label">
                 <value>Steady-State Calibration</value>
@@ -386,7 +413,7 @@
         </a:documentation> 
         <element name="swe:DataArray">
             <attribute name="definition">
-                <value>http://sensorml.com/ont/swe/property/frequencyResponse</value>
+                <value>http://sensorml.com/ont/swe/property/SpectralResponse</value>
             </attribute>
             <element name="swe:label">
                 <value>Frequency Response</value>
@@ -420,6 +447,7 @@
         </element>
     </define>
     
+    
     <!-- Latency Time ... time difference between the a stimulus change and the recognition and time-tagging of that change
                           by a transducer -->
     <define name="sml-x.latencyTime">
@@ -439,6 +467,33 @@
             <element name="swe:uom">
                 <attribute name="code">
                     <value>s</value>
+                </attribute>
+            </element>
+            <element name="sml:value">
+                <data type="decimal"/>
+            </element>
+        </element>
+    </define>
+    
+    
+    <!-- Response Time -->
+    <define name="sml-x.responseTime">
+        <a:documentation>
+            Response Time ... time delay between stimulus and measurement response 
+        </a:documentation> 
+        <element name="swe:Quantity">
+            <attribute name="definition">
+                <value>http://www.w3.org/ns/ssn/systems/ResponseTime</value>
+            </attribute>
+            <element name="swe:label">
+                <value>Response Time</value>
+            </element>  
+            <optional>
+                <ref name="swe.description"/>
+            </optional>
+            <element name="swe:uom">
+                <attribute name="code">
+                    <value>ms</value>
                 </attribute>
             </element>
             <element name="sml:value">
